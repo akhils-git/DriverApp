@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build and Run Android App",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"$env:JAVA_HOME='C:\\Program Files\\Microsoft\\jdk-17.0.16.8-hotspot'; $env:ANDROID_HOME='$env:USERPROFILE\\AppData\\Local\\Android\\Sdk'; & '$env:ANDROID_HOME\\platform-tools\\adb.exe' install -r 'app\\build\\outputs\\apk\\debug\\app-debug.apk'; & '$env:ANDROID_HOME\\platform-tools\\adb.exe' shell am start -n 'com.girfalco.driverapp/.MainActivity'"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Build Android APK",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"$env:JAVA_HOME='C:\\Program Files\\Microsoft\\jdk-17.0.16.8-hotspot'; & 'C:\\Program Files\\Android\\Android Studio\\jbr\\bin\\java.exe' -version; Write-Host 'Building APK with Android Studio Gradle...'; Write-Host 'Please build the project in Android Studio and then install manually.'"
+			],
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}

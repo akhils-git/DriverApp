@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">8dp</dimen>
+    <dimen name="stroke_width_focused">1.5dp</dimen>
+    <dimen name="floating_label_top_margin">8dp</dimen>
+</resources>
