@@ -33,6 +33,8 @@ color white
 dimen fab_margin
 dimen floating_label_top_margin
 dimen stroke_width_focused
+drawable checkbox_checked
+drawable checkbox_unchecked
 drawable circle_background
 drawable circle_logo_background
 drawable custom_checkbox
@@ -71,7 +73,8 @@ id password_edit_text
 id password_floating_label
 id password_input
 id password_input_layout
-id remember_checkbox
+id remember_checkbox_icon
+id remember_checkbox_text
 id route_progress_bar
 id route_status_text
 id routesFragment

@@ -3028,6 +3028,8 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable checkbox_checked
+drawable checkbox_unchecked
 drawable circle_background
 drawable circle_logo_background
 drawable custom_checkbox
@@ -3528,7 +3530,8 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id remember_checkbox
+id remember_checkbox_icon
+id remember_checkbox_text
 id report_drawn
 id reverseSawtooth
 id right

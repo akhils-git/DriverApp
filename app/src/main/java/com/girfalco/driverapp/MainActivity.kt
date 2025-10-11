@@ -31,13 +31,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var passwordInputLayout: TextInputLayout
     private lateinit var emailFloatingLabel: TextView
     private lateinit var passwordFloatingLabel: TextView
-    private lateinit var rememberCheckbox: CheckBox
+    private lateinit var rememberCheckboxIcon: ImageView
+    private lateinit var rememberCheckboxText: TextView
     private lateinit var loginButton: MaterialButton
     private lateinit var faceIdContainer: View
     private lateinit var faceIdIcon: ImageView
     private lateinit var forgotPasswordText: TextView
     private lateinit var backgroundImage: ImageView
     private lateinit var loginLogo: ImageView
+    
+    // Custom checkbox state
+    private var isRememberMeChecked = true
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +76,8 @@ class MainActivity : AppCompatActivity() {
         passwordInputLayout = findViewById(R.id.password_input_layout)
         emailFloatingLabel = findViewById(R.id.email_floating_label)
         passwordFloatingLabel = findViewById(R.id.password_floating_label)
-        rememberCheckbox = findViewById(R.id.remember_checkbox)
+        rememberCheckboxIcon = findViewById(R.id.remember_checkbox_icon)
+        rememberCheckboxText = findViewById(R.id.remember_checkbox_text)
         loginButton = findViewById(R.id.login_button)
         faceIdContainer = findViewById(R.id.face_id_container)
         faceIdIcon = findViewById(R.id.face_id_icon)
@@ -91,6 +96,9 @@ class MainActivity : AppCompatActivity() {
         
         // Setup custom floating labels
         setupCustomFloatingLabels()
+        
+        // Setup custom checkbox
+        setupCustomCheckbox()
     }
     
     private fun setupClickListeners() {
@@ -104,6 +112,15 @@ class MainActivity : AppCompatActivity() {
         
         forgotPasswordText.setOnClickListener {
             handleForgotPassword()
+        }
+        
+        // Custom checkbox click listeners
+        rememberCheckboxIcon.setOnClickListener {
+            toggleRememberMe()
+        }
+        
+        rememberCheckboxText.setOnClickListener {
+            toggleRememberMe()
         }
     }
     
@@ -140,7 +157,7 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Login successful! Welcome to Girfalco Driver App", Toast.LENGTH_LONG).show()
         
         // Save remember me preference if checked
-        if (rememberCheckbox.isChecked) {
+        if (isRememberMeChecked) {
             // TODO: Save user credentials securely
             Toast.makeText(this, "Login details will be remembered", Toast.LENGTH_SHORT).show()
         }
@@ -297,6 +314,26 @@ class MainActivity : AppCompatActivity() {
                     label.translationY = 0f
                 }
                 .start()
+        }
+    }
+    
+    private fun setupCustomCheckbox() {
+        // Set initial state - checked (blue background with checkmark)
+        updateCheckboxAppearance()
+    }
+    
+    private fun toggleRememberMe() {
+        isRememberMeChecked = !isRememberMeChecked
+        updateCheckboxAppearance()
+    }
+    
+    private fun updateCheckboxAppearance() {
+        if (isRememberMeChecked) {
+            // Checked: Blue background with white checkmark
+            rememberCheckboxIcon.setImageResource(R.drawable.checkbox_checked)
+        } else {
+            // Unchecked: White background with blue border
+            rememberCheckboxIcon.setImageResource(R.drawable.checkbox_unchecked)
         }
     }
 }
