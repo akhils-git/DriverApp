@@ -1,5 +1,6 @@
 package com.girfalco.driverapp
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
@@ -86,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         // Load SVG files
         loadSvgIntoImageView(backgroundImage, "login_screen_background.svg")
         loadSvgIntoImageView(loginLogo, "login_screen_logo.svg")
-        loadSvgIntoImageView(faceIdIcon, "login_screen_faceid.svg")
+        loadSvgIntoImageView(faceIdIcon, "login_screen_biometric.svg")
         
         // Add underline to "Forgot Password?" text
         forgotPasswordText.paintFlags = forgotPasswordText.paintFlags or android.graphics.Paint.UNDERLINE_TEXT_FLAG
@@ -128,39 +129,22 @@ class MainActivity : AppCompatActivity() {
         val email = emailInput.text.toString().trim()
         val password = passwordInput.text.toString().trim()
         
-        if (email.isEmpty()) {
-            emailInput.error = "Email is required"
-            emailInput.requestFocus()
-            return
-        }
+        // Skip validation for now - accept any input
+        // TODO: Implement actual authentication logic with API integration
         
-        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailInput.error = "Please enter a valid email address"
-            emailInput.requestFocus()
-            return
-        }
-        
-        if (password.isEmpty()) {
-            passwordInput.error = "Password is required"
-            passwordInput.requestFocus()
-            return
-        }
-        
-        if (password.length < 6) {
-            passwordInput.error = "Password must be at least 6 characters"
-            passwordInput.requestFocus()
-            return
-        }
-        
-        // TODO: Implement actual authentication logic
-        // For now, show a success message
-        Toast.makeText(this, "Login successful! Welcome to Girfalco Driver App", Toast.LENGTH_LONG).show()
+        // Show success message
+        Toast.makeText(this, "Login successful! Welcome to Girfalco Driver App", Toast.LENGTH_SHORT).show()
         
         // Save remember me preference if checked
         if (isRememberMeChecked) {
             // TODO: Save user credentials securely
             Toast.makeText(this, "Login details will be remembered", Toast.LENGTH_SHORT).show()
         }
+        
+        // Navigate to Home Activity
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+        finish() // Close login screen
     }
     
     private fun handleFaceIdLogin() {
@@ -181,12 +165,12 @@ class MainActivity : AppCompatActivity() {
             // Get appropriate dimensions based on file
             val width = when (fileName) {
                 "login_screen_logo.svg" -> 150
-                "login_screen_faceid.svg" -> 50
+                "login_screen_biometric.svg" -> 50
                 else -> 1000
             }
             val height = when (fileName) {
                 "login_screen_logo.svg" -> 150
-                "login_screen_faceid.svg" -> 50
+                "login_screen_biometric.svg" -> 50
                 else -> 1000
             }
             
@@ -219,7 +203,7 @@ class MainActivity : AppCompatActivity() {
             "login_screen_logo.svg" -> {
                 imageView.setImageResource(R.drawable.ic_girfalco_logo)
             }
-            "login_screen_faceid.svg" -> {
+            "login_screen_biometric.svg" -> {
                 imageView.setImageResource(android.R.drawable.ic_menu_camera)
             }
         }

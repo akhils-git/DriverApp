@@ -3028,10 +3028,13 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable card_gradient_background
+drawable change_button_background
 drawable checkbox_checked
 drawable checkbox_unchecked
 drawable circle_background
 drawable circle_logo_background
+drawable circular_profile_pic
 drawable custom_checkbox
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3133,6 +3136,9 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable profile_circle_background
+drawable profile_pic
+drawable rectangle_background
 drawable splash_gradient_background
 drawable splash_screen_logo
 drawable status_badge_active
@@ -3260,6 +3266,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id change_button
 id checkbox
 id checked
 id chronometer
@@ -3359,8 +3366,10 @@ id fullscreen_header
 id ghost_view
 id ghost_view_holder
 id gone
+id gradient_card
 id graph
 id graph_wrap
+id greeting_text
 id group_divider
 id grouping
 id groups
@@ -3525,10 +3534,13 @@ id pin
 id position
 id postLayout
 id pressed
+id profile_container
+id profile_picture
 id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id rectangle_container
 id rectangles
 id remember_checkbox_icon
 id remember_checkbox_text
@@ -3630,6 +3642,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id text_container
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3661,6 +3674,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_name_text
 id username_edit_text
 id vertical_only
 id view_map_button
@@ -3798,6 +3812,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_home
 layout activity_login
 layout activity_main
 layout content_main
