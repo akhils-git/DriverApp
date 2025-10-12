@@ -10,6 +10,7 @@
     <color name="input_background_color">#FFFFFF</color>
     <color name="input_border_focused">#4880FB</color>
     <color name="input_border_unfocused">#FFFFFF</color>
+    <color name="light_red">#FFFFCDD2</color>
     <color name="placeholder_text_color">#91989F</color>
     <color name="primary_blue">#FF00AEFF</color>
     <color name="purple_200">#FFBB86FC</color>

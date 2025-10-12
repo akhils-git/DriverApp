@@ -55,6 +55,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
+        <!-- User Profile Activity -->
+        <activity
+            android:name="com.girfalco.driverapp.UserProfileActivity"
+            android:exported="true"
+            android:label="User Profile"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.girfalco.driverapp.androidx-startup"

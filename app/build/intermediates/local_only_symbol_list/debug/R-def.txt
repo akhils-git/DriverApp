@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+anim slide_in_right
+anim slide_out_left
 color background_light
 color black
 color dark_button
@@ -10,6 +12,7 @@ color input_background
 color input_background_color
 color input_border_focused
 color input_border_unfocused
+color light_red
 color placeholder_text_color
 color primary_blue
 color purple_200
@@ -46,13 +49,16 @@ drawable face_id_button_background
 drawable gradient_background
 drawable gradient_rect_253x28
 drawable home_screen_card_vehicle
+drawable home_screen_filter
 drawable home_screen_l_shape
+drawable home_screen_search
 drawable ic_girfalco_logo
 drawable l_shape_rect_gradient
 drawable login_gradient_background
 drawable profile_circle_background
 drawable profile_pic
 drawable rectangle_background
+drawable search_box_background
 drawable splash_gradient_background
 drawable splash_screen_logo
 drawable status_badge_active
@@ -61,6 +67,9 @@ drawable status_badge_scheduled
 id action_dashboardFragment_to_routesFragment
 id action_loginFragment_to_dashboardFragment
 id action_routesFragment_to_dashboardFragment
+id assigned_routes_heading
+id assigned_routes_segment
+id assigned_routes_subtext
 id background_image
 id bins_collected_count
 id bins_remaining_count
@@ -99,12 +108,17 @@ id remember_checkbox_text
 id route_progress_bar
 id route_status_text
 id routesFragment
+id search_box_container
+id search_edit_text
+id search_icon
 id start_route_button
 id subtitle_text
 id text_container
 id toolbar
 id user_name_text
+id user_text_container
 id username_edit_text
+id vehicle_card
 id vehicle_image
 id vehicle_number_text
 id view_map_button
@@ -114,6 +128,7 @@ id yellow_segment
 layout activity_home
 layout activity_login
 layout activity_main
+layout activity_user_profile
 layout content_main
 layout fragment_dashboard
 layout fragment_login

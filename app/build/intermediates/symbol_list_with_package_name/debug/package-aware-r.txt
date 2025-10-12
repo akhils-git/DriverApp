@@ -47,6 +47,8 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim slide_in_right
+anim slide_out_left
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1472,6 +1474,7 @@ color input_background
 color input_background_color
 color input_border_focused
 color input_border_unfocused
+color light_red
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3046,7 +3049,9 @@ drawable face_id_button_background
 drawable gradient_background
 drawable gradient_rect_253x28
 drawable home_screen_card_vehicle
+drawable home_screen_filter
 drawable home_screen_l_shape
+drawable home_screen_search
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3144,6 +3149,7 @@ drawable notify_panel_notification_icon_bg
 drawable profile_circle_background
 drawable profile_pic
 drawable rectangle_background
+drawable search_box_background
 drawable splash_gradient_background
 drawable splash_screen_logo
 drawable status_badge_active
@@ -3238,6 +3244,9 @@ id antiClockwise
 id anticipate
 id arc
 id asConfigured
+id assigned_routes_heading
+id assigned_routes_segment
+id assigned_routes_subtext
 id async
 id auto
 id autoComplete
@@ -3577,10 +3586,13 @@ id scrollView
 id scrollable
 id search_badge
 id search_bar
+id search_box_container
 id search_button
 id search_close_btn
 id search_edit_frame
+id search_edit_text
 id search_go_btn
+id search_icon
 id search_mag_icon
 id search_plate
 id search_src_text
@@ -3684,7 +3696,9 @@ id unlabeled
 id up
 id useLogo
 id user_name_text
+id user_text_container
 id username_edit_text
+id vehicle_card
 id vehicle_image
 id vehicle_number_text
 id vertical_only
@@ -3827,6 +3841,7 @@ layout abc_tooltip
 layout activity_home
 layout activity_login
 layout activity_main
+layout activity_user_profile
 layout content_main
 layout custom_dialog
 layout design_bottom_navigation_item

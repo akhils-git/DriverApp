@@ -34,4 +34,5 @@
     <color name="input_border_focused">#4880FB</color>
     <color name="input_border_unfocused">#FFFFFF</color>
     <color name="input_background_color">#FFFFFF</color>
+    <color name="light_red">#FFFFCDD2</color>
 </resources>
