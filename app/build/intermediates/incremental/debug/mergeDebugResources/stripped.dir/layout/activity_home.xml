@@ -2,113 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="1784dp"
     android:fitsSystemWindows="true"
-    android:background="#F7F7F7">
+    android:background="#FFFFFF">
 
-    <!-- White Container for Text -->
-    <LinearLayout
+    <!-- User Information Card (custom component) -->
+    <com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard
         android:id="@+id/text_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        android:background="#FFFFFF"
-        android:paddingBottom="24dp">
+        android:layout_alignParentTop="true" />
 
-        <!-- Profile Picture -->
-        <FrameLayout
-            android:id="@+id/profile_container"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="end"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/profile_circle_background">
-            
-            <ImageView
-                android:id="@+id/profile_picture"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/profile_pic"
-                android:scaleType="centerCrop"
-                android:contentDescription="User Profile Picture" />
-        </FrameLayout>
 
-        <!-- Mohammed Al Hassan Text -->
-        <TextView
-            android:id="@+id/user_name_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-18dp"
-            android:layout_marginStart="20dp"
-            android:text="Mohammed Al Hassan"
-            android:textSize="18dp"
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="normal"
-            android:textColor="#2F3F46" />
+    <!-- Light Yellow Segment -->
+    <RelativeLayout
+    android:id="@+id/yellow_segment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/text_container"
+    android:background="#F7F7F7"
+    android:fitsSystemWindows="false">
 
-        <!-- Have a nice ride Text -->
-        <TextView
-            android:id="@+id/greeting_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:layout_marginStart="20dp"
-            android:text="Have a nice ride."
-            android:textSize="14dp"
-            android:fontFamily="sans-serif"
-            android:textStyle="normal"
-            android:textColor="#2F3F46" />
-
-    </LinearLayout>
-
-    <!-- Card View in Gray Area -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/gradient_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_container"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="0dp">
-
-        <RelativeLayout
+        <!-- Vehicle Information Card (custom component) -->
+    <com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/card_gradient_background">
+            android:layout_height="92dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
+    </RelativeLayout>
 
-            <!-- Change Button -->
-            <Button
-                android:id="@+id/change_button"
-                android:layout_width="74dp"
-                android:layout_height="32dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="15dp"
-                android:layout_marginTop="10dp"
-                android:text="Change"
-                android:textColor="#17BBF4"
-                android:textSize="12sp"
-                android:background="@drawable/change_button_background"
-                android:fontFamily="sans-serif"
-                android:textAllCaps="false"
-                style="@style/Widget.AppCompat.Button.Borderless" />
-
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <!-- Rectangle Container -->
-    <View
-        android:id="@+id/rectangle_container"
-        android:layout_width="375dp"
-        android:layout_height="106dp"
-        android:layout_below="@id/gradient_card"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rectangle_background" />
 
 </RelativeLayout>

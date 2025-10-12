@@ -3028,6 +3028,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_ripple_white
 drawable card_gradient_background
 drawable change_button_background
 drawable checkbox_checked
@@ -3043,6 +3044,9 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable face_id_button_background
 drawable gradient_background
+drawable gradient_rect_253x28
+drawable home_screen_card_vehicle
+drawable home_screen_l_shape
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3062,6 +3066,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable l_shape_rect_gradient
 drawable login_gradient_background
 drawable m3_appbar_background
 drawable m3_avd_hide_password
@@ -3366,7 +3371,7 @@ id fullscreen_header
 id ghost_view
 id ghost_view_holder
 id gone
-id gradient_card
+id gradient_rect_next_to_l_shape
 id graph
 id graph_wrap
 id greeting_text
@@ -3396,6 +3401,7 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id l_shape_image
 id labeled
 id layout
 id left
@@ -3414,6 +3420,7 @@ id login_logo
 id logo_webview
 id ltr
 id m3_side_sheet
+id make_text
 id marquee
 id masked
 id match_constraint
@@ -3442,6 +3449,7 @@ id matrix
 id message
 id middle
 id mini
+id model_text
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -3531,6 +3539,8 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id pipe_separator
+id plate_number_text
 id position
 id postLayout
 id pressed
@@ -3540,7 +3550,6 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
-id rectangle_container
 id rectangles
 id remember_checkbox_icon
 id remember_checkbox_text
@@ -3676,6 +3685,8 @@ id up
 id useLogo
 id user_name_text
 id username_edit_text
+id vehicle_image
+id vehicle_number_text
 id vertical_only
 id view_map_button
 id view_offset_helper
@@ -3697,6 +3708,7 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id yellow_segment
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -3835,6 +3847,7 @@ layout design_text_input_start_icon
 layout fragment_dashboard
 layout fragment_login
 layout fragment_routes
+layout homescreen_user_information_card
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog
@@ -3899,6 +3912,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout splash_screen
 layout support_simple_spinner_dropdown_item
+layout vehicle_information_card
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
