@@ -20,7 +20,7 @@
 15-->[androidx.core:core:1.12.0] C:\Users\akhil\.gradle\caches\transforms-3\cdabb42d0eb29c24a23cb1606a6c16f6\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:5:5-54:19
+17-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:5:5-41:19
 18        android:allowBackup="true"
 18-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:6:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -42,158 +42,133 @@
 28        android:theme="@style/Theme.GirfalcoDriverApp" >
 28-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:13:9-55
 29
-30        <!-- Splash Screen Activity as Launcher -->
+30        <!-- Home Activity as Launcher -->
 31        <activity
-31-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:16:9-26:20
-32            android:name="com.girfalco.driverapp.SplashScreenActivity"
-32-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:17:13-49
+31-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:16:9-25:20
+32            android:name="com.girfalco.driverapp.HomeActivity"
+32-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:17:13-41
 33            android:exported="true"
 33-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:18:13-36
 34            android:label="@string/app_name"
 34-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:19:13-45
-35            android:screenOrientation="portrait"
-35-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:21:13-49
-36            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
-36-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:20:13-70
-37            <intent-filter>
-37-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:22:13-25:29
-38                <action android:name="android.intent.action.MAIN" />
-38-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:23:17-69
-38-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:23:25-66
-39
-40                <category android:name="android.intent.category.LAUNCHER" />
-40-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:24:17-77
-40-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:24:27-74
-41            </intent-filter>
-42        </activity>
-43
-44        <!-- Main Activity -->
-45        <activity
-45-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:29:9-33:73
-46            android:name="com.girfalco.driverapp.MainActivity"
-46-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:30:13-41
-47            android:exported="true"
-47-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:31:13-36
-48            android:label="@string/app_name"
-48-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:32:13-45
-49            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-49-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:33:13-70
-50
-51        <!-- Home Activity - Launch Activity -->
-52        <activity
-52-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:36:9-40:73
-53            android:name="com.girfalco.driverapp.HomeActivity"
-53-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:37:13-41
-54            android:exported="true"
-54-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:38:13-36
-55            android:label="@string/app_name"
-55-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:39:13-45
+35            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
+35-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:20:13-70
+36            <intent-filter>
+36-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:21:13-24:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:22:17-69
+37-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:22:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:23:17-77
+39-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:23:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <!-- Main Activity -->
+44        <activity
+44-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:28:9-32:73
+45            android:name="com.girfalco.driverapp.MainActivity"
+45-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:29:13-41
+46            android:exported="true"
+46-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:30:13-36
+47            android:label="@string/app_name"
+47-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:31:13-45
+48            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+48-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:32:13-70
+49
+50        <!-- Splash Screen Activity -->
+51        <activity
+51-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:35:9-40:52
+52            android:name="com.girfalco.driverapp.SplashScreenActivity"
+52-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:36:13-49
+53            android:exported="true"
+53-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:37:13-36
+54            android:label="@string/app_name"
+54-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:38:13-45
+55            android:screenOrientation="portrait"
+55-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:40:13-49
 56            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-56-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:40:13-70
+56-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:39:13-70
 57
-58        <!-- Splash Screen Activity as Launcher -->
-59        <activity
-59-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:16:9-26:20
-60            android:name="com.girfalco.driverapp.SplashScreenActivity"
-60-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:17:13-49
-61            android:exported="true"
-61-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:18:13-36
-62            android:label="@string/app_name"
-62-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:19:13-45
-63            android:screenOrientation="portrait"
-63-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:21:13-49
-64            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
-64-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:20:13-70
-65            <intent-filter>
-65-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:22:13-25:29
-66                <action android:name="android.intent.action.MAIN" />
-66-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:23:17-69
-66-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:23:25-66
-67
-68                <category android:name="android.intent.category.LAUNCHER" />
-68-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:24:17-77
-68-->D:\AkhilPC\WorkSpace\CopilotWorkspace\app\src\main\AndroidManifest.xml:24:27-74
-69            </intent-filter>
-70        </activity>
-71
-72        <provider
-72-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-73            android:name="androidx.startup.InitializationProvider"
-73-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-74            android:authorities="com.girfalco.driverapp.androidx-startup"
-74-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-75            android:exported="false" >
-75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-76            <meta-data
-76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-77                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-78                android:value="androidx.startup" />
-78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-79            <meta-data
-79-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\akhil\.gradle\caches\transforms-3\51b8f7bc0077352250e52f33b6ab4797\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-80                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-80-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\akhil\.gradle\caches\transforms-3\51b8f7bc0077352250e52f33b6ab4797\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-81                android:value="androidx.startup" />
-81-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\akhil\.gradle\caches\transforms-3\51b8f7bc0077352250e52f33b6ab4797\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-82            <meta-data
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-83                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-84                android:value="androidx.startup" />
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-85        </provider>
-86
-87        <uses-library
-87-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
-88            android:name="androidx.window.extensions"
-88-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
-89            android:required="false" />
-89-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
-90        <uses-library
-90-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
-91            android:name="androidx.window.sidecar"
-91-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
-92            android:required="false" />
-92-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
-93
-94        <receiver
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-95            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-96            android:directBootAware="false"
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-97            android:enabled="true"
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-98            android:exported="true"
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-99            android:permission="android.permission.DUMP" >
-99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-101                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-104                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-107                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-108            </intent-filter>
-109            <intent-filter>
-109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-110                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-111            </intent-filter>
-112        </receiver>
-113    </application>
-114
-115</manifest>
+58        <provider
+58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+59            android:name="androidx.startup.InitializationProvider"
+59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+60            android:authorities="com.girfalco.driverapp.androidx-startup"
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+61            android:exported="false" >
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+62            <meta-data
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+63                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+64                android:value="androidx.startup" />
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\akhil\.gradle\caches\transforms-3\d246d821b9474ba6da65be1bb34af9cb\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+65            <meta-data
+65-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\akhil\.gradle\caches\transforms-3\51b8f7bc0077352250e52f33b6ab4797\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+66-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\akhil\.gradle\caches\transforms-3\51b8f7bc0077352250e52f33b6ab4797\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+67                android:value="androidx.startup" />
+67-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\akhil\.gradle\caches\transforms-3\51b8f7bc0077352250e52f33b6ab4797\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+68            <meta-data
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+69                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+70                android:value="androidx.startup" />
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+71        </provider>
+72
+73        <uses-library
+73-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+74            android:name="androidx.window.extensions"
+74-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+75            android:required="false" />
+75-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+76        <uses-library
+76-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+77            android:name="androidx.window.sidecar"
+77-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+78            android:required="false" />
+78-->[androidx.window:window:1.0.0] C:\Users\akhil\.gradle\caches\transforms-3\34eee5a2c89e89b10aed6af5db689716\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+79
+80        <receiver
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+81            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+82            android:directBootAware="false"
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+83            android:enabled="true"
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+84            android:exported="true"
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+85            android:permission="android.permission.DUMP" >
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+86            <intent-filter>
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+87                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+88            </intent-filter>
+89            <intent-filter>
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+90                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+91            </intent-filter>
+92            <intent-filter>
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+93                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+94            </intent-filter>
+95            <intent-filter>
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+96                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\akhil\.gradle\caches\transforms-3\670269f5e88bcc89d869389c6bc16206\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+97            </intent-filter>
+98        </receiver>
+99    </application>
+100
+101</manifest>

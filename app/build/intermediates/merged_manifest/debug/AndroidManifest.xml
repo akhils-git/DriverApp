@@ -27,12 +27,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GirfalcoDriverApp" >
 
-        <!-- Splash Screen Activity as Launcher -->
+        <!-- Home Activity as Launcher -->
         <activity
-            android:name="com.girfalco.driverapp.SplashScreenActivity"
+            android:name="com.girfalco.driverapp.HomeActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,26 +47,13 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
-        <!-- Home Activity - Launch Activity -->
-        <activity
-            android:name="com.girfalco.driverapp.HomeActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-
-        <!-- Splash Screen Activity as Launcher -->
+        <!-- Splash Screen Activity -->
         <activity
             android:name="com.girfalco.driverapp.SplashScreenActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
