@@ -45,6 +45,7 @@ drawable circle_background
 drawable circle_logo_background
 drawable circular_profile_pic
 drawable custom_checkbox
+drawable edit_circle_bg
 drawable face_id_button_background
 drawable gradient_background
 drawable gradient_rect_253x28
@@ -52,6 +53,7 @@ drawable home_screen_card_vehicle
 drawable home_screen_filter
 drawable home_screen_l_shape
 drawable home_screen_search
+drawable ic_edit_pen
 drawable ic_girfalco_logo
 drawable l_shape_rect_gradient
 drawable login_gradient_background
@@ -64,6 +66,8 @@ drawable splash_screen_logo
 drawable status_badge_active
 drawable status_badge_pending
 drawable status_badge_scheduled
+drawable user_profile_back_arrow
+drawable user_profile_circle_border
 id action_dashboardFragment_to_routesFragment
 id action_loginFragment_to_dashboardFragment
 id action_routesFragment_to_dashboardFragment
@@ -103,6 +107,8 @@ id pipe_separator
 id plate_number_text
 id profile_container
 id profile_picture
+id profile_title
+id profile_top_segment
 id remember_checkbox_icon
 id remember_checkbox_text
 id route_progress_bar
@@ -116,6 +122,11 @@ id subtitle_text
 id text_container
 id toolbar
 id user_name_text
+id user_profile_back_arrow
+id user_profile_edit
+id user_profile_image
+id user_profile_image_edit_segment
+id user_profile_name
 id user_text_container
 id username_edit_text
 id vehicle_card

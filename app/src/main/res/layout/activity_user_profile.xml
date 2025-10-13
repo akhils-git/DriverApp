@@ -7,7 +7,7 @@
     <!-- Top Segment -->
     <RelativeLayout
         android:id="@+id/profile_top_segment"
-    android:layout_width="match_parent"
+        android:layout_width="match_parent"
         android:layout_height="82dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -31,4 +31,55 @@
             android:fontFamily="sans-serif-medium"
             android:layout_centerInParent="true" />
     </RelativeLayout>
+
+    <!-- User Profile Image and Edit Segment -->
+    <LinearLayout
+        android:id="@+id/user_profile_image_edit_segment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/profile_top_segment"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal">
+
+
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="137dp"
+            android:layout_marginEnd="137dp">
+
+            <ImageView
+                android:id="@+id/user_profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/user_profile_circle_border"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_pic"
+                android:contentDescription="Profile Picture" />
+
+            <ImageView
+                android:id="@+id/user_profile_edit"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="-0dp"
+                android:background="@drawable/edit_circle_bg"
+                android:padding="7dp"
+                android:src="@drawable/ic_edit_pen"
+                android:contentDescription="Edit Profile" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/user_profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Mohammed Al Hassan"
+            android:textColor="#2F3F46"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="16dp"
+            android:gravity="center" />
+    </LinearLayout>
             </RelativeLayout>

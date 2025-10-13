@@ -3045,6 +3045,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable edit_circle_bg
 drawable face_id_button_background
 drawable gradient_background
 drawable gradient_rect_253x28
@@ -3061,6 +3062,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_edit_pen
 drawable ic_girfalco_logo
 drawable ic_keyboard_black_24dp
 drawable ic_m3_chip_check
@@ -3158,6 +3160,8 @@ drawable status_badge_scheduled
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable user_profile_back_arrow
+drawable user_profile_circle_border
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3555,6 +3559,8 @@ id postLayout
 id pressed
 id profile_container
 id profile_picture
+id profile_title
+id profile_top_segment
 id progress_circular
 id progress_horizontal
 id radio
@@ -3696,6 +3702,11 @@ id unlabeled
 id up
 id useLogo
 id user_name_text
+id user_profile_back_arrow
+id user_profile_edit
+id user_profile_image
+id user_profile_image_edit_segment
+id user_profile_name
 id user_text_container
 id username_edit_text
 id vehicle_card
