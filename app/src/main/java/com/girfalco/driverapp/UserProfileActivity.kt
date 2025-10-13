@@ -128,10 +128,33 @@ class UserProfileActivity : AppCompatActivity() {
             window.setBackgroundDrawableResource(android.R.color.transparent)
         }
 
-        // Set Cancel button to dismiss the dialog
+        // Add tap animation function
+        fun animateTap(view: android.view.View, onEnd: () -> Unit) {
+            view.animate().scaleX(0.93f).scaleY(0.93f).setDuration(70).withEndAction {
+                view.animate().scaleX(1f).scaleY(1f).setDuration(70).withEndAction {
+                    onEnd()
+                }.start()
+            }.start()
+        }
+
+        // Set Cancel button to dismiss the dialog with animation
         val cancelButton = view.findViewById<android.widget.Button>(R.id.cancel_button)
         cancelButton?.setOnClickListener {
-            dialog.dismiss()
+            animateTap(it) {
+                dialog.dismiss()
+            }
+        }
+
+        // Set Logout button to launch login screen and clear back stack with animation
+        val logoutButton = view.findViewById<android.widget.Button>(R.id.logout_button)
+        logoutButton?.setOnClickListener {
+            animateTap(it) {
+                dialog.dismiss()
+                val intent = android.content.Intent(this, MainActivity::class.java)
+                intent.flags = android.content.Intent.FLAG_ACTIVITY_NEW_TASK or android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            }
         }
 
         dialog.show()

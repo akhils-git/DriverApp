@@ -4,7 +4,7 @@
     <item>
         <shape android:shape="oval">
             <solid android:color="#4880FB" />
-            <size android:width="22dp" android:height="22dp" />
+            <size android:width="26dp" android:height="26dp" />
         </shape>
     </item>
     <!-- White checkmark -->

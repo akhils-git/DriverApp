@@ -3039,6 +3039,8 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable button_ripple_white
 drawable card_gradient_background
 drawable change_button_background
+drawable change_button_white_rounded
+drawable change_button_yellow
 drawable checkbox_checked
 drawable checkbox_unchecked
 drawable circle_background
@@ -3085,6 +3087,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
 drawable l_shape_rect_gradient
 drawable login_gradient_background
+drawable logout_gradient_button
 drawable m3_appbar_background
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3158,6 +3161,9 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable popup_action_checkbox_rect
+drawable popup_background
+drawable popup_background_bottomsheet
 drawable profile_circle_background
 drawable profile_pic
 drawable rectangle_background
@@ -3259,6 +3265,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id apply_button
 id arc
 id asConfigured
 id assigned_routes_heading
@@ -3385,6 +3392,8 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filter_option_all
+id filter_popup
 id fitCenter
 id fitEnd
 id fitStart
@@ -3415,6 +3424,7 @@ id hide_ime_id
 id hideable
 id home
 id homeAsUp
+id home_screen_filter
 id honorRequest
 id horizontal_only
 id icon
@@ -3579,11 +3589,14 @@ id pin
 id pipe_separator
 id plate_number_text
 id popup_action_button
+id popup_action_checkbox
 id popup_action_choose_photo
+id popup_action_curcle_checkbox
 id popup_action_delete_photo
 id popup_action_icon
 id popup_action_segment
 id popup_action_text
+id popup_heading
 id position
 id postLayout
 id pressed
@@ -3910,6 +3923,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout edit_profile_picture_bottom_sheet
+layout filter_popup
 layout footer_copyright
 layout fragment_dashboard
 layout fragment_login
@@ -3976,6 +3990,7 @@ layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout popup_action_button
+layout popup_action_curcle_checkbox
 layout popup_action_segment
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

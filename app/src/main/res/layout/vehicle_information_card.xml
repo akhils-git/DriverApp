@@ -104,9 +104,9 @@
                 android:layout_marginTop="2dp" />
         </LinearLayout>
 
-        <Button
+        <TextView
             android:id="@+id/change_button"
-            android:layout_width="74dp"
+            android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
@@ -115,10 +115,16 @@
             android:text="Change"
             android:textColor="#17BBF4"
             android:textSize="13sp"
-            android:background="@drawable/change_button_background"
+            android:background="@drawable/change_button_white_rounded"
             android:fontFamily="sans-serif"
             android:textAllCaps="false"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:clickable="true"
+            android:focusable="true"
             android:foreground="@drawable/button_ripple_white" />
 
     </RelativeLayout>
