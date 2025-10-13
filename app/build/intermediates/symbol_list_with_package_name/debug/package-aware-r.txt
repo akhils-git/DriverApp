@@ -3046,6 +3046,9 @@ drawable checkbox_unchecked
 drawable circle_background
 drawable circle_logo_background
 drawable circular_profile_pic
+drawable current_location_details_bg
+drawable current_location_details_rect
+drawable current_location_history
 drawable custom_checkbox
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3329,6 +3332,10 @@ id cos
 id counterclockwise
 id cradle
 id currentState
+id current_location_details
+id current_location_details_include
+id current_location_image
+id current_location_rect
 id custom
 id customPanel
 id cut
@@ -3455,6 +3462,9 @@ id linear
 id listMode
 id list_item
 id locale
+id location_bins_stops
+id location_information_scroll
+id location_title
 id loginFragment
 id login_button
 id login_form
@@ -3906,6 +3916,7 @@ layout activity_login
 layout activity_main
 layout activity_user_profile
 layout content_main
+layout current_location_details
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

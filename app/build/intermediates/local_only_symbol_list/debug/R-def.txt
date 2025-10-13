@@ -51,6 +51,9 @@ drawable checkbox_unchecked
 drawable circle_background
 drawable circle_logo_background
 drawable circular_profile_pic
+drawable current_location_details_bg
+drawable current_location_details_rect
+drawable current_location_history
 drawable custom_checkbox
 drawable dotted_line
 drawable dotted_line_rect
@@ -101,6 +104,10 @@ id bottom_navigation
 id cancel_button
 id change_button
 id change_password_text
+id current_location_details
+id current_location_details_include
+id current_location_image
+id current_location_rect
 id dashboardFragment
 id dotted_line_separator
 id edit_profile_picture_bottom_sheet
@@ -120,6 +127,9 @@ id greeting_text
 id handle_bar
 id home_screen_filter
 id l_shape_image
+id location_bins_stops
+id location_information_scroll
+id location_title
 id loginFragment
 id login_button
 id login_form
@@ -194,6 +204,7 @@ layout activity_login
 layout activity_main
 layout activity_user_profile
 layout content_main
+layout current_location_details
 layout edit_profile_picture_bottom_sheet
 layout filter_popup
 layout footer_copyright

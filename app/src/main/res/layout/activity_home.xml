@@ -110,6 +110,23 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginEnd="10dp" />
                 </RelativeLayout>
+                <!-- Location information (scrollable segment) -->
+                <ScrollView
+                    android:id="@+id/location_information_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fillViewport="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- Removed Location information heading as per request -->
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include" />
+                    </LinearLayout>
+                </ScrollView>
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>
