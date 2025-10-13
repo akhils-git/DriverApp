@@ -3023,6 +3023,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_user_details_rounded_rect
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3162,6 +3163,8 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user_profile_back_arrow
 drawable user_profile_circle_border
+drawable user_profile_mail
+drawable user_profile_screen_phone
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3701,12 +3704,17 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id user_details_segment
 id user_name_text
 id user_profile_back_arrow
 id user_profile_edit
+id user_profile_email
 id user_profile_image
 id user_profile_image_edit_segment
+id user_profile_mail_icon
 id user_profile_name
+id user_profile_phone
+id user_profile_phone_icon
 id user_text_container
 id username_edit_text
 id vehicle_card
