@@ -125,7 +125,8 @@
             android:paddingBottom="6dp"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="@drawable/button_ripple_white" />
+            android:foreground="@drawable/button_ripple_white"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 </merge>

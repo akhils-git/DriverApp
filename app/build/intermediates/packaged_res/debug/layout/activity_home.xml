@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="1784dp"
+    android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="#FFFFFF">
 
@@ -121,10 +121,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
-                        <!-- Removed Location information heading as per request -->
+                        <!-- 5 copies of current_location_details for scroll testing -->
                         <include
                             layout="@layout/current_location_details"
-                            android:id="@+id/current_location_details_include" />
+                            android:id="@+id/current_location_details_include_1"
+                            android:layout_marginBottom="15dp" />
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_2"
+                            android:layout_marginBottom="15dp" />
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_3"
+                            android:layout_marginBottom="15dp" />
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_4"
+                            android:layout_marginBottom="15dp" />
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_5"
+                            android:layout_marginBottom="15dp" />
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>

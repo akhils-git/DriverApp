@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/current_location_details"
     android:layout_width="match_parent"
-    android:layout_height="220dp"
+    android:layout_height="225dp"
     android:orientation="vertical"
-    android:background="@drawable/current_location_details_bg"
+    android:background="@drawable/current_location_details_border"
     android:padding="0dp">
 
     <LinearLayout
@@ -211,6 +211,26 @@
             android:layout_height="match_parent"
             android:background="@drawable/current_location_yellow_rect"
             android:alpha="0.05" />
+        <!-- Right-aligned gradient rectangle -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/current_location_repeat_rect">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Delayed"
+                    android:textColor="#F4945E"
+                    android:textSize="14dp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </FrameLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -238,5 +258,60 @@
                 android:typeface="normal" />
         </LinearLayout>
     </FrameLayout>
+
+    <!-- Button Container below Repeat Frequency Container -->
+        <LinearLayout
+            android:id="@+id/button_container"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/view_details_button_row"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/button_gradient_bg"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/view_details_button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="View Details"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:typeface="normal"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="4dp"
+                android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:drawablePadding="4dp"
+                android:backgroundTintMode="src_in"
+                android:backgroundTint="@null"
+                android:radius="12dp" />
+            <ImageView
+                android:id="@+id/view_details_button_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/home_screen_double_arrow"
+                android:contentDescription="Double Arrow"
+                android:layout_marginLeft="4dp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

@@ -35,6 +35,24 @@ class HomeActivity : AppCompatActivity() {
         filterIcon?.setOnClickListener {
             showFilterPopup()
         }
+
+        // Add scale animation to View Details button (first instance only)
+        val currentLocationDetails1 = findViewById<View>(R.id.current_location_details_include_1)
+        val viewDetailsButtonRow1 = currentLocationDetails1?.findViewById<View>(R.id.view_details_button_row)
+        viewDetailsButtonRow1?.setOnClickListener { v ->
+            v.animate()
+                .scaleX(0.93f)
+                .scaleY(0.93f)
+                .setDuration(80)
+                .withEndAction {
+                    v.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setDuration(80)
+                        .start()
+                }
+                .start()
+        }
     }
 
     private fun showFilterPopup() {

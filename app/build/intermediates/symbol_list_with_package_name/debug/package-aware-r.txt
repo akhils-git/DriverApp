@@ -3036,6 +3036,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_gradient_bg
 drawable button_ripple_white
 drawable card_gradient_background
 drawable change_button_background
@@ -3047,8 +3048,11 @@ drawable circle_background
 drawable circle_logo_background
 drawable circular_profile_pic
 drawable current_location_details_bg
+drawable current_location_details_border
 drawable current_location_details_rect
 drawable current_location_history
+drawable current_location_repeat_rect
+drawable current_location_yellow_rect
 drawable custom_checkbox
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3065,10 +3069,12 @@ drawable face_id_button_background
 drawable gradient_background
 drawable gradient_rect_253x28
 drawable home_screen_card_vehicle
+drawable home_screen_double_arrow
 drawable home_screen_filter
 drawable home_screen_l_shape
 drawable home_screen_search
 drawable ic_arrow_back_black_24
+drawable ic_bin
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -3184,6 +3190,7 @@ drawable user_profile_circle_border
 drawable user_profile_history
 drawable user_profile_mail
 drawable user_profile_screen_phone
+drawable vertical_dotted_line
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3262,6 +3269,10 @@ id alertTitle
 id aligned
 id all
 id allStates
+id allocated_time_label
+id allocated_time_to_label
+id allocated_time_value
+id allocated_time_value_end
 id always
 id androidx_window_activity_scope
 id animateToEnd
@@ -3295,6 +3306,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id buttonPanel
+id button_container
 id cache_measures
 id callMeasure
 id cancel_button
@@ -3332,8 +3344,15 @@ id cos
 id counterclockwise
 id cradle
 id currentState
+id current_location_bin_count
+id current_location_bin_icon
+id current_location_bin_label
 id current_location_details
-id current_location_details_include
+id current_location_details_include_1
+id current_location_details_include_2
+id current_location_details_include_3
+id current_location_details_include_4
+id current_location_details_include_5
 id current_location_image
 id current_location_rect
 id custom
@@ -3621,6 +3640,9 @@ id ratio
 id rectangles
 id remember_checkbox_icon
 id remember_checkbox_text
+id repeat_frequency_container
+id repeat_frequency_label
+id repeat_frequency_value
 id report_drawn
 id reverseSawtooth
 id right
@@ -3775,6 +3797,9 @@ id vehicle_card
 id vehicle_image
 id vehicle_number_text
 id vertical_only
+id view_details_button_icon
+id view_details_button_row
+id view_details_button_text
 id view_map_button
 id view_offset_helper
 id view_routes_button
