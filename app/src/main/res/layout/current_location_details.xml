@@ -58,13 +58,185 @@
         </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:id="@+id/current_location_rect"
+    <FrameLayout
+    android:id="@+id/current_location_rect"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/current_location_details_rect"
+            android:alpha="0.05" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <!-- Left: Allocated Time and Time Range (49%) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="49"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/allocated_time_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Allocated Time:"
+                    android:textColor="#54676F"
+                    android:textSize="13dp"
+                    android:fontFamily="sans-serif"
+                    android:typeface="normal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="2dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="0dp">
+                    <TextView
+                        android:id="@+id/allocated_time_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10.00 AM"
+                        android:textColor="#22201F"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:typeface="normal" />
+                    <TextView
+                        android:id="@+id/allocated_time_to_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="To"
+                        android:textColor="#55676F"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:typeface="normal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp" />
+                    <TextView
+                        android:id="@+id/allocated_time_value_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="11.00 AM"
+                        android:textColor="#22201F"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:typeface="normal" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Center: Vertical Line (1%) -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center"
+                    android:background="#91989F" />
+            </FrameLayout>
+
+
+
+
+
+            <!-- Right: Bin Info (50%) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:id="@+id/current_location_bin_icon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/ic_bin"
+                    android:tint="#91989F"
+                    android:contentDescription="Bin Icon" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="8dp">
+                    <TextView
+                        android:id="@+id/current_location_bin_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="124"
+                        android:textColor="#2F3F46"
+                        android:textSize="15dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:typeface="sans"
+                        android:layout_marginTop="11dp" />
+                    <TextView
+                        android:id="@+id/current_location_bin_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Bins"
+                        android:textColor="#54676F"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="normal"
+                        android:typeface="sans"
+                        android:layout_marginBottom="11dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    
+    <FrameLayout
+        android:id="@+id/repeat_frequency_container"
         android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="28dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/current_location_details_rect" />
+        android:layout_marginTop="6dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/current_location_yellow_rect"
+            android:alpha="0.05" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:id="@+id/repeat_frequency_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repeat Frequency:"
+                android:textColor="#2F3F46"
+                android:textSize="13dp"
+                android:fontFamily="sans-serif"
+                android:typeface="normal" />
+            <TextView
+                android:id="@+id/repeat_frequency_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Weekly"
+                android:textColor="#2F3F46"
+                android:textSize="13dp"
+                android:fontFamily="sans-serif-medium"
+                android:typeface="normal" />
+        </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>
