@@ -3195,6 +3195,7 @@ drawable time_details_active_bg
 drawable time_details_rect_bg
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable total_stops_bg
 drawable user_profile_back_arrow
 drawable user_profile_circle_border
 drawable user_profile_history
@@ -3801,6 +3802,8 @@ id toolbar
 id top
 id topPanel
 id total_stops_container
+id total_stops_left
+id total_stops_right
 id touch_outside
 id transitionToEnd
 id transitionToStart
