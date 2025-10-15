@@ -1,3 +1,4 @@
+
 package com.girfalco.driverapp
 
 import android.os.Bundle
@@ -5,14 +6,13 @@ import android.view.View
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.Button
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class HomeActivity : AppCompatActivity() {
-    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
         // Hide the navigation bar and status bar for immersive fullscreen experience
         window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
             if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
@@ -57,6 +57,12 @@ class HomeActivity : AppCompatActivity() {
             showFilterPopup()
         }
 
+        // Set up Change button to show SelectVehicle popup
+        val vehicleCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard>(R.id.vehicle_card)
+        vehicleCard?.onChangeButtonClick = {
+            showSelectVehiclePopup()
+        }
+
         // Add scale animation to View Details button (first instance only)
         val currentLocationDetails1 = findViewById<View>(R.id.current_location_details_include_1)
         val viewDetailsButtonRow1 = currentLocationDetails1?.findViewById<View>(R.id.view_details_button_row)
@@ -74,6 +80,82 @@ class HomeActivity : AppCompatActivity() {
                 }
                 .start()
         }
+    }
+
+    fun showSelectVehiclePopup() {
+
+        val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+        val view = LayoutInflater.from(this).inflate(R.layout.select_vehicle_bottom_sheet, null)
+        dialog.setContentView(view)
+
+        // Force popup height to 640dp
+        view.post {
+            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.let {
+                val params = it.layoutParams
+                val density = resources.displayMetrics.density
+                params.height = (640 * density).toInt()
+                it.layoutParams = params
+            }
+        }
+
+        // Hide navigation bar when popup is shown (immersive flags)
+        val originalUiFlags = window.decorView.systemUiVisibility
+        dialog.setOnShowListener {
+            val flags = (
+                android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+            )
+            window.decorView.systemUiVisibility = flags
+            dialog.window?.decorView?.systemUiVisibility = flags
+            dialog.window?.setFlags(
+                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            )
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+        }
+        dialog.setOnDismissListener {
+            window.decorView.systemUiVisibility = originalUiFlags
+        }
+
+        val dialogWindow = dialog.window
+        if (dialogWindow != null) {
+            dialogWindow.navigationBarColor = android.graphics.Color.TRANSPARENT
+            dialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
+        }
+
+        // Checkbox toggle logic for vehicle_information_checkbox
+        val vehicleCheckbox = view.findViewById<ImageView>(R.id.vehicle_checkbox)
+        var isChecked = false
+        fun updateVehicleCheckbox() {
+            if (isChecked) {
+                vehicleCheckbox.setImageResource(R.drawable.checkbox_checked)
+                // Set checked background color
+                view.findViewById<View>(R.id.vehicle_information_checkbox)?.setBackgroundResource(R.drawable.vehicle_information_checkbox_bg_checked)
+            } else {
+                vehicleCheckbox.setImageResource(R.drawable.checkbox_unchecked)
+                // Set unchecked background color
+                view.findViewById<View>(R.id.vehicle_information_checkbox)?.setBackgroundResource(R.drawable.vehicle_information_checkbox_bg_unchecked)
+            }
+        }
+        updateVehicleCheckbox()
+        vehicleCheckbox.setOnClickListener {
+            isChecked = !isChecked
+            updateVehicleCheckbox()
+        }
+        // Also allow tapping the card to toggle the checkbox
+        view.findViewById<View>(R.id.vehicle_information_checkbox)?.setOnClickListener {
+            isChecked = !isChecked
+            updateVehicleCheckbox()
+        }
+
+        dialog.show()
     }
 
     private fun showFilterPopup() {

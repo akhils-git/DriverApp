@@ -3177,6 +3177,7 @@ drawable profile_circle_background
 drawable profile_pic
 drawable rectangle_background
 drawable search_box_background
+drawable select_vehicle_checkbox_vehcile_image
 drawable splash_gradient_background
 drawable splash_screen_logo
 drawable status_badge_active
@@ -3190,6 +3191,9 @@ drawable user_profile_circle_border
 drawable user_profile_history
 drawable user_profile_mail
 drawable user_profile_screen_phone
+drawable vehicle_information_checkbox_bg
+drawable vehicle_information_checkbox_bg_checked
+drawable vehicle_information_checkbox_bg_unchecked
 drawable vertical_dotted_line
 id ALT
 id BOTTOM_END
@@ -3682,8 +3686,12 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id select_vehicle_search_box_container
+id select_vehicle_search_edit_text
+id select_vehicle_search_icon
 id selected
 id selection_type
+id selectvehcilecontner
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3794,7 +3802,9 @@ id user_profile_phone_icon
 id user_text_container
 id username_edit_text
 id vehicle_card
+id vehicle_checkbox
 id vehicle_image
+id vehicle_information_checkbox
 id vehicle_number_text
 id vertical_only
 id view_details_button_icon
@@ -4031,9 +4041,11 @@ layout popup_action_segment
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout select_vehicle_bottom_sheet
 layout splash_screen
 layout support_simple_spinner_dropdown_item
 layout vehicle_information_card
+layout vehicle_information_checkbox
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
