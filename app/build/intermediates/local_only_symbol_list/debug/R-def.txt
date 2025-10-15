@@ -54,6 +54,7 @@ drawable checkbox_unchecked
 drawable circle_background
 drawable circle_logo_background
 drawable circular_profile_pic
+drawable current_location_card_grey_bin
 drawable current_location_details_bg
 drawable current_location_details_border
 drawable current_location_details_rect
@@ -88,6 +89,9 @@ drawable popup_background_bottomsheet
 drawable profile_circle_background
 drawable profile_pic
 drawable rectangle_background
+drawable route_details_container_bg
+drawable route_details_screen_back_button
+drawable route_details_screen_handburger_menu
 drawable search_box_background
 drawable select_vehicle_checkbox_vehcile_image
 drawable splash_gradient_background
@@ -107,15 +111,18 @@ drawable vertical_dotted_line
 id action_dashboardFragment_to_routesFragment
 id action_loginFragment_to_dashboardFragment
 id action_routesFragment_to_dashboardFragment
+id activity_route_details
 id allocated_time_label
 id allocated_time_to_label
 id allocated_time_value
 id allocated_time_value_end
 id apply_button
+id apply_button_text
 id assigned_routes_heading
 id assigned_routes_segment
 id assigned_routes_subtext
 id background_image
+id bin_and_stop_container
 id bins_collected_count
 id bins_remaining_count
 id bottom_navigation
@@ -133,6 +140,7 @@ id current_location_details_include_2
 id current_location_details_include_3
 id current_location_details_include_4
 id current_location_details_include_5
+id current_location_history_image
 id current_location_image
 id current_location_rect
 id dashboardFragment
@@ -156,6 +164,7 @@ id forgot_password
 id gradient_rect_next_to_l_shape
 id greeting_text
 id handle_bar
+id heading_and_user_interaction_container
 id home_screen_filter
 id l_shape_image
 id location_bins_stops
@@ -198,6 +207,10 @@ id remember_checkbox_text
 id repeat_frequency_container
 id repeat_frequency_label
 id repeat_frequency_value
+id route_details_back_arrow
+id route_details_container
+id route_details_hamburger_menu
+id route_details_title
 id route_history_icon
 id route_history_segment
 id route_history_text
@@ -214,7 +227,12 @@ id selectvehcilecontner
 id start_route_button
 id subtitle_text
 id text_container
+id time_details_container
 id toolbar
+id total_stops_container
+id trip_details_container
+id trip_details_title
+id trip_details_vehicle
 id user_actions_segment
 id user_details_segment
 id user_name_text
@@ -248,6 +266,7 @@ id yellow_segment
 layout activity_home
 layout activity_login
 layout activity_main
+layout activity_route_details
 layout activity_user_profile
 layout content_main
 layout current_location_details

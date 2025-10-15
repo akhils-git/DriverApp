@@ -93,20 +93,36 @@
         android:layout_width="match_parent"
         android:layout_height="20dp" />
 
-    <Button
+    <LinearLayout
         android:id="@+id/apply_button"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Apply"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:background="@drawable/logout_gradient_button"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/button_gradient_bg_selector"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:id="@+id/apply_button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Apply"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            android:fontFamily="sans-serif-medium"
+            android:typeface="normal"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:includeFontPadding="false"
+            android:letterSpacing="0" />
+    </LinearLayout>
 
     <Space
         android:layout_width="match_parent"

@@ -32,6 +32,12 @@
             android:name="com.girfalco.driverapp.HomeActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+        <!-- Route Details Activity as Launcher for development -->
+        <activity
+            android:name="com.girfalco.driverapp.RouteDetailsActivity"
+            android:exported="true"
+            android:label="Route Details"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

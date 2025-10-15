@@ -164,8 +164,7 @@
                     android:layout_marginLeft="27dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
-                    android:src="@drawable/ic_bin"
-                    android:tint="#91989F"
+                    android:src="@drawable/current_location_card_grey_bin"
                     android:contentDescription="Bin Icon" />
                 <LinearLayout
                     android:layout_width="wrap_content"
