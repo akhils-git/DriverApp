@@ -69,6 +69,7 @@
     </RelativeLayout>
 
     <!-- Scrollable vehicle container -->
+
     <ScrollView
         android:id="@+id/selectvehcilecontner"
         android:layout_width="match_parent"
@@ -84,5 +85,50 @@
             <include layout="@layout/vehicle_information_checkbox" />
         </LinearLayout>
     </ScrollView>
+
+    <!-- Choose This Vehicle Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+                android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/button_gradient_bg_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp">
+            <TextView
+                android:id="@+id/choose_vehicle_button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Choose This Vehicle"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:fontFamily="sans-serif-medium"
+                android:typeface="normal"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:backgroundTintMode="src_in"
+                android:backgroundTint="@null"
+                android:radius="12dp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

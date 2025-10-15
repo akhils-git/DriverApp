@@ -44,10 +44,50 @@
         android:layout_width="match_parent"
         android:layout_height="35dp" />
 
+
     <!-- Filter Option: All (Checked) -->
+
     <include
-        layout="@layout/popup_action_curcle_checkbox"
-        android:id="@+id/filter_option_all" />
+        layout="@layout/filter_check_box"
+        android:id="@+id/filter_option_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <!-- Filter Option: Active Routes -->
+
+    <include
+        layout="@layout/filter_check_box"
+        android:id="@+id/filter_option_active"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <!-- Filter Option: Not Started -->
+
+    <include
+        layout="@layout/filter_check_box"
+        android:id="@+id/filter_option_not_started"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+    <!-- Filter Option: Delayed Routes -->
+
+    <include
+        layout="@layout/filter_check_box"
+        android:id="@+id/filter_option_delayed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Space
         android:layout_width="match_parent"

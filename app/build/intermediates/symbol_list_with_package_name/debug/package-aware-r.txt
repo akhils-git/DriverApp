@@ -3037,6 +3037,8 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_gradient_bg
+drawable button_gradient_bg_ripple
+drawable button_gradient_bg_selector
 drawable button_ripple_white
 drawable card_gradient_background
 drawable change_button_background
@@ -3066,6 +3068,7 @@ drawable edit_circle_bg
 drawable edit_pop_up_choose_photo
 drawable edit_pop_up_delete_photo
 drawable face_id_button_background
+drawable filter_popup_checkbox_bg
 drawable gradient_background
 drawable gradient_rect_253x28
 drawable home_screen_card_vehicle
@@ -3327,6 +3330,7 @@ id change_button
 id change_password_text
 id checkbox
 id checked
+id choose_vehicle_button_text
 id chronometer
 id circle_center
 id clear_text
@@ -3422,7 +3426,11 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filter_check_box
+id filter_option_active
 id filter_option_all
+id filter_option_delayed
+id filter_option_not_started
 id filter_popup
 id fitCenter
 id fitEnd
@@ -3624,7 +3632,6 @@ id plate_number_text
 id popup_action_button
 id popup_action_checkbox
 id popup_action_choose_photo
-id popup_action_curcle_checkbox
 id popup_action_delete_photo
 id popup_action_icon
 id popup_action_segment
@@ -3973,6 +3980,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout edit_profile_picture_bottom_sheet
+layout filter_check_box
 layout filter_popup
 layout footer_copyright
 layout fragment_dashboard

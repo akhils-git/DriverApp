@@ -196,30 +196,50 @@ class HomeActivity : AppCompatActivity() {
             dialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
         }
 
-        // --- Custom circle checkbox logic (like login screen Remind Me) ---
-        // Find the included view for the custom checkbox row
-        val includedRow = view.findViewById<View>(R.id.filter_option_all)
-        val circleCheckbox = includedRow?.findViewById<ImageView>(R.id.popup_action_checkbox)
-        val textView = includedRow?.findViewById<View>(R.id.popup_action_text)
-        var isChecked = true
-        fun updateCircleCheckbox() {
-            if (circleCheckbox != null) {
-                if (isChecked) {
-                    circleCheckbox.setImageResource(R.drawable.checkbox_checked)
+        // Set text for each filter checkbox
+        val allRow = view.findViewById<View>(R.id.filter_option_all)
+        val activeRow = view.findViewById<View>(R.id.filter_option_active)
+        val notStartedRow = view.findViewById<View>(R.id.filter_option_not_started)
+        val delayedRow = view.findViewById<View>(R.id.filter_option_delayed)
+
+        allRow?.findViewById<android.widget.TextView>(R.id.popup_action_text)?.text = "All"
+        activeRow?.findViewById<android.widget.TextView>(R.id.popup_action_text)?.text = "Active Routes"
+        notStartedRow?.findViewById<android.widget.TextView>(R.id.popup_action_text)?.text = "Not Started"
+        delayedRow?.findViewById<android.widget.TextView>(R.id.popup_action_text)?.text = "Delayed Routes"
+
+        // --- Make all checkboxes interactive ---
+        val rows = listOf(allRow, activeRow, notStartedRow, delayedRow)
+        val isCheckedList = mutableListOf(true, false, false, false)
+
+        fun updateCheckbox(row: View?, checked: Boolean) {
+            val checkbox = row?.findViewById<ImageView>(R.id.popup_action_checkbox)
+            if (checkbox != null) {
+                if (checked) {
+                    checkbox.setImageResource(R.drawable.checkbox_checked)
                 } else {
-                    circleCheckbox.setImageResource(R.drawable.checkbox_unchecked)
+                    checkbox.setImageResource(R.drawable.checkbox_unchecked)
                 }
             }
+            row?.isSelected = checked
         }
-        updateCircleCheckbox()
-        circleCheckbox?.setOnClickListener {
-            isChecked = !isChecked
-            updateCircleCheckbox()
+
+        // Initialize all checkboxes
+        for (i in rows.indices) {
+            updateCheckbox(rows[i], isCheckedList[i])
         }
-        // Also allow tapping the text to toggle
-        textView?.setOnClickListener {
-            isChecked = !isChecked
-            updateCircleCheckbox()
+
+        // Set up toggle listeners for each row
+        for (i in rows.indices) {
+            val row = rows[i]
+            val checkbox = row?.findViewById<ImageView>(R.id.popup_action_checkbox)
+            val text = row?.findViewById<View>(R.id.popup_action_text)
+            val toggleListener = View.OnClickListener {
+                isCheckedList[i] = !isCheckedList[i]
+                updateCheckbox(row, isCheckedList[i])
+            }
+            checkbox?.setOnClickListener(toggleListener)
+            text?.setOnClickListener(toggleListener)
+            row?.setOnClickListener(toggleListener)
         }
 
         // Set Apply button to dismiss the dialog
