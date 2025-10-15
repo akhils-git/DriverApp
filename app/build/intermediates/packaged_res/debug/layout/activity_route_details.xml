@@ -163,36 +163,79 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/total_stops_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="5dp">
             <LinearLayout
-                android:id="@+id/total_stops_left"
-                android:layout_width="124dp"
-                android:layout_height="28dp"
-                android:background="@drawable/total_stops_bg"
+                android:id="@+id/total_stops_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:paddingStart="15dp"
                 android:gravity="center_vertical"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="5dp" />
-            <LinearLayout
-                android:id="@+id/total_stops_right"
-                android:layout_width="182dp"
-                android:layout_height="28dp"
-                android:background="@drawable/total_stops_bg"
-                android:orientation="horizontal"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
-                android:gravity="center_vertical" />
+                android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:id="@+id/total_stops_left"
+                    android:layout_width="124dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/total_stops_bg"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="5dp">
+                    <TextView
+                        android:id="@+id/total_stops_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Stops: "
+                        android:textColor="#2F3F46"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="normal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp" />
+                    <TextView
+                        android:id="@+id/total_stops_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="124"
+                        android:textColor="#2F3F46"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/total_stops_right"
+                    android:layout_width="182dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/total_stops_bg"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/repeat_frequency_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeat Frequency"
+                        android:textColor="#2F3F46"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="normal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp" />
+                    <TextView
+                        android:id="@+id/repeat_frequency_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weekly"
+                        android:textColor="#2F3F46"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="normal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

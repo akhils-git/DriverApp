@@ -237,6 +237,8 @@ id time_details_rect
 id time_details_value
 id toolbar
 id total_stops_container
+id total_stops_count
+id total_stops_label
 id total_stops_left
 id total_stops_right
 id trip_details_container

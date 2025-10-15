@@ -3802,6 +3802,8 @@ id toolbar
 id top
 id topPanel
 id total_stops_container
+id total_stops_count
+id total_stops_label
 id total_stops_left
 id total_stops_right
 id touch_outside
