@@ -27,13 +27,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GirfalcoDriverApp" >
 
-        <!-- Home Activity as Launcher -->
+        <!-- Home Activity -->
         <activity
             android:name="com.girfalco.driverapp.HomeActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-        <!-- Route Details Activity as Launcher for development -->
+        <!-- Route Details Activity -->
         <activity
             android:name="com.girfalco.driverapp.RouteDetailsActivity"
             android:exported="true"
@@ -45,20 +45,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Splash Screen Activity as Launcher -->
+        <activity
+            android:name="com.girfalco.driverapp.SplashScreenActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <!-- Main Activity -->
         <activity
             android:name="com.girfalco.driverapp.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-
-        <!-- Splash Screen Activity -->
-        <activity
-            android:name="com.girfalco.driverapp.SplashScreenActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <!-- User Profile Activity -->
