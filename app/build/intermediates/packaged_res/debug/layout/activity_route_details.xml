@@ -43,11 +43,11 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/route_details_container"
-        android:layout_width="match_parent"
-        android:layout_height="193dp"
-        android:orientation="vertical"
-        android:background="@drawable/route_details_container_bg">
+    android:id="@+id/route_details_container"
+    android:layout_width="match_parent"
+    android:layout_height="213dp"
+    android:orientation="vertical"
+    android:background="@drawable/route_details_container_bg">
         <LinearLayout
             android:id="@+id/trip_details_container"
             android:layout_width="match_parent"
@@ -105,45 +105,63 @@
                 android:background="@drawable/time_details_rect_bg"
                 android:orientation="vertical"
                 android:gravity="center_vertical">
-                <!--
-                <TextView
-                    android:id="@+id/time_details_active"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Active"
-                    android:textColor="#4880FB"
-                    android:textSize="13dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:background="@drawable/time_details_active_bg"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:gravity="center_vertical|center_horizontal" />
-                -->
-                <TextView
-                    android:id="@+id/time_details_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Scheduled Date and Time:"
-                    android:textColor="#2F3F46"
-                    android:textSize="13dp"
-                    android:fontFamily="sans-serif"
-                    android:typeface="normal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="15dp" />
-                <TextView
-                    android:id="@+id/time_details_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6/04/2023, 10:00 AM - 12:30 AM"
-                    android:textColor="#2F3F46"
-                    android:textSize="13dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:typeface="normal"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginBottom="10dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/time_details_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scheduled Date and Time:"
+                            android:textColor="#2F3F46"
+                            android:textSize="13dp"
+                            android:fontFamily="sans-serif"
+                            android:typeface="normal"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="15dp" />
+                        <TextView
+                            android:id="@+id/time_details_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6/04/2023, 10:00 AM - 12:30 AM"
+                            android:textColor="#2F3F46"
+                            android:textSize="13dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:typeface="normal"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical|end">
+                        <TextView
+                            android:id="@+id/time_details_active"
+                            android:layout_width="70dp"
+                            android:layout_height="29dp"
+                            android:text="Active"
+                            android:textColor="#4880FB"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textStyle="bold"
+                            android:background="@drawable/time_details_active_bg"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center"
+                            android:paddingLeft="0dp"
+                            android:paddingRight="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout

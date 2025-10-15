@@ -3788,6 +3788,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id time_details_active
 id time_details_container
 id time_details_label
 id time_details_rect

@@ -229,6 +229,7 @@ id selectvehcilecontner
 id start_route_button
 id subtitle_text
 id text_container
+id time_details_active
 id time_details_container
 id time_details_label
 id time_details_rect
