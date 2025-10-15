@@ -3803,8 +3803,12 @@ id user_text_container
 id username_edit_text
 id vehicle_card
 id vehicle_checkbox
+id vehicle_code
 id vehicle_image
 id vehicle_information_checkbox
+id vehicle_make
+id vehicle_model
+id vehicle_number
 id vehicle_number_text
 id vertical_only
 id view_details_button_icon
