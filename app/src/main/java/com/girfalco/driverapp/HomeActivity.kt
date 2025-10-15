@@ -53,8 +53,22 @@ class HomeActivity : AppCompatActivity() {
 
         // Find the filter icon ImageView
         val filterIcon = findViewById<ImageView>(R.id.home_screen_filter)
-        filterIcon?.setOnClickListener {
-            showFilterPopup()
+        filterIcon?.setOnClickListener { v ->
+            v.animate()
+                .scaleX(0.93f)
+                .scaleY(0.93f)
+                .setDuration(80)
+                .withEndAction {
+                    v.animate()
+                        .scaleX(1f)
+                        .scaleY(1f)
+                        .setDuration(80)
+                        .withEndAction {
+                            showFilterPopup()
+                        }
+                        .start()
+                }
+                .start()
         }
 
         // Set up Change button to show SelectVehicle popup
@@ -242,8 +256,8 @@ class HomeActivity : AppCompatActivity() {
             row?.setOnClickListener(toggleListener)
         }
 
-        // Set Apply button to dismiss the dialog
-        view.findViewById<Button>(R.id.apply_button)?.setOnClickListener {
+        // Set Apply button (LinearLayout) to dismiss the dialog
+        view.findViewById<View>(R.id.apply_button)?.setOnClickListener {
             dialog.dismiss()
         }
 
