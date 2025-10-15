@@ -45,7 +45,7 @@
     <LinearLayout
     android:id="@+id/route_details_container"
     android:layout_width="match_parent"
-    android:layout_height="193dp"
+    android:layout_height="200dp"
     android:orientation="vertical"
     android:background="@drawable/route_details_container_bg">
         <LinearLayout
@@ -94,8 +94,7 @@
             android:id="@+id/time_details_container"
             android:layout_width="match_parent"
             android:layout_height="123dp"
-     
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
             <LinearLayout
                 android:id="@+id/time_details_rect"
