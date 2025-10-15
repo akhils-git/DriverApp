@@ -3191,6 +3191,8 @@ drawable status_badge_active
 drawable status_badge_pending
 drawable status_badge_scheduled
 drawable test_level_drawable
+drawable time_details_active_bg
+drawable time_details_rect_bg
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable user_profile_back_arrow
@@ -3787,6 +3789,9 @@ id textinput_prefix_text
 id textinput_suffix_text
 id time
 id time_details_container
+id time_details_label
+id time_details_rect
+id time_details_value
 id title
 id titleDividerNoCustom
 id title_template

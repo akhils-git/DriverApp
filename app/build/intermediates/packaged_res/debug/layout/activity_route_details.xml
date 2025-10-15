@@ -48,68 +48,118 @@
         android:layout_height="193dp"
         android:orientation="vertical"
         android:background="@drawable/route_details_container_bg">
-    <LinearLayout
-        android:id="@+id/trip_details_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/current_location_history_image"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:src="@drawable/current_location_history"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="top" />
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="top"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:id="@+id/trip_details_title"
+            android:id="@+id/trip_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/current_location_history_image"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/current_location_history"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="top" />
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Riyadh Central - Industrial Zones"
-                android:textColor="#2F3F46"
-                android:textSize="15dp"
-                android:fontFamily="sans-serif"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/trip_details_vehicle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vehicle: 1837 RXB"
-                android:textColor="#2F3F46"
-                android:textSize="13dp"
-                android:fontFamily="sans-serif"
-                android:textStyle="normal"
-                android:layout_marginTop="4dp" />
+                android:orientation="vertical"
+                android:layout_gravity="top"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:id="@+id/trip_details_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Riyadh Central - Industrial Zones"
+                    android:textColor="#2F3F46"
+                    android:textSize="15dp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/trip_details_vehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle: 1837 RXB"
+                    android:textColor="#2F3F46"
+                    android:textSize="13dp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-
         <LinearLayout
             android:id="@+id/time_details_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#FFFFFF" />
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/time_details_rect"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/time_details_rect_bg"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+                <!--
+                <TextView
+                    android:id="@+id/time_details_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active"
+                    android:textColor="#4880FB"
+                    android:textSize="13dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:background="@drawable/time_details_active_bg"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:gravity="center_vertical|center_horizontal" />
+                -->
+                <TextView
+                    android:id="@+id/time_details_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scheduled Date and Time:"
+                    android:textColor="#2F3F46"
+                    android:textSize="13dp"
+                    android:fontFamily="sans-serif"
+                    android:typeface="normal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp" />
+                <TextView
+                    android:id="@+id/time_details_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6/04/2023, 10:00 AM - 12:30 AM"
+                    android:textColor="#2F3F46"
+                    android:textSize="13dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:typeface="normal"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="10dp" />
+            </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/total_stops_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#FFFFD6E0" />
-        </LinearLayout>
+            android:background="#FFFFD6E0"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/bin_and_stop_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#C8E6C9" />
+	<LinearLayout
+		android:id="@+id/bin_and_stop_container"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:background="#C8E6C9" />
 
 </LinearLayout>

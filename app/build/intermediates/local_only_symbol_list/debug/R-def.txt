@@ -99,6 +99,8 @@ drawable splash_screen_logo
 drawable status_badge_active
 drawable status_badge_pending
 drawable status_badge_scheduled
+drawable time_details_active_bg
+drawable time_details_rect_bg
 drawable user_profile_back_arrow
 drawable user_profile_circle_border
 drawable user_profile_history
@@ -228,6 +230,9 @@ id start_route_button
 id subtitle_text
 id text_container
 id time_details_container
+id time_details_label
+id time_details_rect
+id time_details_value
 id toolbar
 id total_stops_container
 id trip_details_container
