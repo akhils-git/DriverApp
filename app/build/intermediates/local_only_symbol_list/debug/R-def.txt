@@ -100,6 +100,7 @@ drawable splash_screen_logo
 drawable status_badge_active
 drawable status_badge_pending
 drawable status_badge_scheduled
+drawable tab_rounded_rect
 drawable time_details_active_bg
 drawable time_details_rect_bg
 drawable total_stops_bg
@@ -235,6 +236,10 @@ id selectvehcilecontner
 id start_route_button
 id subtitle_text
 id tab_completed
+id tab_content_completed
+id tab_content_container
+id tab_content_missed
+id tab_content_upcoming
 id tab_missed
 id tab_upcoming
 id tabs_container
@@ -302,6 +307,7 @@ layout logout_bottom_sheet
 layout popup_action_button
 layout popup_action_curcle_checkbox
 layout popup_action_segment
+layout search_box_container
 layout select_vehicle_bottom_sheet
 layout splash_screen
 layout vehicle_information_card

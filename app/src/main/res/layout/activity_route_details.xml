@@ -293,11 +293,6 @@
                 android:elevation="8dp" />
         </LinearLayout> <!-- bin_and_stop_title_container -->
         </LinearLayout> <!-- bin1_and_stop_container -->
-    <!-- Black line below BinAndStopTitleContainer -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#000" />
 
     <!-- New container below black line -->
     <LinearLayout
@@ -312,8 +307,9 @@
             android:layout_height="wrap_content"
             android:background="#FFF"
             app:tabIndicatorColor="#54676F"
-            app:tabSelectedTextColor="#4880FB"
-            app:tabTextColor="#2F3F46"
+            app:tabIndicatorFullWidth="true"
+            app:tabSelectedTextColor="#2F3F46"
+            app:tabTextColor="#4F5567"
             app:tabMode="fixed"
             app:tabGravity="fill">
             <com.google.android.material.tabs.TabItem
@@ -327,5 +323,37 @@
                 android:text="Completed" />
         </com.google.android.material.tabs.TabLayout>
     </LinearLayout>
+
+    <!-- Tab content containers with search box -->
+    <FrameLayout
+        android:id="@+id/tab_content_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/tab_content_upcoming"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <include layout="@layout/search_box_container" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab_content_missed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <include layout="@layout/search_box_container" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab_content_completed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <include layout="@layout/search_box_container" />
+        </LinearLayout>
+    </FrameLayout>
     <!-- New red container below bin1_and_stop_container -->
 </LinearLayout> <!-- activity_route_details -->
