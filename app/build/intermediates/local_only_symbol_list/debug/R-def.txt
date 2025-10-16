@@ -113,7 +113,6 @@ drawable vehicle_information_checkbox_bg_checked
 drawable vehicle_information_checkbox_bg_unchecked
 drawable vertical_dotted_line
 drawable view_map_button_bg
-id BinAndStopTitleContainer
 id action_dashboardFragment_to_routesFragment
 id action_loginFragment_to_dashboardFragment
 id action_routesFragment_to_dashboardFragment
@@ -128,8 +127,9 @@ id assigned_routes_heading
 id assigned_routes_segment
 id assigned_routes_subtext
 id background_image
-id bin_and_stop_container
+id bin1_and_stop_container
 id bin_and_stop_title
+id bin_and_stop_title_container
 id bins_collected_count
 id bins_remaining_count
 id bottom_navigation

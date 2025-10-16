@@ -242,16 +242,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/bin_and_stop_container"
+        android:id="@+id/bin1_and_stop_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+            android:background="#00FFFF"
         android:layout_marginTop="16dp">
 
         <!-- BinAndStop title container -->
-
         <LinearLayout
-            android:id="@+id/BinAndStopTitleContainer"
+            android:id="@+id/bin_and_stop_title_container"
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:layout_marginTop="0dp"
@@ -292,45 +291,41 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:elevation="8dp" />
-        </LinearLayout>
+        </LinearLayout> <!-- bin_and_stop_title_container -->
+        </LinearLayout> <!-- bin1_and_stop_container -->
+    <!-- Black line below BinAndStopTitleContainer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000" />
 
-
-        <!-- Black line below BinAndStopTitleContainer -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#000000" />
-
-        <!-- New container below black line -->
-        <LinearLayout
-            android:id="@+id/tabs_container"
+    <!-- New container below black line -->
+    <LinearLayout
+        android:id="@+id/tabs_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFF">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/route_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#FFF">
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/route_tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFF"
-                app:tabIndicatorColor="#4880FB"
-                app:tabSelectedTextColor="#4880FB"
-                app:tabTextColor="#2F3F46"
-                app:tabMode="fixed"
-                app:tabGravity="fill">
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tab_upcoming"
-                    android:text="Upcoming" />
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tab_missed"
-                    android:text="Missed" />
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tab_completed"
-                    android:text="Completed" />
-            </com.google.android.material.tabs.TabLayout>
-        </LinearLayout>
-
-
+            android:background="#FFF"
+            app:tabIndicatorColor="#54676F"
+            app:tabSelectedTextColor="#4880FB"
+            app:tabTextColor="#2F3F46"
+            app:tabMode="fixed"
+            app:tabGravity="fill">
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_upcoming"
+                android:text="Upcoming" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_missed"
+                android:text="Missed" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_completed"
+                android:text="Completed" />
+        </com.google.android.material.tabs.TabLayout>
     </LinearLayout>
-
-</LinearLayout>
+    <!-- New red container below bin1_and_stop_container -->
+</LinearLayout> <!-- activity_route_details -->

@@ -3210,7 +3210,6 @@ drawable view_map_button_bg
 id ALT
 id BOTTOM_END
 id BOTTOM_START
-id BinAndStopTitleContainer
 id CTRL
 id FUNCTION
 id META
@@ -3315,8 +3314,9 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
-id bin_and_stop_container
+id bin1_and_stop_container
 id bin_and_stop_title
+id bin_and_stop_title_container
 id bins_collected_count
 id bins_remaining_count
 id blocking
