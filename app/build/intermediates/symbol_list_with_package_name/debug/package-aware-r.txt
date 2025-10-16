@@ -3209,7 +3209,14 @@ drawable tab_bin_details_new_container_bg
 drawable tab_bin_details_segment2
 drawable tab_rounded_rect
 drawable test_level_drawable
+drawable time_details_aborted_bg
 drawable time_details_active_bg
+drawable time_details_active_bg_aborted
+drawable time_details_active_bg_active
+drawable time_details_active_bg_delayed
+drawable time_details_active_bg_not_started
+drawable time_details_delayed_bg
+drawable time_details_not_started_bg
 drawable time_details_rect_bg
 drawable tooltip_frame_dark
 drawable tooltip_frame_light

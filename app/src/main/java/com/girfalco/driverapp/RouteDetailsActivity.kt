@@ -8,6 +8,54 @@ class RouteDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_route_details)
 
+        // --- Current Location Card: Tap-to-Cycle State & Animation ---
+        val currentLocationHistoryImage = findViewById<android.widget.ImageView>(R.id.current_location_history_image)
+        val timeDetailsActive = findViewById<android.widget.TextView>(R.id.time_details_active)
+        val stateList = listOf("Delayed", "Not Started", "Aborted", "Active")
+        var currentStateIndex = 3 // Start at "Active"
+        // Set initial color and background for "Active"
+        timeDetailsActive?.setTextColor(android.graphics.Color.parseColor("#4880FB"))
+        timeDetailsActive?.setBackgroundResource(R.drawable.time_details_active_bg)
+        currentLocationHistoryImage?.setOnClickListener {
+            // Cycle state
+            currentStateIndex = (currentStateIndex + 1) % stateList.size
+            val newText = stateList[currentStateIndex]
+            // Animate background width extension (right-aligned, grows left)
+            val textView = timeDetailsActive
+            val oldWidth = textView.width
+            textView.text = newText
+            textView.post {
+                val newWidth = textView.paint.measureText(newText).toInt() + textView.paddingLeft + textView.paddingRight + 40 // extra for padding
+                val anim = android.animation.ValueAnimator.ofInt(oldWidth, newWidth)
+                anim.duration = 220
+                anim.addUpdateListener { valueAnimator ->
+                    val params = textView.layoutParams
+                    params.width = valueAnimator.animatedValue as Int
+                    textView.layoutParams = params
+                }
+                anim.start()
+            }
+            // Change text color and background for each state
+            when (newText) {
+                "Delayed" -> {
+                    textView.setTextColor(android.graphics.Color.parseColor("#F4945E"))
+                    textView.setBackgroundResource(R.drawable.time_details_delayed_bg)
+                }
+                "Not Started" -> {
+                    textView.setTextColor(android.graphics.Color.parseColor("#54676F"))
+                    textView.setBackgroundResource(R.drawable.time_details_not_started_bg)
+                }
+                "Aborted" -> {
+                    textView.setTextColor(android.graphics.Color.parseColor("#D86764"))
+                    textView.setBackgroundResource(R.drawable.time_details_aborted_bg)
+                }
+                "Active" -> {
+                    textView.setTextColor(android.graphics.Color.parseColor("#4880FB"))
+                    textView.setBackgroundResource(R.drawable.time_details_active_bg)
+                }
+            }
+        }
+
         // Add Note Bottom Sheet logic
         val addNoteSwitchContainer = findViewById<android.widget.LinearLayout>(R.id.add_note_switch_container)
         addNoteSwitchContainer.setOnClickListener {
