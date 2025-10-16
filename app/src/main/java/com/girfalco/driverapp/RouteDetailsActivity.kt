@@ -8,6 +8,23 @@ class RouteDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_route_details)
 
+        // Add Note Bottom Sheet logic
+        val addNoteSwitchContainer = findViewById<android.widget.LinearLayout>(R.id.add_note_switch_container)
+        addNoteSwitchContainer.setOnClickListener {
+            val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+            val view = layoutInflater.inflate(R.layout.add_note_bottom_sheet, null)
+            dialog.setContentView(view)
+            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundResource(android.R.color.transparent)
+            // Cancel button logic
+            val cancelButton = view.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.cancel_button)
+            cancelButton.setOnClickListener { dialog.dismiss() }
+            // Add Note button logic (close for now, add logic as needed)
+            val addNoteButton = view.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.add_note_button)
+            addNoteButton.setOnClickListener { dialog.dismiss() }
+            dialog.show()
+        }
+
     // Tab content containers
     val upcomingContainer = findViewById<android.widget.LinearLayout>(R.id.tab_content_upcoming)
     val missedContainer = findViewById<android.widget.LinearLayout>(R.id.tab_content_missed)
