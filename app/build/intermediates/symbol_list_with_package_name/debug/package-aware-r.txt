@@ -3023,6 +3023,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_add_note_button
+drawable bg_add_note_cancel_button
 drawable bg_add_note_edittext
 drawable bg_add_note_textbox
 drawable bg_cancel_button

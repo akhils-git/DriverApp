@@ -36,6 +36,8 @@ color white
 dimen fab_margin
 dimen floating_label_top_margin
 dimen stroke_width_focused
+drawable bg_add_note_button
+drawable bg_add_note_cancel_button
 drawable bg_add_note_edittext
 drawable bg_add_note_textbox
 drawable bg_cancel_button
