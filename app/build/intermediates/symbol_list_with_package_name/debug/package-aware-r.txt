@@ -3184,6 +3184,7 @@ drawable route_details_container_bg
 drawable route_details_screen_back_button
 drawable route_details_screen_handburger_menu
 drawable search_box_background
+drawable searchbox_container_bg
 drawable select_vehicle_checkbox_vehcile_image
 drawable splash_gradient_background
 drawable splash_screen_logo
@@ -3205,9 +3206,11 @@ drawable vehicle_information_checkbox_bg
 drawable vehicle_information_checkbox_bg_checked
 drawable vehicle_information_checkbox_bg_unchecked
 drawable vertical_dotted_line
+drawable view_map_button_bg
 id ALT
 id BOTTOM_END
 id BOTTOM_START
+id BinAndStopTitleContainer
 id CTRL
 id FUNCTION
 id META
@@ -3313,6 +3316,7 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id bin_and_stop_container
+id bin_and_stop_title
 id bins_collected_count
 id bins_remaining_count
 id blocking
@@ -3682,6 +3686,7 @@ id route_history_segment
 id route_history_text
 id route_progress_bar
 id route_status_text
+id route_tabs
 id routesFragment
 id row_index_key
 id rtl
@@ -3758,6 +3763,10 @@ id submit_area
 id subtitle_text
 id supportScrollUp
 id tabMode
+id tab_completed
+id tab_missed
+id tab_upcoming
+id tabs_container
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Drop shadow layer -->
+    <item android:top="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#A8B5D380" />
+            <corners android:radius="12dp" />
+            <!-- Simulate blur by using a slightly larger shape -->
+        </shape>
+    </item>
+    <!-- Main button layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="12dp" />
+            <stroke android:width="0.3dp" android:color="#BCC6DB" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_route_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -90,6 +91,7 @@
                     android:layout_marginTop="4dp" />
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/time_details_container"
             android:layout_width="match_parent"
@@ -242,8 +244,93 @@
     <LinearLayout
         android:id="@+id/bin_and_stop_container"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#FFFFFF" />
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:layout_marginTop="16dp">
+
+        <!-- BinAndStop title container -->
+
+        <LinearLayout
+            android:id="@+id/BinAndStopTitleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/bin_and_stop_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bin &amp; Stop"
+                android:textColor="#2F3F46"
+                android:textSize="16dp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/view_map_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="View Map"
+                android:textColor="#4880FB"
+                android:background="@drawable/view_map_button_bg"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:elevation="8dp" />
+        </LinearLayout>
+
+
+        <!-- Black line below BinAndStopTitleContainer -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#000000" />
+
+        <!-- New container below black line -->
+        <LinearLayout
+            android:id="@+id/tabs_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFF">
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/route_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF"
+                app:tabIndicatorColor="#4880FB"
+                app:tabSelectedTextColor="#4880FB"
+                app:tabTextColor="#2F3F46"
+                app:tabMode="fixed"
+                app:tabGravity="fill">
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_upcoming"
+                    android:text="Upcoming" />
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_missed"
+                    android:text="Missed" />
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_completed"
+                    android:text="Completed" />
+            </com.google.android.material.tabs.TabLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>
