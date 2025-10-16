@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ride_complete_confirm_bottom_sheet"
+    android:id="@+id/abort_ride_confirm_bottom_sheet"
     android:layout_width="match_parent"
     android:layout_height="163dp"
     android:orientation="vertical"
@@ -22,10 +22,10 @@
 
     <!-- Title -->
     <TextView
-        android:id="@+id/ride_complete_confirm_title"
+        android:id="@+id/abort_ride_confirm_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm Mark All as Completed?"
+        android:text="Abort Ride"
         android:textColor="#2F3F46"
         android:textSize="18dp"
         android:fontFamily="sans-serif-medium"
@@ -35,10 +35,10 @@
 
     <!-- Confirmation Text -->
     <TextView
-        android:id="@+id/ride_complete_confirm_text"
+        android:id="@+id/abort_ride_confirm_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Are you sure you want to mark all as completed? This action cannot be undone."
+        android:text="Are you sure you want to abort this ride? This option cannot be undone."
         android:textColor="#54676F"
         android:textSize="14dp"
         android:fontFamily="sans-serif"
@@ -61,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_ride_complete_exit_button"
+            android:background="@drawable/bg_abort_ride_exit_button"
             android:text="Exit"
             android:textColor="#2F3F46"
             android:textSize="15dp"
@@ -69,14 +69,14 @@
             android:layout_marginEnd="5.5dp"
             android:textAllCaps="false"
             android:stateListAnimator="@null" />
-        <!-- Confirm Button -->
+        <!-- Abort Ride Button -->
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/confirm_button"
+            android:id="@+id/abort_ride_button"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_ride_complete_confirm_button"
-            android:text="Confirm"
+            android:background="@drawable/bg_abort_ride_confirm_button"
+            android:text="Abort Ride"
             android:textColor="#FFFFFF"
             android:textSize="15dp"
             android:fontFamily="sans-serif-medium"

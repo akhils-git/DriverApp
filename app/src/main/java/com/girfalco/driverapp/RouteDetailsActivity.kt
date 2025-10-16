@@ -140,6 +140,49 @@ class RouteDetailsActivity : AppCompatActivity() {
                 confirmButton?.setOnClickListener { confirmDialog.dismiss() /* Add your complete logic here */ }
                 confirmDialog.show()
             }
+            // Add Abort Ride button click logic
+            val abortRideButton = view.findViewById<android.view.View>(R.id.abort_ride_button)
+            abortRideButton?.setOnClickListener {
+                val abortDialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+                val abortView = layoutInflater.inflate(R.layout.abort_ride_confirm_bottom_sheet, null)
+                abortDialog.window?.setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+                abortDialog.setContentView(abortView)
+                val originalAbortUiFlags = window.decorView.systemUiVisibility
+                abortDialog.setOnShowListener {
+                    val flags = (
+                        android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                                or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                                or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+                    )
+                    window.decorView.systemUiVisibility = flags
+                    abortDialog.window?.decorView?.systemUiVisibility = flags
+                    abortDialog.window?.setFlags(
+                        android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                        android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                    )
+                    abortDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+                    val bottomSheet = abortDialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+                    bottomSheet?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+                }
+                abortDialog.setOnDismissListener {
+                    window.decorView.systemUiVisibility = originalAbortUiFlags
+                }
+                val abortDialogWindow = abortDialog.window
+                if (abortDialogWindow != null) {
+                    abortDialogWindow.navigationBarColor = android.graphics.Color.TRANSPARENT
+                    abortDialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
+                }
+                // Exit button logic
+                val exitButton = abortView.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.exit_button)
+                exitButton?.setOnClickListener { abortDialog.dismiss() }
+                // Abort Ride button logic
+                val abortRideConfirmButton = abortView.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.abort_ride_button)
+                abortRideConfirmButton?.setOnClickListener { abortDialog.dismiss() /* Add your abort logic here */ }
+                abortDialog.show()
+            }
             dialog.show()
         }
 

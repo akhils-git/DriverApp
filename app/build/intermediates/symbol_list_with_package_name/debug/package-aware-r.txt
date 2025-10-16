@@ -3025,6 +3025,8 @@ drawable active_ride_abort_ride
 drawable active_ride_ride_completed
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_abort_ride_confirm_button
+drawable bg_abort_ride_exit_button
 drawable bg_add_note_button
 drawable bg_add_note_cancel_button
 drawable bg_add_note_edittext
@@ -3237,6 +3239,9 @@ id SYM
 id TOP_END
 id TOP_START
 id abort_ride_button
+id abort_ride_confirm_bottom_sheet
+id abort_ride_confirm_text
+id abort_ride_confirm_title
 id abort_ride_icon
 id abort_ride_text
 id accelerate
@@ -4034,6 +4039,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout abort_ride_button
+layout abort_ride_confirm_bottom_sheet
 layout active_ride_bottom_sheet
 layout activity_home
 layout activity_login
