@@ -45,6 +45,8 @@ drawable bg_add_note_textbox
 drawable bg_cancel_button
 drawable bg_logout_bottom_sheet
 drawable bg_logout_button
+drawable bg_ride_complete_confirm_button
+drawable bg_ride_complete_exit_button
 drawable bg_route_history_rounded_rect
 drawable bg_user_details_rounded_rect
 drawable button_gradient_bg
@@ -162,6 +164,7 @@ id cancel_button
 id change_button
 id change_password_text
 id choose_vehicle_button_text
+id confirm_button
 id current_location_bin_count
 id current_location_bin_icon
 id current_location_bin_label
@@ -181,6 +184,7 @@ id edit_profile_picture_title
 id email_floating_label
 id email_input
 id email_input_layout
+id exit_button
 id fab
 id face_id_container
 id face_id_icon
@@ -239,6 +243,9 @@ id repeat_frequency_container
 id repeat_frequency_label
 id repeat_frequency_value
 id ride_complete_button
+id ride_complete_confirm_bottom_sheet
+id ride_complete_confirm_text
+id ride_complete_confirm_title
 id ride_complete_icon
 id ride_complete_text
 id route_details_back_arrow
@@ -338,6 +345,7 @@ layout popup_action_button
 layout popup_action_curcle_checkbox
 layout popup_action_segment
 layout ride_complete_button
+layout ride_complete_confirm_bottom_sheet
 layout search_box_container
 layout select_vehicle_bottom_sheet
 layout splash_screen
