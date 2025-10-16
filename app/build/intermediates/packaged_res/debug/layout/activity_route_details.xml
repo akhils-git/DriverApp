@@ -289,8 +289,7 @@
                 android:textSize="15sp"
                 android:fontFamily="sans-serif"
                 android:textStyle="bold"
-                android:gravity="center"
-                android:elevation="8dp" />
+                android:gravity="center" />
         </LinearLayout> <!-- bin_and_stop_title_container -->
         </LinearLayout> <!-- bin1_and_stop_container -->
 
