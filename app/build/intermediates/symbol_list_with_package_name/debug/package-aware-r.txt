@@ -3021,6 +3021,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable active_ride_abort_ride
 drawable active_ride_ride_completed
 drawable avd_hide_password
 drawable avd_show_password
@@ -3233,6 +3234,9 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id abort_ride_button
+id abort_ride_icon
+id abort_ride_text
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3692,6 +3696,9 @@ id repeat_frequency_label
 id repeat_frequency_value
 id report_drawn
 id reverseSawtooth
+id ride_complete_button
+id ride_complete_icon
+id ride_complete_text
 id right
 id rightToLeft
 id right_icon
@@ -4020,6 +4027,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout abort_ride_button
 layout active_ride_bottom_sheet
 layout activity_home
 layout activity_login
@@ -4116,6 +4124,7 @@ layout notification_template_part_time
 layout popup_action_button
 layout popup_action_curcle_checkbox
 layout popup_action_segment
+layout ride_complete_button
 layout search_box_container
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

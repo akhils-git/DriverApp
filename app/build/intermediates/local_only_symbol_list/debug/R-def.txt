@@ -36,6 +36,7 @@ color white
 dimen fab_margin
 dimen floating_label_top_margin
 dimen stroke_width_focused
+drawable active_ride_abort_ride
 drawable active_ride_ride_completed
 drawable bg_add_note_button
 drawable bg_add_note_cancel_button
@@ -125,6 +126,9 @@ drawable vehicle_information_checkbox_bg_checked
 drawable vehicle_information_checkbox_bg_unchecked
 drawable vertical_dotted_line
 drawable view_map_button_bg
+id abort_ride_button
+id abort_ride_icon
+id abort_ride_text
 id action_dashboardFragment_to_routesFragment
 id action_loginFragment_to_dashboardFragment
 id action_routesFragment_to_dashboardFragment
@@ -234,6 +238,9 @@ id remember_checkbox_text
 id repeat_frequency_container
 id repeat_frequency_label
 id repeat_frequency_value
+id ride_complete_button
+id ride_complete_icon
+id ride_complete_text
 id route_details_back_arrow
 id route_details_container
 id route_details_hamburger_menu
@@ -308,6 +315,7 @@ id view_map_button
 id view_routes_button
 id welcome_text
 id yellow_segment
+layout abort_ride_button
 layout active_ride_bottom_sheet
 layout activity_home
 layout activity_login
@@ -329,6 +337,7 @@ layout logout_bottom_sheet
 layout popup_action_button
 layout popup_action_curcle_checkbox
 layout popup_action_segment
+layout ride_complete_button
 layout search_box_container
 layout select_vehicle_bottom_sheet
 layout splash_screen

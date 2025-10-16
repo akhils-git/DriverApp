@@ -7,7 +7,11 @@
     android:background="@drawable/bg_logout_bottom_sheet"
     android:elevation="8dp"
     android:paddingTop="0dp"
-    android:paddingBottom="0dp">
+    android:paddingBottom="0dp"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp">
+
+
 
     <!-- Handle Bar -->
     <View
@@ -30,9 +34,23 @@
         android:textSize="18dp"
         android:fontFamily="sans-serif-medium"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="0dp"
         android:gravity="start" />
 
-    <!-- Add more content here as needed -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+    <!-- Ride Complete Button (below heading) -->
+    <include
+        layout="@layout/ride_complete_button" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+    <!-- Abort Ride Button (below ride_complete_button) -->
+    <include
+        layout="@layout/abort_ride_button" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
 
 </LinearLayout>
