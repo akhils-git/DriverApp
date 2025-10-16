@@ -61,32 +61,28 @@ class RouteDetailsActivity : AppCompatActivity() {
         addNoteSwitchContainer.setOnClickListener {
             val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
             val view = layoutInflater.inflate(R.layout.add_note_bottom_sheet, null)
-            // Ensure popup resizes above keyboard
             dialog.window?.setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
             dialog.setContentView(view)
-            // Match immersive and background logic from logout popup
             val originalUiFlags = window.decorView.systemUiVisibility
             dialog.setOnShowListener {
-                val flags = (
-                    android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                            or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
-                )
-                window.decorView.systemUiVisibility = flags
-                dialog.window?.decorView?.systemUiVisibility = flags
-                dialog.window?.setFlags(
-                    android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                    android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-                )
                 dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
                 val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
                 bottomSheet?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+                dialog.window?.navigationBarColor = android.graphics.Color.TRANSPARENT
+                dialog.window?.statusBarColor = android.graphics.Color.TRANSPARENT
+                dialog.window?.setDimAmount(0.5f)
+                dialog.window?.decorView?.systemUiVisibility = (
+                    android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+                )
             }
             dialog.setOnDismissListener {
-                window.decorView.systemUiVisibility = originalUiFlags
+                // Restore system UI
+                dialog.window?.decorView?.systemUiVisibility = originalUiFlags
             }
             val dialogWindow = dialog.window
             if (dialogWindow != null) {
