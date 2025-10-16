@@ -337,6 +337,7 @@
             android:orientation="vertical"
             android:visibility="visible">
             <include layout="@layout/search_box_container" />
+            <include layout="@layout/tab_bin_details" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/tab_content_missed"
@@ -356,4 +357,4 @@
         </LinearLayout>
     </FrameLayout>
     <!-- New red container below bin1_and_stop_container -->
-</LinearLayout> <!-- activity_route_details -->
+</LinearLayout>

@@ -3191,6 +3191,7 @@ drawable splash_screen_logo
 drawable status_badge_active
 drawable status_badge_pending
 drawable status_badge_scheduled
+drawable tab_bin_details_bg
 drawable tab_rounded_rect
 drawable test_level_drawable
 drawable time_details_active_bg
@@ -3764,6 +3765,8 @@ id submit_area
 id subtitle_text
 id supportScrollUp
 id tabMode
+id tab_bin_details_card
+id tab_bin_details_label
 id tab_completed
 id tab_content_completed
 id tab_content_container
@@ -4101,6 +4104,7 @@ layout select_dialog_singlechoice_material
 layout select_vehicle_bottom_sheet
 layout splash_screen
 layout support_simple_spinner_dropdown_item
+layout tab_bin_details
 layout vehicle_information_card
 layout vehicle_information_checkbox
 menu bottom_nav_menu

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tab_bin_details_card"
+    android:layout_width="290dp"
+    android:layout_height="184dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="0dp"
+    card_view:cardBackgroundColor="#54676F14"
+    android:layout_margin="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/tab_bin_details_bg">
+
+        <TextView
+            android:id="@+id/tab_bin_details_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tab Bin Details"
+            android:textColor="#4E5567"
+            android:textSize="13dp"
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

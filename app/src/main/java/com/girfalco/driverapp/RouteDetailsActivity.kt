@@ -8,6 +8,11 @@ class RouteDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_route_details)
 
+    // Tab content containers
+    val upcomingContainer = findViewById<android.widget.LinearLayout>(R.id.tab_content_upcoming)
+    val missedContainer = findViewById<android.widget.LinearLayout>(R.id.tab_content_missed)
+    val completedContainer = findViewById<android.widget.LinearLayout>(R.id.tab_content_completed)
+
         // Set TabLayout tab text size to 14px for all tabs
         val tabLayout = findViewById<com.google.android.material.tabs.TabLayout>(R.id.route_tabs)
         tabLayout.post {
@@ -64,6 +69,31 @@ class RouteDetailsActivity : AppCompatActivity() {
                 }
             }
         }
+
+        // Tab selection logic to show only the selected tab's content
+        tabLayout.addOnTabSelectedListener(object : com.google.android.material.tabs.TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: com.google.android.material.tabs.TabLayout.Tab?) {
+                when (tab?.position) {
+                    0 -> {
+                        upcomingContainer.visibility = android.view.View.VISIBLE
+                        missedContainer.visibility = android.view.View.GONE
+                        completedContainer.visibility = android.view.View.GONE
+                    }
+                    1 -> {
+                        upcomingContainer.visibility = android.view.View.GONE
+                        missedContainer.visibility = android.view.View.VISIBLE
+                        completedContainer.visibility = android.view.View.GONE
+                    }
+                    2 -> {
+                        upcomingContainer.visibility = android.view.View.GONE
+                        missedContainer.visibility = android.view.View.GONE
+                        completedContainer.visibility = android.view.View.VISIBLE
+                    }
+                }
+            }
+            override fun onTabUnselected(tab: com.google.android.material.tabs.TabLayout.Tab?) {}
+            override fun onTabReselected(tab: com.google.android.material.tabs.TabLayout.Tab?) {}
+        })
 
         // Hide status and navigation bars for immersive experience
         window.decorView.post {
