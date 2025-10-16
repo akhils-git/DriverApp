@@ -73,7 +73,9 @@
             android:textColor="#2F3F46"
             android:textSize="15dp"
             android:fontFamily="sans-serif-medium"
-            android:layout_marginEnd="5.5dp" />
+            android:layout_marginEnd="5.5dp"
+            android:textAllCaps="false"
+            android:stateListAnimator="@null" />
         <!-- Add Note Button -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_note_button"
@@ -85,7 +87,9 @@
             android:textColor="#FFFFFF"
             android:textSize="15dp"
             android:fontFamily="sans-serif-medium"
-            android:layout_marginStart="5.5dp" />
+            android:layout_marginStart="5.5dp"
+            android:textAllCaps="false"
+            android:stateListAnimator="@null" />
     </LinearLayout>
 
 </LinearLayout>

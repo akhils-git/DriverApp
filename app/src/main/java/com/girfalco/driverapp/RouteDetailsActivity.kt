@@ -22,6 +22,14 @@ class RouteDetailsActivity : AppCompatActivity() {
             // Add Note button logic (close for now, add logic as needed)
             val addNoteButton = view.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.add_note_button)
             addNoteButton.setOnClickListener { dialog.dismiss() }
+            val addNoteEditText = view.findViewById<android.widget.EditText>(R.id.add_note_textbox)
+            addNoteEditText?.addTextChangedListener(object : android.text.TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    addNoteButton.text = if (!s.isNullOrEmpty()) "Update" else "Add Note"
+                }
+                override fun afterTextChanged(s: android.text.Editable?) {}
+            })
             dialog.show()
         }
 
