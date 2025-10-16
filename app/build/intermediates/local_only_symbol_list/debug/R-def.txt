@@ -36,6 +36,7 @@ color white
 dimen fab_margin
 dimen floating_label_top_margin
 dimen stroke_width_focused
+drawable active_ride_ride_completed
 drawable bg_add_note_button
 drawable bg_add_note_cancel_button
 drawable bg_add_note_edittext
@@ -127,6 +128,8 @@ drawable view_map_button_bg
 id action_dashboardFragment_to_routesFragment
 id action_loginFragment_to_dashboardFragment
 id action_routesFragment_to_dashboardFragment
+id active_ride_bottom_sheet
+id active_ride_title
 id activity_route_details
 id add_note_bottom_sheet
 id add_note_button
@@ -305,6 +308,7 @@ id view_map_button
 id view_routes_button
 id welcome_text
 id yellow_segment
+layout active_ride_bottom_sheet
 layout activity_home
 layout activity_login
 layout activity_main

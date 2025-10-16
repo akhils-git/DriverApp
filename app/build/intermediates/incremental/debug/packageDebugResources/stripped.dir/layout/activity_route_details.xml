@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_route_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+    <RelativeLayout
+    android:id="@+id/heading_and_user_interaction_container"
+    android:layout_width="match_parent"
+    android:layout_height="82dp"
+    android:layout_marginTop="24dp"
+    android:background="#ffffffff">
+        <ImageView
+            android:id="@+id/route_details_back_arrow"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:src="@drawable/route_details_screen_back_button"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true" />
+        <ImageView
+            android:id="@+id/route_details_hamburger_menu"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/route_details_screen_handburger_menu"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="11dp" />
+        <TextView
+            android:id="@+id/route_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Route Details"
+            android:textSize="16dp"
+            android:textColor="#2F3F46"
+            android:fontFamily="sans-serif-medium"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="19dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+    android:id="@+id/route_details_container"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    android:background="@drawable/route_details_container_bg">
+        <LinearLayout
+            android:id="@+id/trip_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+    
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/current_location_history_image"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/current_location_history"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="top" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="top"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:id="@+id/trip_details_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Riyadh Central - Industrial Zones"
+                    android:textColor="#2F3F46"
+                    android:textSize="15dp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/trip_details_vehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle: 1837 RXB"
+                    android:textColor="#2F3F46"
+                    android:textSize="13dp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/time_details_container"
+            android:layout_width="match_parent"
+            android:layout_height="123dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/time_details_rect"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/time_details_rect_bg"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/time_details_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scheduled Date and Time:"
+                            android:textColor="#2F3F46"
+                            android:textSize="13dp"
+                            android:fontFamily="sans-serif"
+                            android:typeface="normal"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="15dp" />
+                        <TextView
+                            android:id="@+id/time_details_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6/04/2023, 10:00 AM - 12:30 AM"
+                            android:textColor="#2F3F46"
+                            android:textSize="13dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:typeface="normal"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginBottom="10dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical|end">
+                        <TextView
+                            android:id="@+id/time_details_active"
+                            android:layout_width="70dp"
+                            android:layout_height="29dp"
+                            android:text="Active"
+                            android:textColor="#4880FB"
+                            android:textSize="14sp"
+                            android:fontFamily="sans-serif"
+                            android:textStyle="bold"
+                            android:background="@drawable/time_details_active_bg"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="center"
+                            android:paddingLeft="0dp"
+                            android:paddingRight="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/total_stops_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp">
+                <LinearLayout
+                    android:id="@+id/total_stops_left"
+                    android:layout_width="124dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/total_stops_bg"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="5dp">
+                    <TextView
+                        android:id="@+id/total_stops_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Stops: "
+                        android:textColor="#2F3F46"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="normal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp" />
+                    <TextView
+                        android:id="@+id/total_stops_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="124"
+                        android:textColor="#2F3F46"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/total_stops_right"
+                    android:layout_width="182dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/total_stops_bg"
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/repeat_frequency_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeat Frequency"
+                        android:textColor="#2F3F46"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="normal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp" />
+                    <TextView
+                        android:id="@+id/repeat_frequency_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weekly"
+                        android:textColor="#2F3F46"
+                        android:textSize="13dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="normal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bin1_and_stop_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:background="#00FFFF"
+        android:layout_marginTop="16dp">
+
+        <!-- BinAndStop title container -->
+        <LinearLayout
+            android:id="@+id/bin_and_stop_title_container"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/bin_and_stop_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bin &amp; Stop"
+                android:textColor="#2F3F46"
+                android:textSize="16dp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/view_map_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="View Map"
+                android:textColor="#4880FB"
+                android:background="@drawable/view_map_button_bg"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:elevation="8dp" />
+        </LinearLayout> <!-- bin_and_stop_title_container -->
+        </LinearLayout> <!-- bin1_and_stop_container -->
+
+    <!-- New container below black line -->
+    <LinearLayout
+        android:id="@+id/tabs_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFF">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/route_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            app:tabIndicatorColor="#54676F"
+            app:tabIndicatorFullWidth="true"
+            app:tabSelectedTextColor="#2F3F46"
+            app:tabTextColor="#4F5567"
+            app:tabMode="fixed"
+            app:tabGravity="fill">
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_upcoming"
+                android:text="Upcoming" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_missed"
+                android:text="Missed" />
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_completed"
+                android:text="Completed" />
+        </com.google.android.material.tabs.TabLayout>
+    </LinearLayout>
+
+    <!-- Tab content containers with search box -->
+    <FrameLayout
+        android:id="@+id/tab_content_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/tab_content_upcoming"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <include layout="@layout/search_box_container" />
+            <include layout="@layout/tab_bin_details" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab_content_missed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <include layout="@layout/search_box_container" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tab_content_completed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <include layout="@layout/search_box_container" />
+        </LinearLayout>
+    </FrameLayout>
+    <!-- New red container below bin1_and_stop_container -->
+</LinearLayout>

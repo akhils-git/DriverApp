@@ -14,8 +14,35 @@ class RouteDetailsActivity : AppCompatActivity() {
             val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
             val view = layoutInflater.inflate(R.layout.add_note_bottom_sheet, null)
             dialog.setContentView(view)
-            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
-            bottomSheet?.setBackgroundResource(android.R.color.transparent)
+            // Match immersive and background logic from logout popup
+            val originalUiFlags = window.decorView.systemUiVisibility
+            dialog.setOnShowListener {
+                val flags = (
+                    android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+                )
+                window.decorView.systemUiVisibility = flags
+                dialog.window?.decorView?.systemUiVisibility = flags
+                dialog.window?.setFlags(
+                    android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                    android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                )
+                dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+                val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+                bottomSheet?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+            }
+            dialog.setOnDismissListener {
+                window.decorView.systemUiVisibility = originalUiFlags
+            }
+            val dialogWindow = dialog.window
+            if (dialogWindow != null) {
+                dialogWindow.navigationBarColor = android.graphics.Color.TRANSPARENT
+                dialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
+            }
             // Cancel button logic
             val cancelButton = view.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.cancel_button)
             cancelButton.setOnClickListener { dialog.dismiss() }
@@ -30,6 +57,28 @@ class RouteDetailsActivity : AppCompatActivity() {
                 }
                 override fun afterTextChanged(s: android.text.Editable?) {}
             })
+            dialog.show()
+        }
+
+        // Active Ride Bottom Sheet logic (show with hamburger menu or your trigger)
+    val hamburgerMenu = findViewById<android.widget.ImageView?>(R.id.route_details_hamburger_menu)
+        hamburgerMenu?.setOnClickListener {
+            val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+            val view = layoutInflater.inflate(R.layout.active_ride_bottom_sheet, null)
+            dialog.setContentView(view)
+            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundResource(android.R.color.transparent)
+            // Remove nav bar and status bar for immersive popup
+            dialog.setOnShowListener {
+                window.decorView.systemUiVisibility = (
+                    android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+                            or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                )
+            }
             dialog.show()
         }
 
