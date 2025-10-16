@@ -35,22 +35,22 @@
 
     <!-- Add Note Textbox -->
     <EditText
-        android:id="@+id/add_note_textbox"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/bg_add_note_textbox"
-        android:hint="Add Collection notes…"
-        android:textColorHint="#91989F"
-        android:textColor="#2F3F46"
-        android:textSize="13dp"
-        android:fontFamily="sans-serif"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:inputType="textMultiLine"
-        android:gravity="center_vertical|start" />
+    android:id="@+id/add_note_textbox"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:background="@drawable/bg_add_note_textbox"
+    android:hint="Add Collection notes…"
+    android:textColorHint="#91989F"
+    android:textColor="#2F3F46"
+    android:textSize="13dp"
+    android:fontFamily="sans-serif"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:inputType="textMultiLine"
+    android:gravity="center_vertical|start" />
 
     <!-- (Optional) Add note input field or content here -->
 
