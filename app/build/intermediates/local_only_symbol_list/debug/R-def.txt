@@ -225,6 +225,7 @@ id footer_copyright
 id forgot_back_button
 id forgot_form
 id forgot_password
+id go_to_login_button
 id gradient_rect_next_to_l_shape
 id greeting_text
 id handle_bar
@@ -264,6 +265,7 @@ id password_requirement_row_2
 id password_requirement_row_3
 id password_requirement_text
 id password_requirement_text_2
+id password_updated_back_button
 id pipe_separator
 id plate_number_text
 id popup_action_button
@@ -310,6 +312,8 @@ id selectvehcilecontner
 id send_reset_link_button
 id start_route_button
 id subtitle_text
+id success_message
+id success_title
 id tab_bin_details_card
 id tab_completed
 id tab_content_completed
@@ -372,6 +376,7 @@ layout activity_forgot_password
 layout activity_home
 layout activity_login
 layout activity_main
+layout activity_password_updated
 layout activity_route_details
 layout activity_user_profile
 layout add_note_bottom_sheet

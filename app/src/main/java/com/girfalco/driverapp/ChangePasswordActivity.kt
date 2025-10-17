@@ -9,6 +9,7 @@ import com.caverock.androidsvg.SVG
 import com.caverock.androidsvg.SVGParseException
 import com.girfalco.driverapp.databinding.ActivityChangePasswordBinding
 import java.io.IOException
+import android.content.Intent
 
 class ChangePasswordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChangePasswordBinding
@@ -126,7 +127,10 @@ class ChangePasswordActivity : AppCompatActivity() {
 
         // Change Password button logic (placeholder)
         binding.changePasswordButton.setOnClickListener {
-            // Handle change password
+            // Navigate to Password Updated Successfully screen
+            val intent = Intent(this, PasswordUpdatedActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

@@ -66,6 +66,13 @@
             android:label="Change Password"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
+        <!-- Password Updated Activity -->
+        <activity
+            android:name=".PasswordUpdatedActivity"
+            android:exported="true"
+            android:label="Password Updated"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+
     </application>
 
 </manifest>

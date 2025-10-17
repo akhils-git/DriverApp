@@ -3519,6 +3519,7 @@ id frost
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
+id go_to_login_button
 id gone
 id gradient_rect_next_to_l_shape
 id graph
@@ -3706,6 +3707,7 @@ id password_requirement_row_3
 id password_requirement_text
 id password_requirement_text_2
 id password_toggle
+id password_updated_back_button
 id path
 id pathRelative
 id peekHeight
@@ -3836,6 +3838,8 @@ id stretch
 id submenuarrow
 id submit_area
 id subtitle_text
+id success_message
+id success_title
 id supportScrollUp
 id tabMode
 id tab_bin_details_card
@@ -4083,6 +4087,7 @@ layout activity_forgot_password
 layout activity_home
 layout activity_login
 layout activity_main
+layout activity_password_updated
 layout activity_route_details
 layout activity_user_profile
 layout add_note_bottom_sheet
