@@ -59,6 +59,8 @@ drawable card_gradient_background
 drawable change_button_background
 drawable change_button_white_rounded
 drawable change_button_yellow
+drawable changepassword_screen_green_round
+drawable changepassword_screen_gry_round
 drawable checkbox_checked
 drawable checkbox_unchecked
 drawable circle_background
@@ -253,6 +255,15 @@ id password_edit_text
 id password_floating_label
 id password_input
 id password_input_layout
+id password_requirement_icon
+id password_requirement_icon_2
+id password_requirement_icon_3
+id password_requirement_row
+id password_requirement_row_2
+id password_requirement_row_3
+id password_requirement_text
+id password_requirement_text_2
+id password_requirement_text_3
 id pipe_separator
 id plate_number_text
 id popup_action_button
