@@ -62,6 +62,23 @@ class ChangePasswordActivity : AppCompatActivity() {
             }
         })
 
+        // Validation for Confirm New Password
+        binding.confirmNewPasswordInput.addTextChangedListener(object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: android.text.Editable?) {
+                val confirmPassword = s?.toString() ?: ""
+                val currentPassword = binding.currentPasswordInput.text?.toString() ?: ""
+
+                // Validation: Confirm New Password is different from Current Password
+                if (confirmPassword.isNotEmpty() && confirmPassword != currentPassword) {
+                    binding.passwordRequirementIconNotSameOldPassword.setImageResource(R.drawable.changepassword_screen_green_round)
+                } else {
+                    binding.passwordRequirementIconNotSameOldPassword.setImageResource(R.drawable.changepassword_screen_gry_round)
+                }
+            }
+        })
+
 
         // Set full-screen flags (immersive mode)
         window.decorView.systemUiVisibility = (
