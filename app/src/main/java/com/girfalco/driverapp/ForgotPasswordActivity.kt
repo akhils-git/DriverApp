@@ -66,7 +66,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             backButton.animate().scaleX(0.85f).scaleY(0.85f).setDuration(80).withEndAction {
                 backButton.animate().scaleX(1f).scaleY(1f).setDuration(80).start()
-                val intent = Intent(this, UserProfileActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }.start()

@@ -36,13 +36,12 @@ class PasswordUpdatedActivity : AppCompatActivity() {
         loadSvgIntoImageView(binding.backgroundImage, "login_screen_background.svg")
         loadSvgIntoImageView(binding.loginLogo, "login_screen_logo.svg")
 
-        // Back button
-        binding.passwordUpdatedBackButton.setOnClickListener {
-            binding.passwordUpdatedBackButton.animate().scaleX(0.85f).scaleY(0.85f).setDuration(80).withEndAction {
-                binding.passwordUpdatedBackButton.animate().scaleX(1f).scaleY(1f).setDuration(80).start()
-                finish()
+        // Animate the success image
+        binding.passwordSuccessImage.postDelayed({
+            binding.passwordSuccessImage.animate().scaleX(1.3f).scaleY(1.3f).setDuration(400).withEndAction {
+                binding.passwordSuccessImage.animate().scaleX(1f).scaleY(1f).setDuration(200).start()
             }.start()
-        }
+        }, 500)
 
         // Go to Login button
         binding.goToLoginButton.setOnClickListener {
