@@ -61,8 +61,10 @@ class RouteDetailsActivity : AppCompatActivity() {
         addNoteSwitchContainer.setOnClickListener {
             val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
             val view = layoutInflater.inflate(R.layout.add_note_bottom_sheet, null)
+            // Ensure popup resizes above keyboard
             dialog.window?.setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
             dialog.setContentView(view)
+            // Match immersive and background logic from logout popup
             val originalUiFlags = window.decorView.systemUiVisibility
             dialog.setOnShowListener {
                 val flags = (
@@ -75,6 +77,10 @@ class RouteDetailsActivity : AppCompatActivity() {
                 )
                 window.decorView.systemUiVisibility = flags
                 dialog.window?.decorView?.systemUiVisibility = flags
+                dialog.window?.setFlags(
+                    android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                    android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                )
                 dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
                 val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
                 bottomSheet?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
