@@ -124,4 +124,17 @@
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_and_date_picker_container"
+        android:background="#F7F7F7"
+        android:fillViewport="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <include layout="@layout/route_history_current_location" />
+
+    </ScrollView>
+
 </RelativeLayout>
