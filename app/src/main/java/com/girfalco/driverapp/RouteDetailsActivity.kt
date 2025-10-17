@@ -63,10 +63,24 @@ class RouteDetailsActivity : AppCompatActivity() {
             val view = layoutInflater.inflate(R.layout.add_note_bottom_sheet, null)
             dialog.window?.setSoftInputMode(android.view.WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
             dialog.setContentView(view)
+            val originalUiFlags = window.decorView.systemUiVisibility
             dialog.setOnShowListener {
+                val flags = (
+                    android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+                )
+                window.decorView.systemUiVisibility = flags
+                dialog.window?.decorView?.systemUiVisibility = flags
                 dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
                 val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
                 bottomSheet?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+            }
+            dialog.setOnDismissListener {
+                window.decorView.systemUiVisibility = originalUiFlags
             }
             val dialogWindow = dialog.window
             if (dialogWindow != null) {
