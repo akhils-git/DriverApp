@@ -3050,6 +3050,7 @@ drawable button_gradient_bg
 drawable button_gradient_bg_ripple
 drawable button_gradient_bg_selector
 drawable button_ripple_white
+drawable calander
 drawable card_gradient_background
 drawable change_button_background
 drawable change_button_white_rounded
@@ -3069,6 +3070,8 @@ drawable current_location_history
 drawable current_location_repeat_rect
 drawable current_location_yellow_rect
 drawable custom_checkbox
+drawable date_picker_background
+drawable date_picker_background_active
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3188,6 +3191,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable password_sucess
 drawable popup_action_checkbox_rect
 drawable popup_background
 drawable popup_background_bottomsheet
@@ -3200,6 +3204,7 @@ drawable route_details_screen_handburger_menu
 drawable search_box_background
 drawable searchbox_container_bg
 drawable select_vehicle_checkbox_vehcile_image
+drawable selected_date_vertical_bar
 drawable splash_gradient_background
 drawable splash_screen_logo
 drawable status_badge_active
@@ -3370,6 +3375,7 @@ id bounceStart
 id buttonPanel
 id button_container
 id cache_measures
+id calendar_icon
 id callMeasure
 id cancel_button
 id carryVelocity
@@ -3436,6 +3442,8 @@ id customPanel
 id cut
 id dashboardFragment
 id date_picker_actions
+id date_picker_control
+id date_text
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -3706,8 +3714,8 @@ id password_requirement_row_2
 id password_requirement_row_3
 id password_requirement_text
 id password_requirement_text_2
+id password_success_image
 id password_toggle
-id password_updated_back_button
 id path
 id pathRelative
 id peekHeight
@@ -3757,9 +3765,11 @@ id route_details_back_arrow
 id route_details_container
 id route_details_hamburger_menu
 id route_details_title
+id route_history_back_arrow
 id route_history_icon
 id route_history_segment
 id route_history_text
+id route_history_title
 id route_progress_bar
 id route_status_text
 id route_tabs
@@ -4089,6 +4099,7 @@ layout activity_login
 layout activity_main
 layout activity_password_updated
 layout activity_route_details
+layout activity_route_history
 layout activity_user_profile
 layout add_note_bottom_sheet
 layout content_main
