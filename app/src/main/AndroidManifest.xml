@@ -31,19 +31,26 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen"
-            android:screenOrientation="portrait" />
-        
-        <!-- User Profile Activity as Launcher -->
-        <activity
-            android:name=".UserProfileActivity"
-            android:exported="true"
-            android:label="User Profile"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <!-- Main Activity (Login Screen) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Login"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+        
+        <!-- User Profile Activity -->
+        <activity
+            android:name=".UserProfileActivity"
+            android:exported="true"
+            android:label="User Profile"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
         
         <!-- Forgot Password Activity -->
         <activity
