@@ -3080,6 +3080,7 @@ drawable edit_pop_up_choose_photo
 drawable edit_pop_up_delete_photo
 drawable face_id_button_background
 drawable filter_popup_checkbox_bg
+drawable forgotscreen_back_button
 drawable gradient_background
 drawable gradient_rect_253x28
 drawable home_screen_card_vehicle
@@ -3496,6 +3497,8 @@ id flip
 id floating
 id footer_copyright
 id forever
+id forgot_back_button
+id forgot_form
 id forgot_password
 id fragment_container_view_tag
 id frost
@@ -3765,6 +3768,7 @@ id select_vehicle_search_icon
 id selected
 id selection_type
 id selectvehcilecontner
+id send_reset_link_button
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -4048,6 +4052,7 @@ layout abc_tooltip
 layout abort_ride_button
 layout abort_ride_confirm_bottom_sheet
 layout active_ride_bottom_sheet
+layout activity_forgot_password
 layout activity_home
 layout activity_login
 layout activity_main

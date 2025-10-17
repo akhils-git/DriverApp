@@ -153,8 +153,9 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun handleForgotPassword() {
-        // TODO: Implement forgot password functionality
-        Toast.makeText(this, "Forgot password functionality coming soon!", Toast.LENGTH_SHORT).show()
+        // Launch ForgotPasswordActivity
+        val intent = Intent(this, ForgotPasswordActivity::class.java)
+        startActivity(intent)
     }
     
     private fun loadSvgIntoImageView(imageView: ImageView, fileName: String) {
