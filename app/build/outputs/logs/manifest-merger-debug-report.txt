@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-63:12
-INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-63:12
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-70:12
 MERGED from [androidx.databinding:viewbinding:8.1.2] /Users/akhilraj/.gradle/caches/transforms-3/c16b6afc5b135d80fdb16429f704cbb5/transformed/viewbinding-8.1.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.5] /Users/akhilraj/.gradle/caches/transforms-3/67d035b76ff73f3d924b38742837ce91/transformed/navigation-common-2.7.5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] /Users/akhilraj/.gradle/caches/transforms-3/d19ec39c578f7cdddf34c1c81d450f76/transformed/navigation-common-ktx-2.7.5/AndroidManifest.xml:2:1-7:12
@@ -75,8 +75,8 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/akhilraj/
 	xmlns:android
 		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:5:5-61:19
-INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:5:5-61:19
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:5:5-68:19
+INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:5:5-68:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/akhilraj/.gradle/caches/transforms-3/1c3bcf0a06d414dc8e397a2da4beaf70/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] /Users/akhilraj/.gradle/caches/transforms-3/1c3bcf0a06d414dc8e397a2da4beaf70/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/akhilraj/.gradle/caches/transforms-3/3fbb779b44ef66372105d69375f64e05/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -140,7 +140,7 @@ ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/Androi
 	android:name
 		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:23:13-49
 activity#com.girfalco.driverapp.SplashScreenActivity
-ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:29:9-39:20
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:29:9-34:52
 	android:screenOrientation
 		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:34:13-49
 	android:label
@@ -151,36 +151,36 @@ ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/Androi
 		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:33:13-70
 	android:name
 		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:30:13-49
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:35:13-38:29
-action#android.intent.action.MAIN
-ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:36:17-69
-	android:name
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:36:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:37:17-77
-	android:name
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:37:27-74
 activity#com.girfalco.driverapp.MainActivity
-ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:42:9-46:73
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:37:9-41:73
 	android:label
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:45:13-45
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:40:13-45
 	android:exported
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:44:13-36
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:39:13-36
 	android:theme
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:46:13-70
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:41:13-70
 	android:name
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:43:13-41
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:38:13-41
 activity#com.girfalco.driverapp.UserProfileActivity
-ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:49:9-53:73
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:44:9-53:20
 	android:label
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:52:13-41
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:47:13-41
 	android:exported
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:51:13-36
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:46:13-36
 	android:theme
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:53:13-70
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:48:13-70
 	android:name
-		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:50:13-48
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:45:13-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:49:13-52:29
+action#android.intent.action.MAIN
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:50:17-69
+	android:name
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:50:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:51:17-77
+	android:name
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:51:27-74
 activity#com.girfalco.driverapp.ForgotPasswordActivity
 ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:56:9-60:73
 	android:label
@@ -191,6 +191,16 @@ ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/Androi
 		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:60:13-70
 	android:name
 		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:57:13-51
+activity#com.girfalco.driverapp.ChangePasswordActivity
+ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:63:9-67:73
+	android:label
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:66:13-44
+	android:exported
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:65:13-36
+	android:theme
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:67:13-70
+	android:name
+		ADDED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:64:13-51
 uses-sdk
 INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml

@@ -175,9 +175,18 @@ id bottom_navigation
 id button_container
 id cancel_button
 id change_button
+id change_password_back_button
+id change_password_background_image
+id change_password_button
+id change_password_form
+id change_password_logo
 id change_password_text
+id change_password_title
 id choose_vehicle_button_text
 id confirm_button
+id confirm_new_password_floating_label
+id confirm_new_password_input
+id confirm_new_password_input_layout
 id current_location_bin_count
 id current_location_bin_icon
 id current_location_bin_label
@@ -190,6 +199,9 @@ id current_location_details_include_5
 id current_location_history_image
 id current_location_image
 id current_location_rect
+id current_password_floating_label
+id current_password_input
+id current_password_input_layout
 id dashboardFragment
 id dotted_line_separator
 id edit_profile_picture_bottom_sheet
@@ -234,6 +246,9 @@ id make_text
 id model_text
 id nav_graph
 id nav_host_fragment_content_main
+id new_password_floating_label
+id new_password_input
+id new_password_input_layout
 id password_edit_text
 id password_floating_label
 id password_input
@@ -341,6 +356,7 @@ id yellow_segment
 layout abort_ride_button
 layout abort_ride_confirm_bottom_sheet
 layout active_ride_bottom_sheet
+layout activity_change_password
 layout activity_forgot_password
 layout activity_home
 layout activity_login

@@ -3380,7 +3380,13 @@ id chain
 id chain2
 id chains
 id change_button
+id change_password_back_button
+id change_password_background_image
+id change_password_button
+id change_password_form
+id change_password_logo
 id change_password_text
+id change_password_title
 id checkbox
 id checked
 id choose_vehicle_button_text
@@ -3394,6 +3400,9 @@ id closest
 id collapseActionView
 id compress
 id confirm_button
+id confirm_new_password_floating_label
+id confirm_new_password_input
+id confirm_new_password_input_layout
 id constraint
 id container
 id content
@@ -3417,6 +3426,9 @@ id current_location_details_include_5
 id current_location_history_image
 id current_location_image
 id current_location_rect
+id current_password_floating_label
+id current_password_input
+id current_password_input_layout
 id custom
 id customPanel
 id cut
@@ -3641,6 +3653,9 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id new_password_floating_label
+id new_password_input
+id new_password_input_layout
 id noScroll
 id noState
 id none
@@ -4052,6 +4067,7 @@ layout abc_tooltip
 layout abort_ride_button
 layout abort_ride_confirm_bottom_sheet
 layout active_ride_bottom_sheet
+layout activity_change_password
 layout activity_forgot_password
 layout activity_home
 layout activity_login

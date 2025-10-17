@@ -40,6 +40,18 @@ class UserProfileActivity : AppCompatActivity() {
         editProfileButton?.setOnClickListener {
             showEditProfilePicturePopup()
         }
+
+        // Set up Change Password navigation
+        val changePasswordText = findViewById<TextView>(R.id.change_password_text)
+        changePasswordText?.setOnClickListener {
+            // Tap animation
+            changePasswordText.animate().scaleX(0.93f).scaleY(0.93f).setDuration(70).withEndAction {
+                changePasswordText.animate().scaleX(1f).scaleY(1f).setDuration(70).withEndAction {
+                    val intent = android.content.Intent(this, ChangePasswordActivity::class.java)
+                    startActivity(intent)
+                }.start()
+            }.start()
+        }
     }
 
     private fun showEditProfilePicturePopup() {

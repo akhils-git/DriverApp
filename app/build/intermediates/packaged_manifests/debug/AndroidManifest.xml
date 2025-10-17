@@ -40,19 +40,13 @@
             android:label="Route Details"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen"
             android:windowSoftInputMode="adjustResize" />
-        <!-- Splash Screen Activity as Launcher -->
+        <!-- Splash Screen Activity -->
         <activity
             android:name="com.girfalco.driverapp.SplashScreenActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <!-- Main Activity -->
         <activity
@@ -61,18 +55,31 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
-        <!-- User Profile Activity -->
+        <!-- User Profile Activity as Launcher -->
         <activity
             android:name="com.girfalco.driverapp.UserProfileActivity"
             android:exported="true"
             android:label="User Profile"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!-- Forgot Password Activity -->
         <activity
             android:name="com.girfalco.driverapp.ForgotPasswordActivity"
             android:exported="true"
             android:label="Forgot Password"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+
+        <!-- Change Password Activity -->
+        <activity
+            android:name="com.girfalco.driverapp.ChangePasswordActivity"
+            android:exported="true"
+            android:label="Change Password"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <provider
