@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/footer_copyright"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="75dp"
+    android:layout_marginEnd="75dp"
+    android:layout_marginBottom="40dp"
+    android:text="Girfalco © 2025 All Rights Reserved."
+    android:textColor="#91989F"
+    android:textSize="14dp"
+    android:fontFamily="sans-serif"
+    android:textStyle="normal"
+    android:gravity="center" />

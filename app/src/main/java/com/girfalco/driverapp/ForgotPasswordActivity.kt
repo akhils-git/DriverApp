@@ -10,6 +10,7 @@ import com.caverock.androidsvg.SVG
 import com.caverock.androidsvg.SVGParseException
 import com.girfalco.driverapp.databinding.ActivityForgotPasswordBinding
 import java.io.IOException
+import android.content.Intent
 
 class ForgotPasswordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityForgotPasswordBinding
@@ -65,6 +66,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             backButton.animate().scaleX(0.85f).scaleY(0.85f).setDuration(80).withEndAction {
                 backButton.animate().scaleX(1f).scaleY(1f).setDuration(80).start()
+                val intent = Intent(this, UserProfileActivity::class.java)
+                startActivity(intent)
                 finish()
             }.start()
         }

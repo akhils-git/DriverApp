@@ -15,7 +15,6 @@ class ChangePasswordActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         // Set full-screen flags (immersive mode)
         window.decorView.systemUiVisibility = (
             View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
@@ -33,29 +32,74 @@ class ChangePasswordActivity : AppCompatActivity() {
         binding = ActivityChangePasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Load SVGs for background and logo (with fallback)
-        loadSvgIntoImageView(findViewById(R.id.change_password_background_image), "login_screen_background.svg")
-        loadSvgIntoImageView(findViewById(R.id.change_password_logo), "login_screen_logo.svg")
+    // Set all icons to gray on screen load using view binding only
+    binding.passwordRequirementIconLeast8Chars.setImageResource(R.drawable.changepassword_screen_gry_round)
+    binding.passwordRequirementIconRequirements.setImageResource(R.drawable.changepassword_screen_gry_round)
+    binding.passwordRequirementIconNotSameOldPassword.setImageResource(R.drawable.changepassword_screen_gry_round)
 
-        // Floating label behavior for password fields
+        // Real-time password validation logic
+        binding.passwordRequirementIconLeast8Chars.setImageResource(R.drawable.changepassword_screen_gry_round)
+        binding.newPasswordInput.addTextChangedListener(object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: android.text.Editable?) {
+                val password = s?.toString() ?: ""
+
+                // Validation for at least 8 characters
+                if (password.length >= 8) {
+                    binding.passwordRequirementIconLeast8Chars.setImageResource(R.drawable.changepassword_screen_green_round)
+                } else {
+                    binding.passwordRequirementIconLeast8Chars.setImageResource(R.drawable.changepassword_screen_gry_round)
+                }
+
+                // Validation for at least one uppercase letter, one number, and one special character
+                val regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%^&*]).+$".toRegex()
+                if (regex.containsMatchIn(password)) {
+                    binding.passwordRequirementIconRequirements.setImageResource(R.drawable.changepassword_screen_green_round)
+                } else {
+                    binding.passwordRequirementIconRequirements.setImageResource(R.drawable.changepassword_screen_gry_round)
+                }
+            }
+        })
+
+
+        // Set full-screen flags (immersive mode)
+        window.decorView.systemUiVisibility = (
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
+            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+            View.SYSTEM_UI_FLAG_FULLSCREEN or
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        )
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
+
+        // Load SVGs for background and logo (with fallback)
+        loadSvgIntoImageView(binding.changePasswordBackgroundImage, "login_screen_background.svg")
+        loadSvgIntoImageView(binding.changePasswordLogo, "login_screen_logo.svg")
+
+        // Floating label behavior for password fields (use binding views)
         setupFloatingLabel(
-            findViewById(R.id.current_password_input),
-            findViewById(R.id.current_password_floating_label),
+            binding.currentPasswordInput,
+            binding.currentPasswordFloatingLabel,
             "Current Password"
         )
         setupFloatingLabel(
-            findViewById(R.id.new_password_input),
-            findViewById(R.id.new_password_floating_label),
+            binding.newPasswordInput,
+            binding.newPasswordFloatingLabel,
             "New Password"
         )
         setupFloatingLabel(
-            findViewById(R.id.confirm_new_password_input),
-            findViewById(R.id.confirm_new_password_floating_label),
+            binding.confirmNewPasswordInput,
+            binding.confirmNewPasswordFloatingLabel,
             "Confirm New Password"
         )
 
-        // Back button: tap animation and finish
-        val backButton = findViewById<ImageView>(R.id.change_password_back_button)
+        // Back button: tap animation and finish (binding)
+        val backButton = binding.changePasswordBackButton
         backButton.setOnClickListener {
             backButton.animate().scaleX(0.85f).scaleY(0.85f).setDuration(80).withEndAction {
                 backButton.animate().scaleX(1f).scaleY(1f).setDuration(80).start()
@@ -64,8 +108,7 @@ class ChangePasswordActivity : AppCompatActivity() {
         }
 
         // Change Password button logic (placeholder)
-        val changePasswordButton = findViewById<android.view.View>(R.id.change_password_button)
-        changePasswordButton.setOnClickListener {
+        binding.changePasswordButton.setOnClickListener {
             // Handle change password
         }
     }
