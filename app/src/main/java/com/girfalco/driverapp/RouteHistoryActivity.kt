@@ -10,15 +10,17 @@ import android.view.WindowManager
 import android.widget.CalendarView
 import android.widget.PopupWindow
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ContextThemeWrapper
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.girfalco.driverapp.databinding.ActivityRouteHistoryBinding
+import com.google.android.material.datepicker.MaterialDatePicker
+import java.text.SimpleDateFormat
+import java.util.*
 
 class RouteHistoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRouteHistoryBinding
-    private var startDate: String? = null
-    private var endDate: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,52 +58,30 @@ class RouteHistoryActivity : AppCompatActivity() {
     }
 
     private fun showCalendarPopup() {
-        val calendarView = CalendarView(this)
-        calendarView.layoutParams = ViewGroup.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-
-        val cardView = CardView(this)
-        cardView.layoutParams = ViewGroup.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
-        cardView.radius = 12f
-        cardView.cardElevation = 20f
-        cardView.setCardBackgroundColor(Color.WHITE)
-        cardView.addView(calendarView)
-
-        val displayMetrics = resources.displayMetrics
-        val screenWidth = displayMetrics.widthPixels
-        val margin = (20 * displayMetrics.density).toInt()
-        val popupWidth = screenWidth - 2 * margin
-
-        val popup = PopupWindow(cardView, popupWidth, ViewGroup.LayoutParams.WRAP_CONTENT, true)
-        popup.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        calendarView.setOnDateChangeListener { view: CalendarView, year: Int, month: Int, dayOfMonth: Int ->
-            val selectedDate = "$dayOfMonth/${month + 1}/$year"
-            if (startDate == null) {
-                startDate = selectedDate
-                binding.dateText.text = startDate
-            } else if (endDate == null) {
-                endDate = selectedDate
-                binding.dateText.text = "$startDate - $endDate"
-                popup.dismiss()
-                binding.datePickerControl.background = getDrawable(R.drawable.date_picker_background)
-                startDate = null
-                endDate = null
-            }
-        }
-
-        popup.setOnDismissListener {
-            binding.datePickerControl.background = getDrawable(R.drawable.date_picker_background)
-            startDate = null
-            endDate = null
-        }
-
         binding.datePickerControl.background = getDrawable(R.drawable.date_picker_background_active)
-        popup.showAsDropDown(binding.datePickerControl, margin, 10)
+        val dateRangePicker = MaterialDatePicker.Builder.dateRangePicker()
+            .setTitleText("Select Date Range")
+            .build()
+
+        dateRangePicker.addOnPositiveButtonClickListener { selection ->
+            val startDateMillis = selection?.first
+            val endDateMillis = selection?.second
+            if (startDateMillis != null && endDateMillis != null) {
+                val startDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date(startDateMillis))
+                val endDate = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date(endDateMillis))
+                binding.dateText.text = "$startDate - $endDate"
+            }
+            binding.datePickerControl.background = getDrawable(R.drawable.date_picker_background)
+        }
+
+        dateRangePicker.addOnNegativeButtonClickListener {
+            binding.datePickerControl.background = getDrawable(R.drawable.date_picker_background)
+        }
+
+        dateRangePicker.addOnCancelListener {
+            binding.datePickerControl.background = getDrawable(R.drawable.date_picker_background)
+        }
+
+        dateRangePicker.show(supportFragmentManager, "date_range_picker")
     }
 }
