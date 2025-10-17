@@ -23,7 +23,8 @@
             android:name=".RouteDetailsActivity"
             android:exported="true"
             android:label="Route Details"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen">
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
