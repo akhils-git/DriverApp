@@ -67,6 +67,13 @@
             android:label="Change Password"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
+        <!-- Route History Activity -->
+        <activity
+            android:name=".RouteHistoryActivity"
+            android:exported="true"
+            android:label="Route History"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+
         <!-- Password Updated Activity -->
         <activity
             android:name=".PasswordUpdatedActivity"

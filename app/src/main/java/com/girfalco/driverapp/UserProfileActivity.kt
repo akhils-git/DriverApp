@@ -52,6 +52,18 @@ class UserProfileActivity : AppCompatActivity() {
                 }.start()
             }.start()
         }
+
+        // Set up Route History navigation
+        val routeHistorySegment = findViewById<android.widget.LinearLayout>(R.id.route_history_segment)
+        routeHistorySegment?.setOnClickListener {
+            // Tap animation
+            routeHistorySegment.animate().scaleX(0.93f).scaleY(0.93f).setDuration(70).withEndAction {
+                routeHistorySegment.animate().scaleX(1f).scaleY(1f).setDuration(70).withEndAction {
+                    val intent = android.content.Intent(this, RouteHistoryActivity::class.java)
+                    startActivity(intent)
+                }.start()
+            }.start()
+        }
     }
 
     private fun showEditProfilePicturePopup() {
