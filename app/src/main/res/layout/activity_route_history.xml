@@ -33,34 +33,95 @@
             android:layout_marginTop="19dp" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/date_picker_control"
+        <LinearLayout
+        android:id="@+id/search_and_date_picker_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/heading_and_user_interaction_container"
         android:layout_marginTop="16dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/date_picker_background"
-        android:padding="15dp">
-        <TextView
-            android:id="@+id/date_text"
-            android:layout_width="wrap_content"
+        android:background="#F7F7F7"
+        android:orientation="vertical"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="06/04/2023 - 10/04/2023"
-            android:textSize="13sp"
-            android:textColor="#54676F"
-            android:fontFamily="sans-serif-medium"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true" />
-        <ImageView
-            android:id="@+id/calendar_icon"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:src="@drawable/calander"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="9dp" />
-    </RelativeLayout>
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/date_picker_control"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/date_picker_background"
+                android:padding="15dp">
+                <TextView
+                    android:id="@+id/date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="06/04/2023 - 10/04/2023"
+                    android:textSize="13sp"
+                    android:textColor="#54676F"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true" />
+                <ImageView
+                    android:id="@+id/calendar_icon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/calander"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="9dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/route_history_filter"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/home_screen_filter" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/route_history_search_box_container"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/search_box_background">
+            <EditText
+                android:id="@+id/route_history_search_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/route_history_search_icon"
+                android:background="@android:color/transparent"
+                android:hint="Search by route name"
+                android:textSize="13dp"
+                android:textColorHint="#54676F"
+                android:fontFamily="sans-serif"
+                android:paddingStart="16dp"
+                android:paddingEnd="56dp"
+                android:inputType="text"
+                android:singleLine="true" />
+            <ImageView
+                android:id="@+id/route_history_search_icon"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/home_screen_search"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
