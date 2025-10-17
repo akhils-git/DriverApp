@@ -112,7 +112,10 @@ class MainActivity : AppCompatActivity() {
         }
         
         forgotPasswordText.setOnClickListener {
-            handleForgotPassword()
+            forgotPasswordText.animate().scaleX(0.85f).scaleY(0.85f).setDuration(80).withEndAction {
+                forgotPasswordText.animate().scaleX(1f).scaleY(1f).setDuration(80).start()
+                handleForgotPassword()
+            }.start()
         }
         
         // Custom checkbox click listeners
