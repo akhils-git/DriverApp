@@ -6,6 +6,7 @@ import android.view.View
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.Button
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 
 class HomeActivity : AppCompatActivity() {
@@ -90,6 +91,11 @@ class HomeActivity : AppCompatActivity() {
                         .scaleX(1f)
                         .scaleY(1f)
                         .setDuration(80)
+                        .withEndAction {
+                            // Navigate to Route Details screen
+                            val intent = Intent(this, RouteDetailsActivity::class.java)
+                            startActivity(intent)
+                        }
                         .start()
                 }
                 .start()
