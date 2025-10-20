@@ -302,8 +302,8 @@
                                 android:layout_height="14dp"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="14dp"
-                                android:src="@drawable/route_history_card_gary_tick"
-                                android:contentDescription="Bin Tick Right" />
+                                android:src="@drawable/route_history_card_gary_untik"
+                                android:contentDescription="Bin Untick Right" />
                         </LinearLayout>
                     <TextView
                         android:id="@+id/current_location_bin_label_right"
