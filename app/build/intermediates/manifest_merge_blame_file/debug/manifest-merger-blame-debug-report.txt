@@ -68,7 +68,7 @@
 42-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:27:13-55
 43        <!-- Splash Screen Activity -->
 44        <activity
-44-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:29:9-35:20
+44-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:29:9-34:52
 45            android:name="com.girfalco.driverapp.SplashScreenActivity"
 45-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:30:13-49
 46            android:exported="true"
@@ -77,80 +77,80 @@
 47-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:32:13-45
 48            android:screenOrientation="portrait"
 48-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:34:13-49
-49            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
+49            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 49-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:33:13-70
-50        </activity>
-51
-52        <!-- Main Activity (Login Screen) -->
-53        <activity
-53-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:38:9-42:73
-54            android:name="com.girfalco.driverapp.MainActivity"
-54-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:39:13-41
-55            android:exported="true"
-55-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:40:13-36
-56            android:label="Login"
-56-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:41:13-34
-57            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-57-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:42:13-70
-58
-59        <!-- User Profile Activity -->
-60        <activity
-60-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:45:9-54:20
-61            android:name="com.girfalco.driverapp.UserProfileActivity"
-61-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:46:13-48
-62            android:exported="true"
-62-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:47:13-36
-63            android:label="User Profile"
-63-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:48:13-41
-64            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
-64-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:49:13-70
-65            <intent-filter>
-65-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:50:13-53:29
-66                <action android:name="android.intent.action.MAIN" />
-66-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:51:17-69
-66-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:51:25-66
-67
-68                <category android:name="android.intent.category.LAUNCHER" />
-68-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:52:17-77
-68-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:52:27-74
-69            </intent-filter>
-70        </activity>
-71
-72        <!-- Forgot Password Activity -->
-73        <activity
-73-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:57:9-61:73
-74            android:name="com.girfalco.driverapp.ForgotPasswordActivity"
-74-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:58:13-51
-75            android:exported="true"
-75-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:59:13-36
-76            android:label="Forgot Password"
-76-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:60:13-44
-77            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-77-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:61:13-70
-78
-79        <!-- Change Password Activity -->
-80        <activity
-80-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:64:9-68:73
-81            android:name="com.girfalco.driverapp.ChangePasswordActivity"
-81-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:65:13-51
-82            android:exported="true"
-82-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:66:13-36
-83            android:label="Change Password"
-83-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:67:13-44
-84            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-84-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:68:13-70
-85
-86        <!-- Route History Activity -->
-87        <activity
-87-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:71:9-75:73
-88            android:name="com.girfalco.driverapp.RouteHistoryActivity"
-88-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:72:13-49
-89            android:exported="true"
-89-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:73:13-36
-90            android:label="Route History"
-90-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:74:13-42
-91            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-91-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:75:13-70
+50
+51        <!-- Main Activity (Login Screen) -->
+52        <activity
+52-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:37:9-41:73
+53            android:name="com.girfalco.driverapp.MainActivity"
+53-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:38:13-41
+54            android:exported="true"
+54-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:39:13-36
+55            android:label="Login"
+55-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:40:13-34
+56            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+56-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:41:13-70
+57
+58        <!-- User Profile Activity -->
+59        <activity
+59-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:44:9-49:20
+60            android:name="com.girfalco.driverapp.UserProfileActivity"
+60-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:45:13-48
+61            android:exported="true"
+61-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:46:13-36
+62            android:label="User Profile"
+62-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:47:13-41
+63            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
+63-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:48:13-70
+64        </activity>
+65
+66        <!-- Forgot Password Activity -->
+67        <activity
+67-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:52:9-56:73
+68            android:name="com.girfalco.driverapp.ForgotPasswordActivity"
+68-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:53:13-51
+69            android:exported="true"
+69-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:54:13-36
+70            android:label="Forgot Password"
+70-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:55:13-44
+71            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+71-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:56:13-70
+72
+73        <!-- Change Password Activity -->
+74        <activity
+74-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:59:9-63:73
+75            android:name="com.girfalco.driverapp.ChangePasswordActivity"
+75-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:60:13-51
+76            android:exported="true"
+76-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:61:13-36
+77            android:label="Change Password"
+77-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:62:13-44
+78            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+78-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:63:13-70
+79
+80        <!-- Route History Activity -->
+81        <activity
+81-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:66:9-75:20
+82            android:name="com.girfalco.driverapp.RouteHistoryActivity"
+82-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:67:13-49
+83            android:exported="true"
+83-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:68:13-36
+84            android:label="Route History"
+84-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:69:13-42
+85            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
+85-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:70:13-70
+86            <intent-filter>
+86-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:71:13-74:29
+87                <action android:name="android.intent.action.MAIN" />
+87-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:72:17-69
+87-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:72:25-66
+88
+89                <category android:name="android.intent.category.LAUNCHER" />
+89-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:73:17-77
+89-->/Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:73:27-74
+90            </intent-filter>
+91        </activity>
 92
 93        <!-- Password Updated Activity -->
 94        <activity

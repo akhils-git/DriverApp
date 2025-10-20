@@ -46,8 +46,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
-        </activity>
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <!-- Main Activity (Login Screen) -->
         <activity
@@ -62,11 +61,6 @@
             android:exported="true"
             android:label="User Profile"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!-- Forgot Password Activity -->
@@ -88,7 +82,13 @@
             android:name="com.girfalco.driverapp.RouteHistoryActivity"
             android:exported="true"
             android:label="Route History"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!-- Password Updated Activity -->
         <activity
