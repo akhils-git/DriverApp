@@ -146,11 +146,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
-            <!-- Left: Bin Info (25%) -->
+            <!-- Left: Bin Info (35%) -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="17"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
                 <ImageView
@@ -158,7 +158,7 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="27dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
                     android:src="@drawable/current_location_card_grey_bin"
@@ -167,7 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginLeft="8dp">
+                    android:layout_marginLeft="4dp">
                     <TextView
                         android:id="@+id/current_location_bin_count"
                         android:layout_width="wrap_content"
@@ -193,53 +193,36 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Center Left: Vertical Lines (25%) -->
+            <!-- Center Left: Vertical Line 1 -->
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center">
                 <View
                     android:layout_width="1dp"
                     android:layout_height="29dp"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="10dp"
-                    android:background="#91989F" />
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="29dp"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="94dp"
                     android:background="#91989F" />
             </FrameLayout>
 
-            <!-- Center Right: Stops Info (25%) -->
+            <!-- Center: Bin Info -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="14"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
-                <ImageView
-                    android:id="@+id/current_location_stops_icon"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:src="@drawable/current_location_card_grey_bin"
-                    android:contentDescription="Stops Icon" />
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_marginLeft="10dp">
                     <TextView
-                        android:id="@+id/current_location_stops_count"
+                        android:id="@+id/current_location_bin_count_center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="56"
+                        android:text="124"
                         android:textColor="#2F3F46"
                         android:textSize="15dp"
                         android:fontFamily="sans-serif"
@@ -247,10 +230,10 @@
                         android:typeface="sans"
                         android:layout_marginTop="11dp" />
                     <TextView
-                        android:id="@+id/current_location_stops_label"
+                        android:id="@+id/current_location_bin_label_center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Total Stops"
+                        android:text="Total Bins"
                         android:textColor="#54676F"
                         android:textSize="13dp"
                         android:fontFamily="sans-serif"
@@ -260,33 +243,36 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Right: Routes Info (25%) -->
+            <!-- Center Right: Vertical Line 2 -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center"
+                    android:background="#91989F" />
+            </FrameLayout>
+
+            <!-- Right: Bin Info -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="14"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
-                <ImageView
-                    android:id="@+id/current_location_routes_icon"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:src="@drawable/current_location_card_grey_bin"
-                    android:contentDescription="Routes Icon" />
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginLeft="8dp">
+                    android:layout_marginLeft="10dp">
                     <TextView
-                        android:id="@+id/current_location_routes_count"
+                        android:id="@+id/current_location_bin_count_right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="78"
+                        android:text="124"
                         android:textColor="#2F3F46"
                         android:textSize="15dp"
                         android:fontFamily="sans-serif"
@@ -294,10 +280,10 @@
                         android:typeface="sans"
                         android:layout_marginTop="11dp" />
                     <TextView
-                        android:id="@+id/current_location_routes_label"
+                        android:id="@+id/current_location_bin_label_right"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Total Routes"
+                        android:text="Total Bins"
                         android:textColor="#54676F"
                         android:textSize="13dp"
                         android:fontFamily="sans-serif"
