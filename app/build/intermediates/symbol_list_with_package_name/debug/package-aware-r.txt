@@ -3050,6 +3050,7 @@ drawable button_gradient_bg
 drawable button_gradient_bg_ripple
 drawable button_gradient_bg_selector
 drawable button_ripple_white
+drawable button_solid_bg
 drawable calander
 drawable calendar_popup_bg
 drawable card_gradient_background
@@ -3068,6 +3069,7 @@ drawable current_location_details_bg
 drawable current_location_details_border
 drawable current_location_details_rect
 drawable current_location_history
+drawable current_location_image_with_blue_tik
 drawable current_location_repeat_rect
 drawable current_location_yellow_rect
 drawable custom_checkbox
@@ -3200,11 +3202,14 @@ drawable popup_background_bottomsheet
 drawable profile_circle_background
 drawable profile_pic
 drawable rectangle_background
+drawable root_bg
 drawable route_details_container_bg
 drawable route_details_screen_back_button
 drawable route_details_screen_handburger_menu
 drawable route_history_card_gary_tick
 drawable route_history_card_gary_untik
+drawable scheduled_bg
+drawable scheduled_gradient_bg
 drawable search_box_background
 drawable searchbox_container_bg
 drawable select_vehicle_checkbox_vehcile_image
@@ -3805,6 +3810,9 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scheduled_date_label
+id scheduled_date_range
+id scheduled_time_container
 id scheduled_time_range
 id screen
 id scroll

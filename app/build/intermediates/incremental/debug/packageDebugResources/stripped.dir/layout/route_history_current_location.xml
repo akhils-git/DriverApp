@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#FFFFFF"
+    android:background="@drawable/root_bg"
     android:padding="0dp">
 
     <LinearLayout
@@ -16,7 +16,7 @@
             android:id="@+id/current_location_image"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:src="@drawable/current_location_history"
+            android:src="@drawable/current_location_image_with_blue_tik"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:contentDescription="Current Location History" />
@@ -136,13 +136,11 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/current_location_details_rect"
-            android:alpha="0.05" />
-
-        <LinearLayout
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/current_location_yellow_rect"
+        android:alpha="0.05" />        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -328,11 +326,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="6dp">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/current_location_yellow_rect"
-            android:alpha="0.05" />
         <!-- Right-aligned gradient rectangle -->
         <FrameLayout
             android:layout_width="match_parent"
@@ -364,7 +357,7 @@
                 android:id="@+id/repeat_frequency_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Scheduled Date &amp; Time: "
+                android:text="Started &amp; End Time"
                 android:textColor="#2F3F46"
                 android:textSize="13dp"
                 android:fontFamily="sans-serif"
@@ -376,6 +369,46 @@
                 android:text="10:00 AM - 12:38 PM"
                 android:textColor="#22201F"
                 android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                android:typeface="normal"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- New container with only two TextViews -->
+    <FrameLayout
+        android:id="@+id/scheduled_time_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/scheduled_gradient_bg"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:id="@+id/scheduled_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scheduled Date &amp; Time:"
+                android:textColor="#2F3F46"
+                android:textSize="13dp"
+                android:fontFamily="sans-serif"
+                android:typeface="normal" />
+            <TextView
+                android:id="@+id/scheduled_date_range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="06/04/2023, 10:00 AM - 12:38 PM"
+                android:textColor="#2F3F46"
+                android:textSize="13dp"
                 android:fontFamily="sans-serif-medium"
                 android:typeface="normal"
                 android:layout_marginTop="2dp" />
@@ -398,7 +431,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center"
-            android:background="@drawable/button_gradient_bg"
+            android:background="@drawable/button_solid_bg"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
@@ -411,7 +444,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="View Details"
-                android:textColor="#FFFFFF"
+                android:textColor="#2F3F46"
                 android:textSize="15dp"
                 android:fontFamily="sans-serif-medium"
                 android:typeface="normal"
@@ -423,8 +456,7 @@
                 android:letterSpacing="0"
                 android:drawablePadding="4dp"
                 android:backgroundTintMode="src_in"
-                android:backgroundTint="@null"
-                android:radius="12dp" />
+                android:backgroundTint="@null" />
             <ImageView
                 android:id="@+id/view_details_button_icon"
                 android:layout_width="20dp"
@@ -433,7 +465,8 @@
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/home_screen_double_arrow"
                 android:contentDescription="Double Arrow"
-                android:layout_marginLeft="4dp" />
+                android:layout_marginLeft="4dp"
+                android:tint="#2F3F46" />
         </LinearLayout>
     </LinearLayout>
 
