@@ -431,7 +431,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center"
-            android:background="#F1F3F3"
+            android:background="@drawable/button_solid_bg"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
@@ -456,8 +456,7 @@
                 android:letterSpacing="0"
                 android:drawablePadding="4dp"
                 android:backgroundTintMode="src_in"
-                android:backgroundTint="@null"
-                android:radius="12dp" />
+                android:backgroundTint="@null" />
             <ImageView
                 android:id="@+id/view_details_button_icon"
                 android:layout_width="20dp"
