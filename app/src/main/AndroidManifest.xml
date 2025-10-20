@@ -31,12 +31,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait" />
         
         <!-- Main Activity (Login Screen) -->
         <activity
@@ -72,7 +67,12 @@
             android:name=".RouteHistoryActivity"
             android:exported="true"
             android:label="Route History"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <!-- Password Updated Activity -->
         <activity
