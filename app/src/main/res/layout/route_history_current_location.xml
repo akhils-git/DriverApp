@@ -326,11 +326,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="6dp">
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/current_location_details_rect"
-            android:alpha="0.05" />
         <!-- Right-aligned gradient rectangle -->
         <FrameLayout
             android:layout_width="match_parent"
