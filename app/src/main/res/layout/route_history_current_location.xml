@@ -16,7 +16,7 @@
             android:id="@+id/current_location_image"
             android:layout_width="42dp"
             android:layout_height="42dp"
-            android:src="@drawable/current_location_history"
+            android:src="@drawable/current_location_image_with_blue_tik"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:contentDescription="Current Location History" />
@@ -431,7 +431,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="center"
-            android:background="@drawable/button_gradient_bg"
+            android:background="#F1F3F3"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:paddingTop="0dp"
@@ -444,7 +444,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:text="View Details"
-                android:textColor="#FFFFFF"
+                android:textColor="#2F3F46"
                 android:textSize="15dp"
                 android:fontFamily="sans-serif-medium"
                 android:typeface="normal"
@@ -466,7 +466,8 @@
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/home_screen_double_arrow"
                 android:contentDescription="Double Arrow"
-                android:layout_marginLeft="4dp" />
+                android:layout_marginLeft="4dp"
+                android:tint="#2F3F46" />
         </LinearLayout>
     </LinearLayout>
 
