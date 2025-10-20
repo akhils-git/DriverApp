@@ -77,6 +77,53 @@
                 android:layout_height="34dp"
                 android:background="@drawable/gray_rounded_rect"
                 android:layout_gravity="bottom" />
+            <TextView
+                android:id="@+id/plate_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1837 RXB"
+                android:textColor="#22201F"
+                android:textSize="13dp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="normal"
+                android:typeface="normal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="bottom|left" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="14dp"
+                android:layout_gravity="bottom|left"
+                android:layout_marginLeft="80dp"
+                android:layout_marginBottom="10dp"
+                android:background="#91989F" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plate Number: "
+                android:textColor="#22201F"
+                android:textSize="13dp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="normal"
+                android:typeface="normal"
+                android:layout_marginLeft="88dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="bottom|left" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BXR 6754"
+                android:textColor="#2F3F46"
+                android:textSize="13dp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="normal"
+                android:typeface="normal"
+                android:layout_marginLeft="178dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="bottom|left" />
         </FrameLayout>
 
     </LinearLayout>
@@ -99,80 +146,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
-            <!-- Left: Allocated Time and Time Range (49%) -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="49"
-                android:orientation="vertical"
-                android:gravity="center_vertical">
-                <TextView
-                    android:id="@+id/allocated_time_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Allocated Time:"
-                    android:textColor="#54676F"
-                    android:textSize="13dp"
-                    android:fontFamily="sans-serif"
-                    android:typeface="normal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="2dp" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="0dp">
-                    <TextView
-                        android:id="@+id/allocated_time_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="10.00 AM"
-                        android:textColor="#22201F"
-                        android:textSize="13dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:typeface="normal" />
-                    <TextView
-                        android:id="@+id/allocated_time_to_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="To"
-                        android:textColor="#55676F"
-                        android:textSize="13dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:typeface="normal"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp" />
-                    <TextView
-                        android:id="@+id/allocated_time_value_end"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="11.00 AM"
-                        android:textColor="#22201F"
-                        android:textSize="13dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:typeface="normal" />
-                </LinearLayout>
-            </LinearLayout>
-            <!-- Center: Vertical Line (1%) -->
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center">
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="29dp"
-                    android:layout_gravity="center"
-                    android:background="#91989F" />
-            </FrameLayout>
-
-
-
-
-
-            <!-- Right: Bin Info (50%) -->
+            <!-- Left: Bin Info (50%) -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -218,6 +192,25 @@
                         android:layout_marginBottom="11dp" />
                 </LinearLayout>
             </LinearLayout>
+
+            <!-- Right: Vertical Line (50%) -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="center">
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center"
+                    android:background="#91989F" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="94dp"
+                    android:background="#91989F" />
+            </FrameLayout>
         </LinearLayout>
     </FrameLayout>
     
