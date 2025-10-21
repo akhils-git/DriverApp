@@ -23,6 +23,13 @@ import android.text.TextWatcher
 import android.text.Editable
 import android.view.Gravity
 import java.io.IOException
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
+import android.util.Base64
+import com.girfalco.driverapp.viewmodel.LoginViewModel
+import com.girfalco.driverapp.viewmodel.LoginViewModelFactory
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
 
 class MainActivity : AppCompatActivity() {
     
@@ -43,6 +50,9 @@ class MainActivity : AppCompatActivity() {
     
     // Custom checkbox state
     private var isRememberMeChecked = true
+
+    // Single ViewModel instance scoped to this Activity
+    private val viewModel: LoginViewModel by viewModels { LoginViewModelFactory() }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +76,30 @@ class MainActivity : AppCompatActivity() {
         
         initializeViews()
         setupClickListeners()
+
+        // Observe login state and navigate on success
+        lifecycleScope.launchWhenStarted {
+            viewModel.state.collect { state ->
+                when (state) {
+                    is com.girfalco.driverapp.viewmodel.LoginUiState.Loading -> {
+                        // TODO: show loading indicator
+                    }
+                    is com.girfalco.driverapp.viewmodel.LoginUiState.Error -> {
+                        Toast.makeText(this@MainActivity, state.message, Toast.LENGTH_LONG).show()
+                    }
+                    is com.girfalco.driverapp.viewmodel.LoginUiState.Success -> {
+                        Toast.makeText(this@MainActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
+                        // pass response JSON to HomeActivity
+                        val json = Json.encodeToString(state.response)
+                        val intent = Intent(this@MainActivity, HomeActivity::class.java)
+                        intent.putExtra("LOGIN_RESPONSE_JSON", json)
+                        startActivity(intent)
+                        finish()
+                    }
+                    else -> {}
+                }
+            }
+        }
     }
     
     private fun initializeViews() {
@@ -131,23 +165,19 @@ class MainActivity : AppCompatActivity() {
     private fun handleLogin() {
         val email = emailInput.text.toString().trim()
         val password = passwordInput.text.toString().trim()
-        
-        // Skip validation for now - accept any input
-        // TODO: Implement actual authentication logic with API integration
-        
-        // Show success message
-        Toast.makeText(this, "Login successful! Welcome to Girfalco Driver App", Toast.LENGTH_SHORT).show()
-        
-        // Save remember me preference if checked
-        if (isRememberMeChecked) {
-            // TODO: Save user credentials securely
-            Toast.makeText(this, "Login details will be remembered", Toast.LENGTH_SHORT).show()
+        // Basic validation: require non-empty email and password
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
+            return
         }
-        
-        // Navigate to Home Activity
-        val intent = Intent(this, HomeActivity::class.java)
-        startActivity(intent)
-        finish() // Close login screen
+
+        // Convert password to Base64 (as required by API contract)
+        val encodedPassword = Base64.encodeToString(password.toByteArray(Charsets.UTF_8), Base64.NO_WRAP)
+        val mobile = "1"
+        val fcmToken = "ZHVtbXl0b2tlbg=="
+
+        // Trigger the ViewModel login
+        viewModel.login(email, encodedPassword, mobile, fcmToken)
     }
     
     private fun handleFaceIdLogin() {
