@@ -1,29 +1,32 @@
+
 package com.girfalco.driverapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import com.girfalco.driverapp.network.model.LoginResponse
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
+import android.view.View
+import android.view.LayoutInflater
+import android.widget.ImageView
+import android.widget.Button
+import android.content.Intent
 import androidx.lifecycle.lifecycleScope
 import com.girfalco.driverapp.model.Person
 import com.girfalco.driverapp.model.PersonStore
 import com.girfalco.driverapp.network.RetrofitProvider
-import com.girfalco.driverapp.network.model.LoginResponse
 import kotlinx.coroutines.launch
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
+import androidx.appcompat.app.AppCompatActivity
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // Parse LOGIN_RESPONSE_JSON (if present)
+        // Parse LOGIN_RESPONSE_JSON (if present) and populate greeting text
         val json = intent.getStringExtra("LOGIN_RESPONSE_JSON")
+
         val loginResponse: LoginResponse? = try {
             if (!json.isNullOrBlank()) Json.decodeFromString<LoginResponse>(json) else null
         } catch (e: Exception) {
@@ -31,29 +34,27 @@ class HomeActivity : AppCompatActivity() {
             null
         }
 
-        val success = loginResponse?.success ?: false
-        val message = loginResponse?.message
-        val token = loginResponse?.token
-        val userId = loginResponse?.userId
+        // Access all values (null-safe)
+        val success: Boolean = loginResponse?.success ?: false
+        val message: String? = loginResponse?.message
+        val token: String? = loginResponse?.token
+        val userId: String? = loginResponse?.userId
 
+        // Optional: fallback to the explicit extra that LoginFragment sometimes sets
         val fallbackMessage: String? = intent.getStringExtra("LOGIN_SUCCESS_MESSAGE")
         val finalMessage = fallbackMessage ?: message ?: "Login Successful"
 
+        // Log and populate greeting in the custom user information card (if present)
         Log.d("LOGIN", "success=$success message=$message token=$token userId=$userId")
-
         val userCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard>(R.id.text_container)
         if (userCard != null) {
             userCard.setGreeting(finalMessage)
         } else {
+            // fallback: try to set the plain TextView
             findViewById<TextView>(R.id.greeting_text)?.text = finalMessage
         }
 
-        // If a success message was passed from Login, keep a log entry
-        fallbackMessage?.let { msg ->
-            Log.d("HomeActivity", "Login success message received: $msg")
-        }
-
-        // Fetch person details if we have an id
+        // Fetch full person details from the API when we have a userId
         val idInt = userId?.toIntOrNull()
         if (idInt != null) {
             lifecycleScope.launch {
@@ -70,8 +71,10 @@ class HomeActivity : AppCompatActivity() {
                             image = personResult.Image
                         )
                         PersonStore.current = person
+
+                        // update UI on main thread
                         val displayName = listOfNotNull(person.firstName, person.lastName).joinToString(" ").ifBlank { null }
-                        if (!displayName.isNullOrBlank()) {
+                        if (displayName != null) {
                             userCard?.setUserName(displayName)
                         }
                     }
@@ -81,66 +84,31 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-        // Update UI from store if already populated
-        updateUserNameFromStore()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        updateUserNameFromStore()
-    }
-
-    private fun updateUserNameFromStore() {
-        val userCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard>(R.id.text_container)
-        val person = PersonStore.current
-        val displayName = person?.let { listOfNotNull(it.firstName, it.lastName).joinToString(" ").ifBlank { null } }
-        if (!displayName.isNullOrBlank()) {
-            userCard?.setUserName(displayName)
+        // If a success message was passed from Login, keep a log entry (popup shown by LoginFragment)
+        intent?.getStringExtra("LOGIN_SUCCESS_MESSAGE")?.let { msg ->
+            Log.d("HomeActivity", "Login success message received: $msg")
+            // Note: showSuccessPopup is invoked from LoginFragment before navigation; removing here to avoid build errors
         }
-    }
 
-    fun showSelectVehiclePopup() {
-        val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
-        val view = LayoutInflater.from(this).inflate(R.layout.select_vehicle_bottom_sheet, null)
-        dialog.setContentView(view)
-
-        // Force popup height to 640dp
-        view.post {
-            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
-            bottomSheet?.let {
-                val params = it.layoutParams
-                val density = resources.displayMetrics.density
-                params.height = (640 * density).toInt()
-                it.layoutParams = params
+        // Hide the navigation bar and status bar for immersive fullscreen experience
+        window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
+            if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
+                window.decorView.systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    or View.SYSTEM_UI_FLAG_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                )
             }
         }
-
-        dialog.show()
-    }
-
-    private fun showFilterPopup() {
-        val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
-        val view = LayoutInflater.from(this).inflate(R.layout.filter_popup, null)
-        dialog.setContentView(view)
-        dialog.show()
-    }
-}
-
-package com.girfalco.driverapp
-
-import android.os.Bundle
-import android.util.Log
-import android.widget.TextView
-import com.girfalco.driverapp.network.model.LoginResponse
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
-import android.view.View
-import android.view.LayoutInflater
-import android.widget.ImageView
-import android.widget.Button
-import android.content.Intent
-import androidx.lifecycle.lifecycleScope
-    
+        window.decorView.systemUiVisibility = (
+            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            or View.SYSTEM_UI_FLAG_FULLSCREEN
+            or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+            or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
             or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         )
 
@@ -208,165 +176,173 @@ import androidx.lifecycle.lifecycleScope
                 }
                 .start()
         }
-
-        // Immediately update UI from any stored person (if already loaded)
-        updateUserNameFromStore()
     }
 
-    override fun onResume() {
-        super.onResume()
-        // Refresh the displayed name from the store in case it was populated elsewhere
-        updateUserNameFromStore()
-    }
+    fun showSelectVehiclePopup() {
 
-    private fun updateUserNameFromStore() {
-        val userCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard>(R.id.text_container)
-        val person = com.girfalco.driverapp.model.PersonStore.current
-        val displayName = person?.let { listOfNotNull(it.firstName, it.lastName).joinToString(" ").ifBlank { null } }
-        if (!displayName.isNullOrBlank()) {
-            userCard?.setUserName(displayName)
-        }
-    }
-        // If a success message was passed from Login, keep a log entry (popup shown by LoginFragment)
-        intent?.getStringExtra("LOGIN_SUCCESS_MESSAGE")?.let { msg ->
-            Log.d("HomeActivity", "Login success message received: $msg")
-            // Note: showSuccessPopup is invoked from LoginFragment before navigation; removing here to avoid build errors
+        val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+        val view = LayoutInflater.from(this).inflate(R.layout.select_vehicle_bottom_sheet, null)
+        dialog.setContentView(view)
+
+        // Force popup height to 640dp
+        view.post {
+            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.let {
+                val params = it.layoutParams
+                val density = resources.displayMetrics.density
+                params.height = (640 * density).toInt()
+                it.layoutParams = params
+            }
         }
 
-        // Hide the navigation bar and status bar for immersive fullscreen experience
-        window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
-            if (visibility and View.SYSTEM_UI_FLAG_FULLSCREEN == 0) {
-                window.decorView.systemUiVisibility = (
-                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                    or View.SYSTEM_UI_FLAG_FULLSCREEN
-                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    package com.girfalco.driverapp
+        // Hide navigation bar when popup is shown (immersive flags)
+        val originalUiFlags = window.decorView.systemUiVisibility
+        dialog.setOnShowListener {
+            val flags = (
+                android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+            )
+            window.decorView.systemUiVisibility = flags
+            dialog.window?.decorView?.systemUiVisibility = flags
+            dialog.window?.setFlags(
+                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            )
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+        }
+        dialog.setOnDismissListener {
+            window.decorView.systemUiVisibility = originalUiFlags
+        }
 
-                    import android.os.Bundle
-                    import android.util.Log
-                    import android.widget.TextView
-                    import com.girfalco.driverapp.network.model.LoginResponse
-                    import kotlinx.serialization.decodeFromString
-                    import kotlinx.serialization.json.Json
-                    import android.view.View
-                    import android.view.LayoutInflater
-                    import android.widget.ImageView
-                    import androidx.lifecycle.lifecycleScope
-                    import com.girfalco.driverapp.model.Person
-                    import com.girfalco.driverapp.model.PersonStore
-                    import com.girfalco.driverapp.network.RetrofitProvider
-                    import kotlinx.coroutines.launch
-                    import androidx.appcompat.app.AppCompatActivity
+        val dialogWindow = dialog.window
+        if (dialogWindow != null) {
+            dialogWindow.navigationBarColor = android.graphics.Color.TRANSPARENT
+            dialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
+        }
 
-                    class HomeActivity : AppCompatActivity() {
-                        override fun onCreate(savedInstanceState: Bundle?) {
-                            super.onCreate(savedInstanceState)
-                            setContentView(R.layout.activity_home)
+        // Checkbox toggle logic for vehicle_information_checkbox
+        val vehicleCheckbox = view.findViewById<ImageView>(R.id.vehicle_checkbox)
+        var isChecked = false
+        fun updateVehicleCheckbox() {
+            if (isChecked) {
+                vehicleCheckbox.setImageResource(R.drawable.checkbox_checked)
+                // Set checked background color
+                view.findViewById<View>(R.id.vehicle_information_checkbox)?.setBackgroundResource(R.drawable.vehicle_information_checkbox_bg_checked)
+            } else {
+                vehicleCheckbox.setImageResource(R.drawable.checkbox_unchecked)
+                // Set unchecked background color
+                view.findViewById<View>(R.id.vehicle_information_checkbox)?.setBackgroundResource(R.drawable.vehicle_information_checkbox_bg_unchecked)
+            }
+        }
+        updateVehicleCheckbox()
+        vehicleCheckbox.setOnClickListener {
+            isChecked = !isChecked
+            updateVehicleCheckbox()
+        }
+        // Also allow tapping the card to toggle the checkbox
+        view.findViewById<View>(R.id.vehicle_information_checkbox)?.setOnClickListener {
+            isChecked = !isChecked
+            updateVehicleCheckbox()
+        }
 
-                            // Parse LOGIN_RESPONSE_JSON (if present) and populate greeting text
-                            val json = intent.getStringExtra("LOGIN_RESPONSE_JSON")
+        dialog.show()
+    }
 
-                            val loginResponse: LoginResponse? = try {
-                                if (!json.isNullOrBlank()) Json.decodeFromString<LoginResponse>(json) else null
-                            } catch (e: Exception) {
-                                Log.w("HomeActivity", "Failed to parse LOGIN_RESPONSE_JSON", e)
-                                null
-                            }
+    private fun showFilterPopup() {
+        val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+        val view = LayoutInflater.from(this).inflate(R.layout.filter_popup, null)
+        dialog.setContentView(view)
 
-                            // Access all values (null-safe)
-                            val success: Boolean = loginResponse?.success ?: false
-                            val message: String? = loginResponse?.message
-                            val token: String? = loginResponse?.token
-                            val userId: String? = loginResponse?.userId
+        // Hide navigation bar when popup is shown (immersive flags)
+        val originalUiFlags = window.decorView.systemUiVisibility
+        dialog.setOnShowListener {
+            val flags = (
+                android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                or android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+            )
+            window.decorView.systemUiVisibility = flags
+            dialog.window?.decorView?.systemUiVisibility = flags
+            dialog.window?.setFlags(
+                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            )
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+            // Explicitly set the bottom sheet background to transparent
+            val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+        }
+        dialog.setOnDismissListener {
+            window.decorView.systemUiVisibility = originalUiFlags
+        }
 
-                            // Optional: fallback to the explicit extra that LoginFragment sometimes sets
-                            val fallbackMessage: String? = intent.getStringExtra("LOGIN_SUCCESS_MESSAGE")
-                            val finalMessage = fallbackMessage ?: message ?: "Login Successful"
+        // Make the nav bar transparent
+        val dialogWindow = dialog.window
+        if (dialogWindow != null) {
+            dialogWindow.navigationBarColor = android.graphics.Color.TRANSPARENT
+            dialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
+        }
 
-                            // Log and populate greeting in the custom user information card (if present)
-                            Log.d("LOGIN", "success=$success message=$message token=$token userId=$userId")
-                            val userCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard>(R.id.text_container)
-                            if (userCard != null) {
-                                userCard.setGreeting(finalMessage)
-                            } else {
-                                // fallback: try to set the plain TextView
-                                findViewById<TextView>(R.id.greeting_text)?.text = finalMessage
-                            }
+        // Set text for each filter checkbox
+        val allRow = view.findViewById<View>(R.id.filter_option_all)
+        val activeRow = view.findViewById<View>(R.id.filter_option_active)
+        val notStartedRow = view.findViewById<View>(R.id.filter_option_not_started)
+        val delayedRow = view.findViewById<View>(R.id.filter_option_delayed)
 
-                            // Fetch full person details from the API when we have a userId
-                            val idInt = userId?.toIntOrNull()
-                            if (idInt != null) {
-                                lifecycleScope.launch {
-                                    try {
-                                        val resp = RetrofitProvider.personApi.getPersonById(idInt)
-                                        val personResult = resp.results.firstOrNull()
-                                        if (personResult != null) {
-                                            val person = Person(
-                                                id = personResult.ID,
-                                                firstName = personResult.FirstName,
-                                                lastName = personResult.LastName,
-                                                email = personResult.Email,
-                                                mobile = personResult.Mobile,
-                                                image = personResult.Image
-                                            )
-                                            PersonStore.current = person
+        allRow?.findViewById<android.widget.TextView>(R.id.popup_action_text)?.text = "All"
+        activeRow?.findViewById<android.widget.TextView>(R.id.popup_action_text)?.text = "Active Routes"
+        notStartedRow?.findViewById<android.widget.TextView>(R.id.popup_action_text)?.text = "Not Started"
+        delayedRow?.findViewById<android.widget.TextView>(R.id.popup_action_text)?.text = "Delayed Routes"
 
-                                            // update UI on main thread
-                                            val displayName = listOfNotNull(person.firstName, person.lastName).joinToString(" ").ifBlank { null }
-                                            if (displayName != null) {
-                                                userCard?.setUserName(displayName)
-                                            }
-                                        }
-                                    } catch (e: Exception) {
-                                        Log.w("HomeActivity", "Failed to load person by id=$idInt", e)
-                                    }
-                                }
-                            }
+        // --- Make all checkboxes interactive ---
+        val rows = listOf(allRow, activeRow, notStartedRow, delayedRow)
+        val isCheckedList = mutableListOf(true, false, false, false)
 
-                            // Immediately update UI from any stored person (if already loaded)
-                            updateUserNameFromStore()
-                        }
+        fun updateCheckbox(row: View?, checked: Boolean) {
+            val checkbox = row?.findViewById<ImageView>(R.id.popup_action_checkbox)
+            if (checkbox != null) {
+                if (checked) {
+                    checkbox.setImageResource(R.drawable.checkbox_checked)
+                } else {
+                    checkbox.setImageResource(R.drawable.checkbox_unchecked)
+                }
+            }
+            row?.isSelected = checked
+        }
 
-                        override fun onResume() {
-                            super.onResume()
-                            // Refresh the displayed name from the store in case it was populated elsewhere
-                            updateUserNameFromStore()
-                        }
+        // Initialize all checkboxes
+        for (i in rows.indices) {
+            updateCheckbox(rows[i], isCheckedList[i])
+        }
 
-                        private fun updateUserNameFromStore() {
-                            val userCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard>(R.id.text_container)
-                            val person = com.girfalco.driverapp.model.PersonStore.current
-                            val displayName = person?.let { listOfNotNull(it.firstName, it.lastName).joinToString(" ").ifBlank { null } }
-                            if (!displayName.isNullOrBlank()) {
-                                userCard?.setUserName(displayName)
-                            }
-                        }
+        // Set up toggle listeners for each row
+        for (i in rows.indices) {
+            val row = rows[i]
+            val checkbox = row?.findViewById<ImageView>(R.id.popup_action_checkbox)
+            val text = row?.findViewById<View>(R.id.popup_action_text)
+            val toggleListener = View.OnClickListener {
+                isCheckedList[i] = !isCheckedList[i]
+                updateCheckbox(row, isCheckedList[i])
+            }
+            checkbox?.setOnClickListener(toggleListener)
+            text?.setOnClickListener(toggleListener)
+            row?.setOnClickListener(toggleListener)
+        }
 
-                        fun showSelectVehiclePopup() {
+        // Set Apply button (LinearLayout) to dismiss the dialog
+        view.findViewById<View>(R.id.apply_button)?.setOnClickListener {
+            dialog.dismiss()
+        }
 
-                            val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
-                            val view = LayoutInflater.from(this).inflate(R.layout.select_vehicle_bottom_sheet, null)
-                            dialog.setContentView(view)
-
-                            // Force popup height to 640dp
-                            view.post {
-                                val bottomSheet = dialog.delegate.findViewById<android.view.View>(com.google.android.material.R.id.design_bottom_sheet)
-                                bottomSheet?.let {
-                                    val params = it.layoutParams
-                                    val density = resources.displayMetrics.density
-                                    params.height = (640 * density).toInt()
-                                    it.layoutParams = params
-                                }
-                            }
-
-                            dialog.show()
-                        }
-
-                        private fun showFilterPopup() {
-                            val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
-                            val view = LayoutInflater.from(this).inflate(R.layout.filter_popup, null)
-                            dialog.setContentView(view)
-
-                            dialog.show()
-                        }
-                    }
+        dialog.show()
+    }
+}
