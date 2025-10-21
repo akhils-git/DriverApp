@@ -68,7 +68,7 @@ class SplashScreenActivity : AppCompatActivity() {
         
         // Delay and then move to RouteHistoryActivity
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, RouteHistoryActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, SPLASH_DELAY)
     }
