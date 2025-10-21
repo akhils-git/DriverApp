@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import com.girfalco.driverapp.R
 import com.girfalco.driverapp.UserProfileActivity
+import android.widget.TextView
 
 class HomeScreenUserInformationCard @JvmOverloads constructor(
     context: Context,
@@ -26,5 +27,19 @@ class HomeScreenUserInformationCard @JvmOverloads constructor(
                 context.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
             }
         }
+    }
+
+    /**
+     * Public setter to update the greeting text inside the card.
+     * Pass null to reset to default string in layout.
+     */
+    fun setGreeting(greeting: String?) {
+        val greetingText = findViewById<TextView>(R.id.greeting_text)
+        if (greeting.isNullOrBlank()) {
+            // let the layout default remain
+            // Optionally you could set a fallback string here
+            return
+        }
+        greetingText?.text = greeting
     }
 }

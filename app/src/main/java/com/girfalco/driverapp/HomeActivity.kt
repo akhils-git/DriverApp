@@ -2,6 +2,11 @@
 package com.girfalco.driverapp
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
+import com.girfalco.driverapp.network.model.LoginResponse
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import android.view.View
 import android.view.LayoutInflater
 import android.widget.ImageView
@@ -13,6 +18,42 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        // Parse LOGIN_RESPONSE_JSON (if present) and populate greeting text
+        val json = intent.getStringExtra("LOGIN_RESPONSE_JSON")
+
+        val loginResponse: LoginResponse? = try {
+            if (!json.isNullOrBlank()) Json.decodeFromString<LoginResponse>(json) else null
+        } catch (e: Exception) {
+            Log.w("HomeActivity", "Failed to parse LOGIN_RESPONSE_JSON", e)
+            null
+        }
+
+        // Access all values (null-safe)
+        val success: Boolean = loginResponse?.success ?: false
+        val message: String? = loginResponse?.message
+        val token: String? = loginResponse?.token
+        val userId: String? = loginResponse?.userId
+
+        // Optional: fallback to the explicit extra that LoginFragment sometimes sets
+        val fallbackMessage: String? = intent.getStringExtra("LOGIN_SUCCESS_MESSAGE")
+        val finalMessage = fallbackMessage ?: message ?: "Login Successful"
+
+        // Log and populate greeting in the custom user information card (if present)
+        Log.d("LOGIN", "success=$success message=$message token=$token userId=$userId")
+        val userCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard>(R.id.text_container)
+        if (userCard != null) {
+            userCard.setGreeting(finalMessage)
+        } else {
+            // fallback: try to set the plain TextView
+            findViewById<TextView>(R.id.greeting_text)?.text = finalMessage
+        }
+
+        // If a success message was passed from Login, keep a log entry (popup shown by LoginFragment)
+        intent?.getStringExtra("LOGIN_SUCCESS_MESSAGE")?.let { msg ->
+            Log.d("HomeActivity", "Login success message received: $msg")
+            // Note: showSuccessPopup is invoked from LoginFragment before navigation; removing here to avoid build errors
+        }
 
         // Hide the navigation bar and status bar for immersive fullscreen experience
         window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
