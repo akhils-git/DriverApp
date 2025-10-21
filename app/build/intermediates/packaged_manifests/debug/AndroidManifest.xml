@@ -53,6 +53,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Main Activity (Login Screen) -->
+        <activity
+            android:name="com.girfalco.driverapp.MainActivity"
+            android:exported="true"
+            android:label="Login"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <!-- Main Activity (Login Screen) -->
         <!-- Main Activity (Login Screen) is declared below with launcher intent-filter -->
