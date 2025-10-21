@@ -42,4 +42,13 @@ class HomeScreenUserInformationCard @JvmOverloads constructor(
         }
         greetingText?.text = greeting
     }
+
+    /**
+     * Public setter to update the user name inside the card.
+     */
+    fun setUserName(name: String?) {
+        val nameText = findViewById<TextView>(R.id.user_name_text)
+        if (name.isNullOrBlank()) return
+        nameText?.text = name
+    }
 }

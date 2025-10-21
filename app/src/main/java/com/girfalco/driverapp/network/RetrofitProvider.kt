@@ -31,4 +31,15 @@ object RetrofitProvider {
 
         retrofit.create(AuthApi::class.java)
     }
+
+    val personApi: PersonApi by lazy {
+        val contentType = "application/json".toMediaType()
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(json.asConverterFactory(contentType))
+            .build()
+
+        retrofit.create(PersonApi::class.java)
+    }
 }
