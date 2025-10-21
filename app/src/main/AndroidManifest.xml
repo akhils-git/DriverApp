@@ -34,11 +34,7 @@
             android:screenOrientation="portrait" />
         
         <!-- Main Activity (Login Screen) -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="Login"
-            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
+        <!-- Main Activity (Login Screen) is declared below with launcher intent-filter -->
         
         <!-- User Profile Activity -->
         <activity
@@ -67,6 +63,14 @@
             android:name=".RouteHistoryActivity"
             android:exported="true"
             android:label="Route History"
+            android:theme="@style/Theme.GirfalcoDriverApp.FullScreen">
+        </activity>
+
+        <!-- Set Login as Launcher -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Login"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
