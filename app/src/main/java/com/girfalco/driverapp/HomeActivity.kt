@@ -5,7 +5,6 @@ import android.util.Log
 import android.widget.TextView
 import com.girfalco.driverapp.network.model.LoginResponse
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.decodeFromString
 import android.view.View
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -35,7 +34,7 @@ class HomeActivity : AppCompatActivity() {
         val json = intent.getStringExtra("LOGIN_RESPONSE_JSON")
 
         // Use a Json instance that ignores unknown keys so server extras won't break deserialization
-        val deserializer = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }
+        val deserializer = Json { ignoreUnknownKeys = true }
         val loginResponse: LoginResponse? = try {
             if (!json.isNullOrBlank()) deserializer.decodeFromString<LoginResponse>(json) else null
         } catch (e: Exception) {
@@ -103,7 +102,7 @@ class HomeActivity : AppCompatActivity() {
                             Log.w("HomeActivity", "getPersonById: no results in body")
                         }
                     } else {
-                        val err = try { response.errorBody()?.string() } catch (e: Exception) { null }
+                        val err = try { response.errorBody()?.string() } catch (ignored: Exception) { null }
                         Log.w("HomeActivity", "getPersonById failed: code=${response.code()} error=$err")
                     }
                 } catch (e: Exception) {
@@ -127,10 +126,8 @@ class HomeActivity : AppCompatActivity() {
 
         // Set status and navigation bar colors (still fine to set directly)
         // minSdk is 24 so the LOLLIPOP check is unnecessary; kept for clarity
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            window.statusBarColor = android.graphics.Color.WHITE
-            window.navigationBarColor = "#FFF9E5".toColorInt()
-        }
+        window.statusBarColor = android.graphics.Color.WHITE
+        window.navigationBarColor = "#FFF9E5".toColorInt()
 
         // Find the filter icon ImageView
         val filterIcon = findViewById<ImageView>(R.id.home_screen_filter)
