@@ -26,6 +26,9 @@ class HomeActivity : AppCompatActivity() {
     // Re-usable controller for hiding/showing system bars
     private lateinit var insetsController: WindowInsetsControllerCompat
 
+    // List of vehicles for the current company (populated after API call)
+    private var vehicleList: List<com.girfalco.driverapp.network.model.Vehicle> = emptyList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -98,11 +101,35 @@ class HomeActivity : AppCompatActivity() {
                             if (displayName != null) {
                                 userCard?.setUserName(displayName)
                             }
+
+                            // --- NEW: Call Vehicle list API for this person's company ---
+                            val companyId = personResult.CompanyID
+                            if (companyId != null) {
+                                try {
+                                    Log.d("HomeActivity", "calling listCompanyVehicles companyId=$companyId tokenPresent=${!currentToken.isNullOrBlank()}")
+                                    val vehicleResp = RetrofitProvider.vehicleApi.listCompanyVehicles(companyId)
+                                    Log.d("HomeActivity", "listCompanyVehicles HTTP code=${vehicleResp.code()} success=${vehicleResp.isSuccessful}")
+                                    if (vehicleResp.isSuccessful) {
+                                        val vehiclesBody = vehicleResp.body()
+                                        vehicleList = vehiclesBody?.data ?: emptyList()
+                                        Log.d("HomeActivity", "Loaded vehicles count=${vehicleList.size}")
+                                        // TODO: update vehicle UI (e.g., vehicleCard) or persist selection
+                                    } else {
+                                        val err = try { vehicleResp.errorBody()?.string() } catch (_: Exception) { null }
+                                        Log.w("HomeActivity", "listCompanyVehicles failed: code=${vehicleResp.code()} error=$err")
+                                    }
+                                } catch (e: Exception) {
+                                    Log.w("HomeActivity", "Failed to load vehicles for companyId=$companyId", e)
+                                }
+                            } else {
+                                Log.w("HomeActivity", "No CompanyID in person result; skipping vehicle list fetch")
+                            }
+
                         } else {
                             Log.w("HomeActivity", "getPersonById: no results in body")
                         }
                     } else {
-                        val err = try { response.errorBody()?.string() } catch (ignored: Exception) { null }
+                        val err = try { response.errorBody()?.string() } catch (_: Exception) { null }
                         Log.w("HomeActivity", "getPersonById failed: code=${response.code()} error=$err")
                     }
                 } catch (e: Exception) {
@@ -110,6 +137,7 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
+
 
         // If a success message was passed from Login, keep a log entry (popup shown by LoginFragment)
         intent?.getStringExtra("LOGIN_SUCCESS_MESSAGE")?.let { msg ->

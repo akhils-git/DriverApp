@@ -54,5 +54,16 @@ object RetrofitProvider {
 
         retrofit.create(PersonApi::class.java)
     }
-}
 
+    @Suppress("unused")
+    val vehicleApi: VehicleApi by lazy {
+        val contentType = "application/json".toMediaType()
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(json.asConverterFactory(contentType))
+            .build()
+
+        retrofit.create(VehicleApi::class.java)
+    }
+}
