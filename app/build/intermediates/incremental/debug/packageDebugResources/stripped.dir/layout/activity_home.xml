@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#FFFFFF">
+
+    <!-- User Information Card (custom component) -->
+    <com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+
+    <!-- Light Yellow Segment -->
+    <RelativeLayout
+    android:id="@+id/yellow_segment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/text_container"
+    android:background="#F7F7F7"
+    android:fitsSystemWindows="false">
+
+        <!-- Vehicle Information Card (custom component) -->
+        <com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard
+            android:id="@+id/vehicle_card"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" />
+
+        <!-- Assigned Routes Heading Segment -->
+        <LinearLayout
+            android:id="@+id/assigned_routes_segment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vehicle_card"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            android:background="#F7F7F7"
+                android:padding="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:id="@+id/assigned_routes_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Assigned Routes"
+                        android:textSize="16dp"
+                        android:textColor="#2F3F46"
+                        android:fontFamily="sans-serif-medium"
+                        android:typeface="normal" />
+                    <ImageView
+                        android:id="@+id/home_screen_filter"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:src="@drawable/home_screen_filter"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="0dp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/assigned_routes_subtext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Showing your today’s assigned routes"
+                    android:textSize="14dp"
+                    android:textColor="#54676F"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginTop="4dp"
+                    android:typeface="normal" />
+                <!-- Search Box -->
+                <RelativeLayout
+                    android:id="@+id/search_box_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/search_box_background">
+                    <EditText
+                        android:id="@+id/search_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toStartOf="@id/search_icon"
+                        android:background="@android:color/transparent"
+                        android:hint="Search by route name"
+                        android:textSize="13dp"
+                        android:textColorHint="#54676F"
+                        android:fontFamily="sans-serif"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="56dp"
+                        android:inputType="text"
+                        android:singleLine="true" />
+                    <ImageView
+                        android:id="@+id/search_icon"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/home_screen_search"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp" />
+                </RelativeLayout>
+                <!-- Location information (scrollable segment) -->
+                <ScrollView
+                    android:id="@+id/location_information_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fillViewport="true"
+                    android:paddingBottom="0dp"
+                    android:scrollbars="none">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <!-- 5 copies of current_location_details for scroll testing -->
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_1" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:background="@android:color/transparent" />
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_2" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:background="@android:color/transparent" />
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_3" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:background="@android:color/transparent" />
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_4" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:background="@android:color/transparent" />
+                        <include
+                            layout="@layout/current_location_details"
+                            android:id="@+id/current_location_details_include_5" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
