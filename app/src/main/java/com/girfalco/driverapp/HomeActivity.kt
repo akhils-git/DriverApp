@@ -31,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // Parse LOGIN_RESPONSE_JSON (if present) and populate greeting text
+        // Parse done LOGIN_RESPONSE_JSON (if present) and populate greeting text
         val json = intent.getStringExtra("LOGIN_RESPONSE_JSON")
 
         // Use a Json instance that ignores unknown keys so server extras won't break deserialization
