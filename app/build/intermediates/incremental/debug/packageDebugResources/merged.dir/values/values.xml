@@ -41,6 +41,10 @@
     <string name="complete_route">Complete Route</string>
     <string name="current_route">Current Route</string>
     <string name="dashboard_title">Route Management</string>
+    <string name="filter_active_routes">Active Routes</string>
+    <string name="filter_all">All</string>
+    <string name="filter_delayed_routes">Delayed Routes</string>
+    <string name="filter_not_started">Not Started</string>
     <string name="first_fragment_label">Route Dashboard</string>
     <string name="next">Next Route</string>
     <string name="previous">Previous Route</string>

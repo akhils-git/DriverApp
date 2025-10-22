@@ -23,4 +23,10 @@
         Manage your collection routes efficiently with real-time updates,
         GPS navigation, and progress tracking.
     </string>
+
+    <!-- Filter popup labels used by HomeActivity -->
+    <string name="filter_all">All</string>
+    <string name="filter_active_routes">Active Routes</string>
+    <string name="filter_not_started">Not Started</string>
+    <string name="filter_delayed_routes">Delayed Routes</string>
 </resources>

@@ -17,6 +17,7 @@ import android.content.Intent
 import com.girfalco.driverapp.HomeActivity
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import com.girfalco.driverapp.network.AuthTokenStore
 import androidx.lifecycle.lifecycleScope
 
 class LoginFragment : Fragment() {
@@ -96,6 +97,10 @@ class LoginFragment : Fragment() {
     private fun navigateToHome(response: LoginResponse) {
         // Serialize response to JSON and pass to HomeActivity
         val json = Json.encodeToString(response)
+        // Debug: log the serialized JSON so we can confirm the server userID is present
+        android.util.Log.d("LoginFragment", "LOGIN_RESPONSE_JSON: $json")
+        // Store the token in the AuthTokenStore so Retrofit will attach it to future requests
+        response.token?.let { AuthTokenStore.token = it }
         val intent = Intent(requireContext(), HomeActivity::class.java)
         intent.putExtra("LOGIN_RESPONSE_JSON", json)
         startActivity(intent)
