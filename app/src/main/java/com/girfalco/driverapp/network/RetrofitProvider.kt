@@ -1,69 +1,39 @@
 package com.girfalco.driverapp.network
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 
-@OptIn(ExperimentalSerializationApi::class)
 object RetrofitProvider {
     private const val BASE_URL = "https://api.girfalco.sa/"
 
-    private val json = Json { ignoreUnknownKeys = true }
+    private val contentType = "application/json".toMediaType()
 
-    private val client: OkHttpClient by lazy {
-        val logging = HttpLoggingInterceptor().apply { setLevel(HttpLoggingInterceptor.Level.BODY) }
-        OkHttpClient.Builder()
-            .addInterceptor { chain ->
-                val request = chain.request()
-                val token = AuthTokenStore.token
-                if (!token.isNullOrBlank()) {
-                    val newReq = request.newBuilder()
-                        .addHeader("Authorization", "Bearer $token")
-                        .build()
-                    chain.proceed(newReq)
-                } else {
-                    chain.proceed(request)
-                }
-            }
-            .addInterceptor(logging)
-            .build()
+    private val json = Json { 
+        ignoreUnknownKeys = true
+        coerceInputValues = true
     }
 
-    val authApi: AuthApi by lazy {
-        val contentType = "application/json".toMediaType()
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(json.asConverterFactory(contentType))
-            .build()
+    private val okHttpClient = OkHttpClient.Builder()
+        .addInterceptor {
+            val req = it.request()
+            val newReq = req.newBuilder()
+                .header("Authorization", "Bearer ${AuthTokenStore.token}")
+                .build()
+            it.proceed(newReq)
+        }
+        .build()
 
-        retrofit.create(AuthApi::class.java)
-    }
+    private val retrofit = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .client(okHttpClient)
+        .addConverterFactory(json.asConverterFactory(contentType))
+        .build()
 
-    val personApi: PersonApi by lazy {
-        val contentType = "application/json".toMediaType()
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(json.asConverterFactory(contentType))
-            .build()
-
-        retrofit.create(PersonApi::class.java)
-    }
-
-    @Suppress("unused")
-    val vehicleApi: VehicleApi by lazy {
-        val contentType = "application/json".toMediaType()
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(client)
-            .addConverterFactory(json.asConverterFactory(contentType))
-            .build()
-
-        retrofit.create(VehicleApi::class.java)
-    }
+    val authApi: AuthApi = retrofit.create(AuthApi::class.java)
+    val personApi: PersonApi = retrofit.create(PersonApi::class.java)
+    val vehicleApi: VehicleApi = retrofit.create(VehicleApi::class.java)
+    val scheduleApi: ScheduleApi = retrofit.create(ScheduleApi::class.java)
 }

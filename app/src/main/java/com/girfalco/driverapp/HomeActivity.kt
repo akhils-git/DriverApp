@@ -18,6 +18,7 @@ import androidx.lifecycle.lifecycleScope
 import com.girfalco.driverapp.model.Person
 import com.girfalco.driverapp.model.PersonStore
 import com.girfalco.driverapp.network.RetrofitProvider
+import com.girfalco.driverapp.network.model.RouteInformation
 import com.girfalco.driverapp.network.model.UpdateVehicleRequest
 import com.girfalco.driverapp.utils.ToastType
 import com.girfalco.driverapp.utils.ToastUtils
@@ -33,6 +34,7 @@ import com.girfalco.driverapp.ui.components.home_screen.VehicleAdapter
 import com.girfalco.driverapp.network.model.Vehicle
 import com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import java.util.TimeZone
 
 class HomeActivity : AppCompatActivity() {
 
@@ -44,6 +46,9 @@ class HomeActivity : AppCompatActivity() {
 
     // Currently selected vehicle for the driver
     private var selectedVehicle: Vehicle? = null
+
+    // List of routes for the selected vehicle
+    private var listRouteInformationCard: List<RouteInformation> = emptyList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -139,6 +144,8 @@ class HomeActivity : AppCompatActivity() {
                                         // UPDATED LOGIC: Use selfAssignedVehicle if available
                                         selectedVehicle = vehiclesBody?.selfAssignedVehicle
                                         vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
+                                        // After assigning a vehicle, fetch the route list
+                                        fetchRouteList()
                                     } else {
                                         val err = try { vehicleResp.errorBody()?.string() } catch (_: Exception) { null }
                                         Log.w("HomeActivity", "listCompanyVehicles failed: code=${vehicleResp.code()} error=$err")
@@ -231,6 +238,45 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    private fun fetchRouteList() {
+        val companyId = PersonStore.current?.CompanyID
+        val vehicleId = selectedVehicle?.ID
+
+        if (companyId != null && vehicleId != null) {
+            lifecycleScope.launch {
+                try {
+                    val timeZone = TimeZone.getDefault().id
+                    // Log the request parameters
+                    Log.d("HomeActivity", "Fetching route list with companyID: $companyId, vehicleID: $vehicleId, timeZone: $timeZone")
+
+                    val response = RetrofitProvider.scheduleApi.getRouteList(
+                        companyID = companyId,
+                        vehicleID = vehicleId,
+                        timeZone = timeZone
+                    )
+
+                    if (response.isSuccessful) {
+                        val routeList = response.body()?.data
+                        if (routeList != null) {
+                            listRouteInformationCard = routeList
+                            Log.d("HomeActivity", "Successfully fetched route list. Count: ${listRouteInformationCard.size}")
+                            // Here is the log you requested
+                            Log.d("HomeActivity", "Route list content: $listRouteInformationCard")
+                        } else {
+                            Log.w("HomeActivity", "Route list is null or empty.")
+                        }
+                    } else {
+                        Log.e("HomeActivity", "Failed to fetch route list: ${response.errorBody()?.string()}")
+                    }
+                } catch (e: Exception) {
+                    Log.e("HomeActivity", "Exception when fetching route list", e)
+                }
+            }
+        } else {
+            Log.w("HomeActivity", "Cannot fetch route list: companyId or vehicleId is null.")
+        }
+    }
+
     fun showSelectVehiclePopup() {
 
         val dialog = BottomSheetDialog(this)
@@ -312,6 +358,9 @@ class HomeActivity : AppCompatActivity() {
                             selectedVehicle = tempSelectedVehicle
                             val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
                             vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
+                            
+                            // After assigning a vehicle, fetch the route list
+                            fetchRouteList()
 
                             dialog.dismiss()
                         } else {
