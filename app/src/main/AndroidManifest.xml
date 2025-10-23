@@ -21,12 +21,14 @@
             android:name=".HomeActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
         <!-- Route Details Activity -->
         <activity
             android:name=".RouteDetailsActivity"
             android:exported="true"
             android:label="Route Details"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen"
             android:windowSoftInputMode="adjustResize" />
         <!-- Splash Screen Activity -->
@@ -46,16 +48,15 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="Login"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
-        
-        <!-- Main Activity (Login Screen) -->
-        <!-- Main Activity (Login Screen) is declared below with launcher intent-filter -->
         
         <!-- User Profile Activity -->
         <activity
             android:name=".UserProfileActivity"
             android:exported="true"
             android:label="User Profile"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen">
         </activity>
         
@@ -64,6 +65,7 @@
             android:name=".ForgotPasswordActivity"
             android:exported="true"
             android:label="Forgot Password"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <!-- Change Password Activity -->
@@ -71,6 +73,7 @@
             android:name=".ChangePasswordActivity"
             android:exported="true"
             android:label="Change Password"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
         <!-- Route History Activity -->
@@ -78,6 +81,7 @@
             android:name=".RouteHistoryActivity"
             android:exported="true"
             android:label="Route History"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen">
         </activity>
 
@@ -86,6 +90,7 @@
             android:name=".PasswordUpdatedActivity"
             android:exported="true"
             android:label="Password Updated"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.GirfalcoDriverApp.FullScreen" />
 
     </application>
