@@ -50,6 +50,7 @@
             android:background="@android:color/transparent"
             android:hint="Search..."
             android:textSize="13dp"
+            android:textColor="#202020"
             android:textColorHint="#54676F"
             android:fontFamily="sans-serif"
             android:paddingStart="16dp"

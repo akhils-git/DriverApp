@@ -3,18 +3,23 @@ package com.girfalco.driverapp.ui.components.home_screen
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.girfalco.driverapp.R
 import com.girfalco.driverapp.network.model.Vehicle
+import java.util.Locale
 
 class VehicleAdapter(
-    private val vehicles: List<Vehicle>,
+    private var vehicles: List<Vehicle>,
     private var selectedVehicle: Vehicle?,
     private val onVehicleSelected: (Vehicle) -> Unit
-) : RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder>() {
+) : RecyclerView.Adapter<VehicleAdapter.VehicleViewHolder>(), Filterable {
+
+    private var filteredVehicles: List<Vehicle> = vehicles
 
     inner class VehicleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val vehicleLayout: LinearLayout = itemView.findViewById(R.id.vehicle_information_checkbox)
@@ -33,25 +38,33 @@ class VehicleAdapter(
             val isSelected = vehicle == selectedVehicle
             updateCheckboxState(isSelected)
 
-            vehicleLayout.setOnClickListener { // Allow tapping the whole card to select
+            vehicleLayout.setOnClickListener { 
                 if (selectedVehicle != vehicle) {
-                    val oldSelectedPosition = vehicles.indexOf(selectedVehicle)
+                    val oldSelectedPosition = filteredVehicles.indexOf(selectedVehicle)
                     selectedVehicle = vehicle
                     onVehicleSelected(vehicle)
                     updateCheckboxState(true)
                     if (oldSelectedPosition != -1) {
                         notifyItemChanged(oldSelectedPosition)
                     }
+                    val newSelectedPosition = filteredVehicles.indexOf(vehicle)
+                    if (newSelectedPosition != -1) {
+                        notifyItemChanged(newSelectedPosition)
+                    }
                 }
             }
-            vehicleCheckbox.setOnClickListener { // Also allow tapping the checkbox to select
+            vehicleCheckbox.setOnClickListener { 
                 if (selectedVehicle != vehicle) {
-                    val oldSelectedPosition = vehicles.indexOf(selectedVehicle)
+                    val oldSelectedPosition = filteredVehicles.indexOf(selectedVehicle)
                     selectedVehicle = vehicle
                     onVehicleSelected(vehicle)
                     updateCheckboxState(true)
                     if (oldSelectedPosition != -1) {
                         notifyItemChanged(oldSelectedPosition)
+                    }
+                    val newSelectedPosition = filteredVehicles.indexOf(vehicle)
+                    if (newSelectedPosition != -1) {
+                        notifyItemChanged(newSelectedPosition)
                     }
                 }
             }
@@ -75,20 +88,48 @@ class VehicleAdapter(
     }
 
     override fun onBindViewHolder(holder: VehicleViewHolder, position: Int) {
-        holder.bind(vehicles[position])
+        holder.bind(filteredVehicles[position])
     }
 
-    override fun getItemCount(): Int = vehicles.size
+    override fun getItemCount(): Int = filteredVehicles.size
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                val charString = constraint?.toString()?.lowercase(Locale.getDefault()) ?: ""
+                filteredVehicles = if (charString.isEmpty()) {
+                    vehicles
+                } else {
+                    vehicles.filter {
+                        it.NumberPlate?.lowercase(Locale.getDefault())?.contains(charString) == true ||
+                        it.Name?.lowercase(Locale.getDefault())?.contains(charString) == true
+                    }
+                }
+                val filterResults = FilterResults()
+                filterResults.values = filteredVehicles
+                return filterResults
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                filteredVehicles = if (results?.values == null) {
+                    ArrayList()
+                } else {
+                    results.values as List<Vehicle>
+                }
+                notifyDataSetChanged()
+            }
+        }
+    }
 
     fun setSelectedVehicle(vehicle: Vehicle?) {
         val oldSelected = selectedVehicle
         selectedVehicle = vehicle
         if (oldSelected != null) {
-            val oldPosition = vehicles.indexOf(oldSelected)
+            val oldPosition = filteredVehicles.indexOf(oldSelected)
             if (oldPosition != -1) notifyItemChanged(oldPosition)
         }
         if (selectedVehicle != null) {
-            val newPosition = vehicles.indexOf(selectedVehicle)
+            val newPosition = filteredVehicles.indexOf(selectedVehicle)
             if (newPosition != -1) notifyItemChanged(newPosition)
         }
     }

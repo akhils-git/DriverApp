@@ -1,7 +1,10 @@
 package com.girfalco.driverapp
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.girfalco.driverapp.network.model.LoginResponse
@@ -272,6 +275,16 @@ class HomeActivity : AppCompatActivity() {
             tempSelectedVehicle = it
         }
         recyclerView.adapter = vehicleAdapter
+
+        // --- Search Functionality ---
+        val searchEditText = view.findViewById<EditText>(R.id.select_vehicle_search_edit_text)
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                vehicleAdapter.filter.filter(s)
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
 
         val chooseVehicleButton = view.findViewById<View>(R.id.choose_vehicle_button)
         val chooseVehicleButtonText = view.findViewById<TextView>(R.id.choose_vehicle_button_text)
