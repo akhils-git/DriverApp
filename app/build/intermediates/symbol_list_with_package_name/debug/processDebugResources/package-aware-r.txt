@@ -3122,6 +3122,8 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable ic_toast_error_icon
+drawable ic_toast_success_icon
 drawable l_shape_rect_gradient
 drawable login_gradient_background
 drawable logout_gradient_button

@@ -3121,6 +3121,8 @@ int drawable ic_mtrl_chip_checked_black 0x7f0700d8
 int drawable ic_mtrl_chip_checked_circle 0x7f0700d9
 int drawable ic_mtrl_chip_close_circle 0x7f0700da
 int drawable ic_search_black_24 0x7f0700db
+int drawable ic_toast_error_icon 0x7f07015e
+int drawable ic_toast_success_icon 0x7f07015f
 int drawable l_shape_rect_gradient 0x7f0700dc
 int drawable login_gradient_background 0x7f0700dd
 int drawable logout_gradient_button 0x7f0700de

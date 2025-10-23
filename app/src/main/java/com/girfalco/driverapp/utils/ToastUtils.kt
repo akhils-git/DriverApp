@@ -29,11 +29,11 @@ object ToastUtils {
         when (type) {
             ToastType.SUCCESS -> {
                 toastRoot.setBackgroundResource(R.drawable.bg_toast_success)
-                toastIcon.setImageResource(R.drawable.tosst_ok_tick)
+                toastIcon.setImageResource(R.drawable.ic_toast_success_icon)
             }
             ToastType.ERROR -> {
                 toastRoot.setBackgroundResource(R.drawable.bg_toast_error)
-                toastIcon.setImageResource(R.drawable.ic_error_icon) // Assuming you have an error icon
+                toastIcon.setImageResource(R.drawable.ic_toast_error_icon)
             }
         }
 

@@ -104,6 +104,8 @@ drawable ic_bin
 drawable ic_edit_pen
 drawable ic_error_icon
 drawable ic_girfalco_logo
+drawable ic_toast_error_icon
+drawable ic_toast_success_icon
 drawable l_shape_rect_gradient
 drawable login_gradient_background
 drawable logout_gradient_button
