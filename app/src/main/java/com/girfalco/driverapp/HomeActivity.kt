@@ -129,8 +129,8 @@ class HomeActivity : AppCompatActivity() {
                                         val vehiclesBody = vehicleResp.body()
                                         vehicleList = vehiclesBody?.data ?: emptyList()
                                         Log.d("HomeActivity", "Loaded vehicles count=${vehicleList.size}")
-                                        // Automatically select the first vehicle if available
-                                        selectedVehicle = vehicleList.firstOrNull()
+                                        // UPDATED LOGIC: Use selfAssignedVehicle if available
+                                        selectedVehicle = vehiclesBody?.selfAssignedVehicle
                                         vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
                                     } else {
                                         val err = try { vehicleResp.errorBody()?.string() } catch (_: Exception) { null }
@@ -281,7 +281,6 @@ class HomeActivity : AppCompatActivity() {
             val vehicleId = tempSelectedVehicle?.ID
 
             if (driverId != null && vehicleId != null) {
-                // Change text and disable button before API call
                 chooseVehicleButtonText.text = "Assigning the vehicle..."
                 chooseVehicleButton.isEnabled = false
 
@@ -301,14 +300,12 @@ class HomeActivity : AppCompatActivity() {
                         } else {
                             Log.e("HomeActivity", "Failed to update vehicle: ${response.errorBody()?.string()}")
                             Toast.makeText(this@HomeActivity, "Failed to update vehicle", Toast.LENGTH_SHORT).show()
-                            // Restore button state on failure
                             chooseVehicleButtonText.text = "Choose This Vehicle"
                             chooseVehicleButton.isEnabled = true
                         }
                     } catch (e: Exception) {
                         Log.e("HomeActivity", "Exception when updating vehicle", e)
                         Toast.makeText(this@HomeActivity, "An error occurred", Toast.LENGTH_SHORT).show()
-                        // Restore button state on exception
                         chooseVehicleButtonText.text = "Choose This Vehicle"
                         chooseVehicleButton.isEnabled = true
                     }
