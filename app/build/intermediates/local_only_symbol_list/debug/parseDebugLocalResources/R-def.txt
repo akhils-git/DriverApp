@@ -199,6 +199,7 @@ id change_password_form
 id change_password_logo
 id change_password_text
 id change_password_title
+id choose_vehicle_button
 id choose_vehicle_button_text
 id confirm_button
 id confirm_new_password_floating_label

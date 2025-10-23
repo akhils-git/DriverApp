@@ -3406,6 +3406,7 @@ id change_password_text
 id change_password_title
 id checkbox
 id checked
+id choose_vehicle_button
 id choose_vehicle_button_text
 id chronometer
 id circle_center

@@ -26,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.girfalco.driverapp.ui.components.home_screen.VehicleAdapter
 import com.girfalco.driverapp.network.model.Vehicle
 import com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class HomeActivity : AppCompatActivity() {
 
@@ -80,7 +81,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Initialize vehicleCard here so it's accessible within the coroutine scope
-        val vehicleCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard>(R.id.vehicle_card)
+        val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
 
         // Fetch full person details from the API when we have a userId
         val idInt = userId?.toIntOrNull()
@@ -222,10 +223,13 @@ class HomeActivity : AppCompatActivity() {
 
     fun showSelectVehiclePopup() {
 
-        val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+        val dialog = BottomSheetDialog(this)
         val parent = findViewById<ViewGroup>(android.R.id.content)
         val view = LayoutInflater.from(this).inflate(R.layout.select_vehicle_bottom_sheet, parent, false)
         dialog.setContentView(view)
+
+        // --- MODIFICATION: Use a temporary variable for the selection ---
+        var tempSelectedVehicle: Vehicle? = selectedVehicle
 
         // Force popup height to 640dp
         view.post {
@@ -267,17 +271,19 @@ class HomeActivity : AppCompatActivity() {
         // --- RecyclerView setup for vehicles ---
         val recyclerView = view.findViewById<RecyclerView>(R.id.vehicle_recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val vehicleAdapter = VehicleAdapter(vehicleList, selectedVehicle) {
+        val vehicleAdapter = VehicleAdapter(vehicleList, tempSelectedVehicle) {
             // Lambda for when a vehicle is selected in the adapter
-            selectedVehicle = it
-            val vehicleCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard>(R.id.vehicle_card)
-            vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
+            // MODIFICATION: Just update the temporary variable, not the main UI
+            tempSelectedVehicle = it
         }
         recyclerView.adapter = vehicleAdapter
 
         // "Choose This Vehicle" button click listener
-        view.findViewById<View>(R.id.choose_vehicle_button_text)?.setOnClickListener { // Use the text view as the clickable area
-            // You can add logic here to confirm the selection and potentially dismiss the dialog
+        view.findViewById<View>(R.id.choose_vehicle_button)?.setOnClickListener { 
+            // MODIFICATION: Update the main UI and dismiss the dialog
+            selectedVehicle = tempSelectedVehicle
+            val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
+            vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
             Log.d("HomeActivity", "Chosen vehicle: ${selectedVehicle?.NumberPlate}")
             dialog.dismiss()
         }
@@ -286,13 +292,13 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showFilterPopup() {
-        val dialog = com.google.android.material.bottomsheet.BottomSheetDialog(this)
+        val dialog = BottomSheetDialog(this)
         val parent = findViewById<ViewGroup>(android.R.id.content)
         val view = LayoutInflater.from(this).inflate(R.layout.filter_popup, parent, false)
         dialog.setContentView(view)
 
         // Use WindowInsetsControllerCompat for dialog immersive flags
-        dialog.setOnShowListener {
+        dialog.setOnShowListener { dialogWindow ->
             dialog.window?.let { win ->
                 val dlgCtrl = WindowInsetsControllerCompat(win, win.decorView)
                 dlgCtrl.hide(WindowInsetsCompat.Type.systemBars())
