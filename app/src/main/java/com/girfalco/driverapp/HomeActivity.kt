@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.TextView
 import com.girfalco.driverapp.network.model.LoginResponse
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.decodeFromString
 import android.view.View
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,6 +21,11 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.graphics.toColorInt
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.girfalco.driverapp.ui.components.home_screen.VehicleAdapter
+import com.girfalco.driverapp.network.model.Vehicle
+import com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard
 
 class HomeActivity : AppCompatActivity() {
 
@@ -27,17 +33,20 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var insetsController: WindowInsetsControllerCompat
 
     // List of vehicles for the current company (populated after API call)
-    private var vehicleList: List<com.girfalco.driverapp.network.model.Vehicle> = emptyList()
+    private var vehicleList: List<Vehicle> = emptyList()
+
+    // Currently selected vehicle for the driver
+    private var selectedVehicle: Vehicle? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        // Parse done LOGIN_RESPONSE_JSON (if present) and populate greeting text
+        // Parse LOGIN_RESPONSE_JSON (if present) and populate greeting text
         val json = intent.getStringExtra("LOGIN_RESPONSE_JSON")
 
         // Use a Json instance that ignores unknown keys so server extras won't break deserialization
-        val deserializer = Json { ignoreUnknownKeys = true }
+        val deserializer = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }
         val loginResponse: LoginResponse? = try {
             if (!json.isNullOrBlank()) deserializer.decodeFromString<LoginResponse>(json) else null
         } catch (e: Exception) {
@@ -69,6 +78,9 @@ class HomeActivity : AppCompatActivity() {
             // fallback: try to set the plain TextView
             findViewById<TextView>(R.id.greeting_text)?.text = finalMessage
         }
+
+        // Initialize vehicleCard here so it's accessible within the coroutine scope
+        val vehicleCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard>(R.id.vehicle_card)
 
         // Fetch full person details from the API when we have a userId
         val idInt = userId?.toIntOrNull()
@@ -113,7 +125,9 @@ class HomeActivity : AppCompatActivity() {
                                         val vehiclesBody = vehicleResp.body()
                                         vehicleList = vehiclesBody?.data ?: emptyList()
                                         Log.d("HomeActivity", "Loaded vehicles count=${vehicleList.size}")
-                                        // TODO: update vehicle UI (e.g., vehicleCard) or persist selection
+                                        // Automatically select the first vehicle if available
+                                        selectedVehicle = vehicleList.firstOrNull()
+                                        vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
                                     } else {
                                         val err = try { vehicleResp.errorBody()?.string() } catch (_: Exception) { null }
                                         Log.w("HomeActivity", "listCompanyVehicles failed: code=${vehicleResp.code()} error=$err")
@@ -178,7 +192,6 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Set up Change button to show SelectVehicle popup
-        val vehicleCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard>(R.id.vehicle_card)
         vehicleCard?.onChangeButtonClick = {
             showSelectVehiclePopup()
         }
@@ -251,29 +264,22 @@ class HomeActivity : AppCompatActivity() {
             dialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
         }
 
-        // Checkbox toggle logic for vehicle_information_checkbox
-        val vehicleCheckbox = view.findViewById<ImageView>(R.id.vehicle_checkbox)
-        var isChecked = false
-        fun updateVehicleCheckbox() {
-            if (isChecked) {
-                vehicleCheckbox.setImageResource(R.drawable.checkbox_checked)
-                // Set checked background color
-                view.findViewById<View>(R.id.vehicle_information_checkbox)?.setBackgroundResource(R.drawable.vehicle_information_checkbox_bg_checked)
-            } else {
-                vehicleCheckbox.setImageResource(R.drawable.checkbox_unchecked)
-                // Set unchecked background color
-                view.findViewById<View>(R.id.vehicle_information_checkbox)?.setBackgroundResource(R.drawable.vehicle_information_checkbox_bg_unchecked)
-            }
+        // --- RecyclerView setup for vehicles ---
+        val recyclerView = view.findViewById<RecyclerView>(R.id.vehicle_recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        val vehicleAdapter = VehicleAdapter(vehicleList, selectedVehicle) {
+            // Lambda for when a vehicle is selected in the adapter
+            selectedVehicle = it
+            val vehicleCard = findViewById<com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard>(R.id.vehicle_card)
+            vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
         }
-        updateVehicleCheckbox()
-        vehicleCheckbox.setOnClickListener {
-            isChecked = !isChecked
-            updateVehicleCheckbox()
-        }
-        // Also allow tapping the card to toggle the checkbox
-        view.findViewById<View>(R.id.vehicle_information_checkbox)?.setOnClickListener {
-            isChecked = !isChecked
-            updateVehicleCheckbox()
+        recyclerView.adapter = vehicleAdapter
+
+        // "Choose This Vehicle" button click listener
+        view.findViewById<View>(R.id.choose_vehicle_button_text)?.setOnClickListener { // Use the text view as the clickable area
+            // You can add logic here to confirm the selection and potentially dismiss the dialog
+            Log.d("HomeActivity", "Chosen vehicle: ${selectedVehicle?.NumberPlate}")
+            dialog.dismiss()
         }
 
         dialog.show()

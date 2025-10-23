@@ -3840,7 +3840,6 @@ id select_vehicle_search_edit_text
 id select_vehicle_search_icon
 id selected
 id selection_type
-id selectvehcilecontner
 id send_reset_link_button
 id sharedValueSet
 id sharedValueUnset
@@ -3984,6 +3983,7 @@ id vehicle_make
 id vehicle_model
 id vehicle_number
 id vehicle_number_text
+id vehicle_recycler_view
 id vertical_only
 id view_details_button_icon
 id view_details_button_row
@@ -4240,6 +4240,7 @@ layout support_simple_spinner_dropdown_item
 layout tab_bin_details
 layout vehicle_information_card
 layout vehicle_information_checkbox
+layout vehicle_list_item
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round

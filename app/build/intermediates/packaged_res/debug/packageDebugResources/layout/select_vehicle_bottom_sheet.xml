@@ -68,23 +68,15 @@
             android:layout_marginEnd="10dp" />
     </RelativeLayout>
 
-    <!-- Scrollable vehicle container -->
-
-    <ScrollView
-        android:id="@+id/selectvehcilecontner"
+    <!-- Scrollable vehicle container - now a RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vehicle_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginTop="15dp"
         android:overScrollMode="never"
-        android:scrollbars="none">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <include layout="@layout/vehicle_information_checkbox" />
-        </LinearLayout>
-    </ScrollView>
+        android:scrollbars="none" />
 
     <!-- Choose This Vehicle Button -->
     <LinearLayout

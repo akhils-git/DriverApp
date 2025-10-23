@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
+import android.widget.TextView
 import com.girfalco.driverapp.R
 
 class VehicleInformationCard @JvmOverloads constructor(
@@ -23,5 +24,12 @@ class VehicleInformationCard @JvmOverloads constructor(
             }.start()
             onChangeButtonClick?.invoke()
         }
+    }
+
+    fun setVehicleDetails(plateNumber: String?, code: String?, make: String?, model: String?) {
+        findViewById<TextView>(R.id.vehicle_number).text = plateNumber
+        findViewById<TextView>(R.id.vehicle_code).text = code
+        findViewById<TextView>(R.id.vehicle_make).text = "Make: $make"
+        findViewById<TextView>(R.id.vehicle_model).text = "Model: $model"
     }
 }

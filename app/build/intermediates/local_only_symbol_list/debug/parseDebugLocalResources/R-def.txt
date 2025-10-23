@@ -353,7 +353,6 @@ id search_icon
 id select_vehicle_search_box_container
 id select_vehicle_search_edit_text
 id select_vehicle_search_icon
-id selectvehcilecontner
 id send_reset_link_button
 id start_route_button
 id subtitle_text
@@ -406,6 +405,7 @@ id vehicle_make
 id vehicle_model
 id vehicle_number
 id vehicle_number_text
+id vehicle_recycler_view
 id view_details_button_icon
 id view_details_button_row
 id view_details_button_text
@@ -450,6 +450,7 @@ layout splash_screen
 layout tab_bin_details
 layout vehicle_information_card
 layout vehicle_information_checkbox
+layout vehicle_list_item
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
