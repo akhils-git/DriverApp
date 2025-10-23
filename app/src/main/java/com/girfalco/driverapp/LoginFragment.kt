@@ -39,11 +39,36 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         
         setupLoginForm()
+        observeViewModel()
     }
     
     private fun setupLoginForm() {
         binding.loginButton.setOnClickListener {
             performLogin()
+        }
+    }
+
+    private fun observeViewModel() {
+        // Observe state from onViewCreated - this is the correct lifecycle-aware approach
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.state.collect { state ->
+                when (state) {
+                    is com.girfalco.driverapp.viewmodel.LoginUiState.Loading -> {
+                        // optionally show loading UI
+                    }
+                    is com.girfalco.driverapp.viewmodel.LoginUiState.Error -> {
+                        ToastUtils.showCustomToast(requireContext(), state.message, ToastType.ERROR)
+                    }
+                    is com.girfalco.driverapp.viewmodel.LoginUiState.Success -> {
+                        // DEFINITIVE FIX: The success toast is now only shown in HomeActivity.
+                        // No toast should be shown here.
+                        navigateToHome(state.response)
+                    }
+                    else -> {
+                        // idle
+                    }
+                }
+            }
         }
     }
     
@@ -52,7 +77,7 @@ class LoginFragment : Fragment() {
         val password = binding.passwordEditText.text.toString().trim()
         
         if (username.isEmpty() || password.isEmpty()) {
-            context?.let { ToastUtils.showCustomToast(it, "Please enter username and password", ToastType.ERROR) }
+            ToastUtils.showCustomToast(requireContext(), "Please enter username and password", ToastType.ERROR)
             return
         }
         
@@ -64,34 +89,6 @@ class LoginFragment : Fragment() {
         val fcmToken = "ZHVtbXl0b2tlbg==" // hardcoded Base64 for 'dummytoken'
 
         viewModel.login(email, encodedPassword, mobile, fcmToken)
-
-        // Observe state
-        // Use viewLifecycleOwner.lifecycle to be lifecycle aware
-        viewModel.state
-            .also { flow ->
-                // collect in a lifecycle-aware way
-            }
-
-        // Simple observation using a coroutine scope on viewLifecycleOwner
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.state.collect { state ->
-                when (state) {
-                    is com.girfalco.driverapp.viewmodel.LoginUiState.Loading -> {
-                        // optionally show loading UI
-                    }
-                    is com.girfalco.driverapp.viewmodel.LoginUiState.Error -> {
-                        context?.let { ToastUtils.showCustomToast(it, state.message, ToastType.ERROR) }
-                    }
-                    is com.girfalco.driverapp.viewmodel.LoginUiState.Success -> {
-                        context?.let { ToastUtils.showCustomToast(it, "Login Successful!", ToastType.SUCCESS) }
-                        navigateToHome(state.response)
-                    }
-                    else -> {
-                        // idle
-                    }
-                }
-            }
-        }
     }
 
     private fun navigateToHome(response: LoginResponse) {

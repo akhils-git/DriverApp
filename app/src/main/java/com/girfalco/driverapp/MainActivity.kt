@@ -26,6 +26,8 @@ import java.io.IOException
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import android.util.Base64
+import com.girfalco.driverapp.utils.ToastType
+import com.girfalco.driverapp.utils.ToastUtils
 import com.girfalco.driverapp.viewmodel.LoginViewModel
 import com.girfalco.driverapp.viewmodel.LoginViewModelFactory
 import kotlinx.serialization.json.Json
@@ -85,11 +87,10 @@ class MainActivity : AppCompatActivity() {
                         // TODO: show loading indicator
                     }
                     is com.girfalco.driverapp.viewmodel.LoginUiState.Error -> {
-                        Toast.makeText(this@MainActivity, state.message, Toast.LENGTH_LONG).show()
+                        ToastUtils.showCustomToast(this@MainActivity, state.message, ToastType.ERROR)
                     }
                     is com.girfalco.driverapp.viewmodel.LoginUiState.Success -> {
-                        Toast.makeText(this@MainActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
-                        // pass response JSON to HomeActivity
+                        // The toast is now correctly handled by HomeActivity
                         val json = Json.encodeToString(state.response)
                         val intent = Intent(this@MainActivity, HomeActivity::class.java)
                         intent.putExtra("LOGIN_RESPONSE_JSON", json)
@@ -167,7 +168,7 @@ class MainActivity : AppCompatActivity() {
         val password = passwordInput.text.toString().trim()
         // Basic validation: require non-empty email and password
         if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
+            ToastUtils.showCustomToast(this, "Please enter email and password", ToastType.ERROR)
             return
         }
 

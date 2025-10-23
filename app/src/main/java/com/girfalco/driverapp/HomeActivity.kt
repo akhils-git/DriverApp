@@ -6,7 +6,6 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import com.girfalco.driverapp.network.model.LoginResponse
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.decodeFromString
@@ -49,6 +48,9 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        // Show login success toast
+        ToastUtils.showCustomToast(this, "Login Successful!", ToastType.SUCCESS)
 
         // Parse LOGIN_RESPONSE_JSON (if present) and populate greeting text
         val json = intent.getStringExtra("LOGIN_RESPONSE_JSON")
