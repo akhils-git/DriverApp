@@ -6,7 +6,8 @@ data class Person(
     val lastName: String? = null,
     val email: String? = null,
     val mobile: String? = null,
-    val image: String? = null
+    val image: String? = null,
+    val CompanyID: Int? = null
 )
 
 object PersonStore {

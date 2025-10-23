@@ -3,6 +3,7 @@ package com.girfalco.driverapp
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import com.girfalco.driverapp.network.model.LoginResponse
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.decodeFromString
@@ -15,6 +16,7 @@ import androidx.lifecycle.lifecycleScope
 import com.girfalco.driverapp.model.Person
 import com.girfalco.driverapp.model.PersonStore
 import com.girfalco.driverapp.network.RetrofitProvider
+import com.girfalco.driverapp.network.model.UpdateVehicleRequest
 import kotlinx.coroutines.launch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
@@ -105,7 +107,8 @@ class HomeActivity : AppCompatActivity() {
                                 lastName = personResult.LastName,
                                 email = personResult.Email,
                                 mobile = personResult.Mobile,
-                                image = personResult.Image
+                                image = personResult.Image,
+                                CompanyID = personResult.CompanyID // Corrected property
                             )
                             PersonStore.current = person
 
@@ -280,12 +283,41 @@ class HomeActivity : AppCompatActivity() {
 
         // "Choose This Vehicle" button click listener
         view.findViewById<View>(R.id.choose_vehicle_button)?.setOnClickListener { 
-            // MODIFICATION: Update the main UI and dismiss the dialog
-            selectedVehicle = tempSelectedVehicle
-            val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
-            vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
-            Log.d("HomeActivity", "Chosen vehicle: ${selectedVehicle?.NumberPlate}")
-            dialog.dismiss()
+            // Call the new updateSelectedVehicle API
+            val driverId = PersonStore.current?.id
+            val vehicleId = tempSelectedVehicle?.ID
+            if (driverId != null && vehicleId != null) {
+                lifecycleScope.launch {
+                    try {
+                        val request = UpdateVehicleRequest(vehicleID = vehicleId, driverID = driverId)
+                        val response = RetrofitProvider.vehicleApi.updateSelectedVehicle(request)
+                        if (response.isSuccessful) {
+                            Log.d("HomeActivity", "Successfully updated selected vehicle on the server.")
+                            Toast.makeText(this@HomeActivity, "Vehicle updated successfully", Toast.LENGTH_SHORT).show()
+
+                            // CORRECTED: Update UI with the user's selection, not the API response.
+                            selectedVehicle = tempSelectedVehicle
+                            val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
+                            vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
+
+                            dialog.dismiss()
+                        } else {
+                            Log.e("HomeActivity", "Failed to update vehicle: ${response.errorBody()?.string()}")
+                            Toast.makeText(this@HomeActivity, "Failed to update vehicle", Toast.LENGTH_SHORT).show()
+                        }
+                    } catch (e: Exception) {
+                        Log.e("HomeActivity", "Exception when updating vehicle", e)
+                        Toast.makeText(this@HomeActivity, "An error occurred", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Log.w("HomeActivity", "Cannot update vehicle: driverId or vehicleId is null")
+                // Fallback to old behavior if API call is not possible
+                selectedVehicle = tempSelectedVehicle
+                val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
+                vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
+                dialog.dismiss()
+            }
         }
 
         dialog.show()
