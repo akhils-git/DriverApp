@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
                         // optionally show loading UI
                     }
                     is com.girfalco.driverapp.viewmodel.LoginUiState.Error -> {
-                        ToastUtils.showCustomToast(requireContext(), state.message, ToastType.ERROR)
+                        ToastUtils.showCustomToast(requireContext(), "Login fail !", ToastType.ERROR)
                     }
                     is com.girfalco.driverapp.viewmodel.LoginUiState.Success -> {
                         // DEFINITIVE FIX: The success toast is now only shown in HomeActivity.

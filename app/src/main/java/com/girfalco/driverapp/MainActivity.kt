@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                         // TODO: show loading indicator
                     }
                     is com.girfalco.driverapp.viewmodel.LoginUiState.Error -> {
-                        ToastUtils.showCustomToast(this@MainActivity, state.message, ToastType.ERROR)
+                        ToastUtils.showCustomToast(this@MainActivity, "Login fail !", ToastType.ERROR)
                     }
                     is com.girfalco.driverapp.viewmodel.LoginUiState.Success -> {
                         // The toast is now correctly handled by HomeActivity
