@@ -231,10 +231,8 @@ class HomeActivity : AppCompatActivity() {
         val view = LayoutInflater.from(this).inflate(R.layout.select_vehicle_bottom_sheet, parent, false)
         dialog.setContentView(view)
 
-        // --- MODIFICATION: Use a temporary variable for the selection ---
         var tempSelectedVehicle: Vehicle? = selectedVehicle
 
-        // Force popup height to 640dp
         view.post {
             val bottomSheet = dialog.delegate.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
             bottomSheet?.let {
@@ -245,9 +243,7 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
-        // Use WindowInsetsControllerCompat to hide system bars when dialog is shown
         dialog.setOnShowListener {
-            // Hide system bars for dialog window as well
             dialog.window?.let { win ->
                 val dlgCtrl = WindowInsetsControllerCompat(win, win.decorView)
                 dlgCtrl.hide(WindowInsetsCompat.Type.systemBars())
@@ -261,7 +257,6 @@ class HomeActivity : AppCompatActivity() {
             }
         }
         dialog.setOnDismissListener {
-            // Restore system bars on dismiss
             insetsController.show(WindowInsetsCompat.Type.systemBars())
         }
 
@@ -271,22 +266,25 @@ class HomeActivity : AppCompatActivity() {
             dialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
         }
 
-        // --- RecyclerView setup for vehicles ---
         val recyclerView = view.findViewById<RecyclerView>(R.id.vehicle_recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
         val vehicleAdapter = VehicleAdapter(vehicleList, tempSelectedVehicle) {
-            // Lambda for when a vehicle is selected in the adapter
-            // MODIFICATION: Just update the temporary variable, not the main UI
             tempSelectedVehicle = it
         }
         recyclerView.adapter = vehicleAdapter
 
-        // "Choose This Vehicle" button click listener
-        view.findViewById<View>(R.id.choose_vehicle_button)?.setOnClickListener { 
-            // Call the new updateSelectedVehicle API
+        val chooseVehicleButton = view.findViewById<View>(R.id.choose_vehicle_button)
+        val chooseVehicleButtonText = view.findViewById<TextView>(R.id.choose_vehicle_button_text)
+
+        chooseVehicleButton?.setOnClickListener { 
             val driverId = PersonStore.current?.id
             val vehicleId = tempSelectedVehicle?.ID
+
             if (driverId != null && vehicleId != null) {
+                // Change text and disable button before API call
+                chooseVehicleButtonText.text = "Assigning the vehicle..."
+                chooseVehicleButton.isEnabled = false
+
                 lifecycleScope.launch {
                     try {
                         val request = UpdateVehicleRequest(vehicleID = vehicleId, driverID = driverId)
@@ -295,7 +293,6 @@ class HomeActivity : AppCompatActivity() {
                             Log.d("HomeActivity", "Successfully updated selected vehicle on the server.")
                             Toast.makeText(this@HomeActivity, "Vehicle updated successfully", Toast.LENGTH_SHORT).show()
 
-                            // CORRECTED: Update UI with the user's selection, not the API response.
                             selectedVehicle = tempSelectedVehicle
                             val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
                             vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
@@ -304,15 +301,20 @@ class HomeActivity : AppCompatActivity() {
                         } else {
                             Log.e("HomeActivity", "Failed to update vehicle: ${response.errorBody()?.string()}")
                             Toast.makeText(this@HomeActivity, "Failed to update vehicle", Toast.LENGTH_SHORT).show()
+                            // Restore button state on failure
+                            chooseVehicleButtonText.text = "Choose This Vehicle"
+                            chooseVehicleButton.isEnabled = true
                         }
                     } catch (e: Exception) {
                         Log.e("HomeActivity", "Exception when updating vehicle", e)
                         Toast.makeText(this@HomeActivity, "An error occurred", Toast.LENGTH_SHORT).show()
+                        // Restore button state on exception
+                        chooseVehicleButtonText.text = "Choose This Vehicle"
+                        chooseVehicleButton.isEnabled = true
                     }
                 }
             } else {
                 Log.w("HomeActivity", "Cannot update vehicle: driverId or vehicleId is null")
-                // Fallback to old behavior if API call is not possible
                 selectedVehicle = tempSelectedVehicle
                 val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
                 vehicleCard?.setVehicleDetails(selectedVehicle?.NumberPlate, selectedVehicle?.Name, selectedVehicle?.Make, selectedVehicle?.Model)
@@ -329,7 +331,6 @@ class HomeActivity : AppCompatActivity() {
         val view = LayoutInflater.from(this).inflate(R.layout.filter_popup, parent, false)
         dialog.setContentView(view)
 
-        // Use WindowInsetsControllerCompat for dialog immersive flags
         dialog.setOnShowListener { dialogWindow ->
             dialog.window?.let { win ->
                 val dlgCtrl = WindowInsetsControllerCompat(win, win.decorView)
@@ -347,14 +348,12 @@ class HomeActivity : AppCompatActivity() {
             insetsController.show(WindowInsetsCompat.Type.systemBars())
         }
 
-        // Make the nav bar transparent
         val dialogWindow = dialog.window
         if (dialogWindow != null) {
             dialogWindow.navigationBarColor = android.graphics.Color.TRANSPARENT
             dialogWindow.setBackgroundDrawableResource(android.R.color.transparent)
         }
 
-        // Set text for each filter checkbox using resources
         val allRow = view.findViewById<View>(R.id.filter_option_all)
         val activeRow = view.findViewById<View>(R.id.filter_option_active)
         val notStartedRow = view.findViewById<View>(R.id.filter_option_not_started)
@@ -365,7 +364,6 @@ class HomeActivity : AppCompatActivity() {
         notStartedRow?.findViewById<TextView>(R.id.popup_action_text)?.text = getString(R.string.filter_not_started)
         delayedRow?.findViewById<TextView>(R.id.popup_action_text)?.text = getString(R.string.filter_delayed_routes)
 
-        // --- Make all checkboxes interactive ---
         val rows = listOf(allRow, activeRow, notStartedRow, delayedRow)
         val isCheckedList = mutableListOf(true, false, false, false)
 
@@ -381,12 +379,10 @@ class HomeActivity : AppCompatActivity() {
             row?.isSelected = checked
         }
 
-        // Initialize all checkboxes
         for (i in rows.indices) {
             updateCheckbox(rows[i], isCheckedList[i])
         }
 
-        // Set up toggle listeners for each row
         for (i in rows.indices) {
             val row = rows[i]
             val checkbox = row?.findViewById<ImageView>(R.id.popup_action_checkbox)
@@ -400,7 +396,6 @@ class HomeActivity : AppCompatActivity() {
             row?.setOnClickListener(toggleListener)
         }
 
-        // Set Apply button (LinearLayout) to dismiss the dialog
         view.findViewById<View>(R.id.apply_button)?.setOnClickListener {
             dialog.dismiss()
         }
