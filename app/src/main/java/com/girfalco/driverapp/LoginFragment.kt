@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.girfalco.driverapp.databinding.FragmentLoginBinding
 import com.girfalco.driverapp.viewmodel.LoginViewModel
 import com.girfalco.driverapp.viewmodel.LoginViewModelFactory
@@ -15,6 +13,8 @@ import com.girfalco.driverapp.network.model.LoginResponse
 import android.util.Base64
 import android.content.Intent
 import com.girfalco.driverapp.HomeActivity
+import com.girfalco.driverapp.utils.ToastType
+import com.girfalco.driverapp.utils.ToastUtils
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import com.girfalco.driverapp.network.AuthTokenStore
@@ -52,7 +52,7 @@ class LoginFragment : Fragment() {
         val password = binding.passwordEditText.text.toString().trim()
         
         if (username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(context, "Please enter username and password", Toast.LENGTH_SHORT).show()
+            context?.let { ToastUtils.showCustomToast(it, "Please enter username and password", ToastType.ERROR) }
             return
         }
         
@@ -80,10 +80,10 @@ class LoginFragment : Fragment() {
                         // optionally show loading UI
                     }
                     is com.girfalco.driverapp.viewmodel.LoginUiState.Error -> {
-                        Toast.makeText(context, state.message, Toast.LENGTH_LONG).show()
+                        context?.let { ToastUtils.showCustomToast(it, state.message, ToastType.ERROR) }
                     }
                     is com.girfalco.driverapp.viewmodel.LoginUiState.Success -> {
-                        Toast.makeText(context, "Login Successful!", Toast.LENGTH_SHORT).show()
+                        context?.let { ToastUtils.showCustomToast(it, "Login Successful!", ToastType.SUCCESS) }
                         navigateToHome(state.response)
                     }
                     else -> {

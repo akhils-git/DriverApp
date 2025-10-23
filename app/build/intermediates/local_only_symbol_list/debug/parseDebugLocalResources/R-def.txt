@@ -50,6 +50,8 @@ drawable bg_logout_button
 drawable bg_ride_complete_confirm_button
 drawable bg_ride_complete_exit_button
 drawable bg_route_history_rounded_rect
+drawable bg_toast_error
+drawable bg_toast_success
 drawable bg_user_details_rounded_rect
 drawable button_gradient_bg
 drawable button_gradient_bg_ripple
@@ -100,6 +102,7 @@ drawable home_screen_search
 drawable ic_add_blue_24
 drawable ic_bin
 drawable ic_edit_pen
+drawable ic_error_icon
 drawable ic_girfalco_logo
 drawable l_shape_rect_gradient
 drawable login_gradient_background
@@ -143,6 +146,7 @@ drawable time_details_active_bg_not_started
 drawable time_details_delayed_bg
 drawable time_details_not_started_bg
 drawable time_details_rect_bg
+drawable tosst_ok_tick
 drawable total_stops_bg
 drawable user_profile_back_arrow
 drawable user_profile_circle_border
@@ -374,6 +378,9 @@ id time_details_container
 id time_details_label
 id time_details_rect
 id time_details_value
+id toast_icon
+id toast_root
+id toast_text
 id toolbar
 id total_stops_container
 id total_stops_count
@@ -437,6 +444,7 @@ layout fragment_dashboard
 layout fragment_login
 layout fragment_routes
 layout homescreen_user_information_card
+layout layout_custom_toast
 layout logout_bottom_sheet
 layout popup_action_button
 layout popup_action_curcle_checkbox

@@ -20,6 +20,8 @@ import com.girfalco.driverapp.model.Person
 import com.girfalco.driverapp.model.PersonStore
 import com.girfalco.driverapp.network.RetrofitProvider
 import com.girfalco.driverapp.network.model.UpdateVehicleRequest
+import com.girfalco.driverapp.utils.ToastType
+import com.girfalco.driverapp.utils.ToastUtils
 import kotlinx.coroutines.launch
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
@@ -303,7 +305,7 @@ class HomeActivity : AppCompatActivity() {
                         val response = RetrofitProvider.vehicleApi.updateSelectedVehicle(request)
                         if (response.isSuccessful) {
                             Log.d("HomeActivity", "Successfully updated selected vehicle on the server.")
-                            Toast.makeText(this@HomeActivity, "Vehicle updated successfully", Toast.LENGTH_SHORT).show()
+                            ToastUtils.showCustomToast(this@HomeActivity, "Vehicle updated successfully", ToastType.SUCCESS)
 
                             selectedVehicle = tempSelectedVehicle
                             val vehicleCard = findViewById<VehicleInformationCard>(R.id.vehicle_card)
@@ -312,13 +314,13 @@ class HomeActivity : AppCompatActivity() {
                             dialog.dismiss()
                         } else {
                             Log.e("HomeActivity", "Failed to update vehicle: ${response.errorBody()?.string()}")
-                            Toast.makeText(this@HomeActivity, "Failed to update vehicle", Toast.LENGTH_SHORT).show()
+                            ToastUtils.showCustomToast(this@HomeActivity, "Failed to update vehicle", ToastType.ERROR)
                             chooseVehicleButtonText.text = "Choose This Vehicle"
                             chooseVehicleButton.isEnabled = true
                         }
                     } catch (e: Exception) {
                         Log.e("HomeActivity", "Exception when updating vehicle", e)
-                        Toast.makeText(this@HomeActivity, "An error occurred", Toast.LENGTH_SHORT).show()
+                        ToastUtils.showCustomToast(this@HomeActivity, "An error occurred", ToastType.ERROR)
                         chooseVehicleButtonText.text = "Choose This Vehicle"
                         chooseVehicleButton.isEnabled = true
                     }
