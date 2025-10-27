@@ -235,6 +235,10 @@ class HomeActivity : AppCompatActivity() {
     private fun fetchRouteList() {
         val companyId = PersonStore.current?.CompanyID
         val vehicleId = selectedVehicle?.ID
+        val routeContainer = findViewById<LinearLayout>(R.id.location_information_scroll_container)
+
+        // Clear previous views
+        routeContainer.removeAllViews()
 
         if (companyId != null && vehicleId != null) {
             lifecycleScope.launch {
@@ -251,33 +255,37 @@ class HomeActivity : AppCompatActivity() {
 
                     if (response.isSuccessful) {
                         val routeList = response.body()?.data
-                        if (routeList != null) {
+                        if (!routeList.isNullOrEmpty()) {
                             listRouteInformationCard = routeList
                             Log.d("HomeActivity", "Successfully fetched route list. Count: ${listRouteInformationCard.size}")
                             Log.d("HomeActivity", "Route list content: $listRouteInformationCard")
 
                             // --- UI UPDATE ---
-                            val routeContainer = findViewById<LinearLayout>(R.id.location_information_scroll_container)
-                            routeContainer.removeAllViews() // Clear old placeholder views
-
                             for (route in listRouteInformationCard) {
                                 val cardView = layoutInflater.inflate(R.layout.current_location_details, routeContainer, false)
                                 populateRouteCard(route, cardView)
                                 routeContainer.addView(cardView)
                             }
-
                         } else {
                             Log.w("HomeActivity", "Route list is null or empty.")
+                            val noRouteView = layoutInflater.inflate(R.layout.no_route_found_layout, routeContainer, false)
+                            routeContainer.addView(noRouteView)
                         }
                     } else {
                         Log.e("HomeActivity", "Failed to fetch route list: ${response.errorBody()?.string()}")
+                        val noRouteView = layoutInflater.inflate(R.layout.no_route_found_layout, routeContainer, false)
+                        routeContainer.addView(noRouteView)
                     }
                 } catch (e: Exception) {
                     Log.e("HomeActivity", "Exception when fetching route list", e)
+                    val noRouteView = layoutInflater.inflate(R.layout.no_route_found_layout, routeContainer, false)
+                    routeContainer.addView(noRouteView)
                 }
             }
         } else {
             Log.w("HomeActivity", "Cannot fetch route list: companyId or vehicleId is null.")
+            val noRouteView = layoutInflater.inflate(R.layout.no_route_found_layout, routeContainer, false)
+            routeContainer.addView(noRouteView)
         }
     }
 

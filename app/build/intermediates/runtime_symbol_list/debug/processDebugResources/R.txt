@@ -3186,6 +3186,7 @@ int drawable mtrl_switch_track 0x7f070119
 int drawable mtrl_switch_track_decoration 0x7f07011a
 int drawable mtrl_tabs_default_indicator 0x7f07011b
 int drawable navigation_empty_icon 0x7f07011c
+int drawable no_route_found 0x7f070160
 int drawable notification_action_background 0x7f07011d
 int drawable notification_bg 0x7f07011e
 int drawable notification_bg_low 0x7f07011f
@@ -3641,6 +3642,7 @@ int id material_timepicker_view 0x7f080180
 int id material_value_index 0x7f080181
 int id matrix 0x7f080182
 int id message 0x7f080183
+int id message_box 0x7f0802ff
 int id middle 0x7f080184
 int id mini 0x7f080185
 int id model_text 0x7f080186
@@ -4229,6 +4231,7 @@ int layout mtrl_picker_text_input_date 0x7f0b0076
 int layout mtrl_picker_text_input_date_range 0x7f0b0077
 int layout mtrl_search_bar 0x7f0b0078
 int layout mtrl_search_view 0x7f0b0079
+int layout no_route_found_layout 0x7f0b0092
 int layout notification_action 0x7f0b007a
 int layout notification_action_tombstone 0x7f0b007b
 int layout notification_template_custom_big 0x7f0b007c

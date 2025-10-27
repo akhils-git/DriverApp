@@ -3187,6 +3187,7 @@ drawable mtrl_switch_track
 drawable mtrl_switch_track_decoration
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable no_route_found
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -3642,6 +3643,7 @@ id material_timepicker_view
 id material_value_index
 id matrix
 id message
+id message_box
 id middle
 id mini
 id model_text
@@ -4230,6 +4232,7 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout mtrl_search_bar
 layout mtrl_search_view
+layout no_route_found_layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
