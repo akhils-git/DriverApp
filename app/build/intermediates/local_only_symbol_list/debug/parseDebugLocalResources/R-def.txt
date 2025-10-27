@@ -151,6 +151,8 @@ drawable time_details_not_started_bg
 drawable time_details_rect_bg
 drawable tosst_ok_tick
 drawable total_stops_bg
+drawable user_avatar
+drawable user_avathar
 drawable user_profile_back_arrow
 drawable user_profile_circle_border
 drawable user_profile_history
@@ -222,11 +224,6 @@ id current_location_bin_label_right
 id current_location_bin_tick_center
 id current_location_bin_tick_right
 id current_location_details
-id current_location_details_include_1
-id current_location_details_include_2
-id current_location_details_include_3
-id current_location_details_include_4
-id current_location_details_include_5
 id current_location_history_image
 id current_location_image
 id current_location_rect

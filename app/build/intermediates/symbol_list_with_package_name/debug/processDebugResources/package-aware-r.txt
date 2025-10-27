@@ -3245,6 +3245,8 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable tosst_ok_tick
 drawable total_stops_bg
+drawable user_avatar
+drawable user_avathar
 drawable user_profile_back_arrow
 drawable user_profile_circle_border
 drawable user_profile_history
@@ -3422,6 +3424,7 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id closest
+id coil_request_manager
 id collapseActionView
 id compress
 id confirm_button
@@ -3449,11 +3452,6 @@ id current_location_bin_label_right
 id current_location_bin_tick_center
 id current_location_bin_tick_right
 id current_location_details
-id current_location_details_include_1
-id current_location_details_include_2
-id current_location_details_include_3
-id current_location_details_include_4
-id current_location_details_include_5
 id current_location_history_image
 id current_location_image
 id current_location_rect

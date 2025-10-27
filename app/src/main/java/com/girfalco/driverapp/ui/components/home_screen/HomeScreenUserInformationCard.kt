@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.RelativeLayout
+import coil.load
 import com.girfalco.driverapp.R
 import com.girfalco.driverapp.UserProfileActivity
 import android.widget.TextView
@@ -16,10 +17,13 @@ class HomeScreenUserInformationCard @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : RelativeLayout(context, attrs, defStyleAttr) {
+
+    private val profilePicture: ImageView
+
     init {
         LayoutInflater.from(context).inflate(R.layout.homescreen_user_information_card, this, true)
         
-        val profilePicture = findViewById<ImageView>(R.id.profile_picture)
+        profilePicture = findViewById(R.id.profile_picture)
         profilePicture.setOnClickListener {
             val intent = Intent(context, UserProfileActivity::class.java)
             context.startActivity(intent)
@@ -29,26 +33,28 @@ class HomeScreenUserInformationCard @JvmOverloads constructor(
         }
     }
 
-    /**
-     * Public setter to update the greeting text inside the card.
-     * Pass null to reset to default string in layout.
-     */
     fun setGreeting(greeting: String?) {
         val greetingText = findViewById<TextView>(R.id.greeting_text)
         if (greeting.isNullOrBlank()) {
-            // let the layout default remain
-            // Optionally you could set a fallback string here
             return
         }
         greetingText?.text = greeting
     }
 
-    /**
-     * Public setter to update the user name inside the card.
-     */
     fun setUserName(name: String?) {
         val nameText = findViewById<TextView>(R.id.user_name_text)
         if (name.isNullOrBlank()) return
         nameText?.text = name
+    }
+
+    fun setUserImage(imagePath: String?) {
+        val imageUrl = if (imagePath != null) "https://api.girfalco.sa/uploads/person/$imagePath" else null
+
+        // Add the following dependency to your app-level build.gradle file:
+        // implementation("io.coil-kt:coil:2.4.0")
+        profilePicture.load(imageUrl) {
+            placeholder(R.drawable.user_avathar) // Corrected placeholder
+            error(R.drawable.user_avathar)       // Corrected error drawable
+        }
     }
 }

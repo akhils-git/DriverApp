@@ -33,6 +33,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.girfalco.driverapp.ui.components.home_screen.VehicleAdapter
 import com.girfalco.driverapp.network.model.Vehicle
+import com.girfalco.driverapp.ui.components.home_screen.HomeScreenUserInformationCard
 import com.girfalco.driverapp.ui.components.home_screen.VehicleInformationCard
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.TimeZone
@@ -126,10 +127,8 @@ class HomeActivity : AppCompatActivity() {
                             PersonStore.current = person
 
                             // update UI on main thread
-                            val displayName = listOfNotNull(person.firstName, person.lastName).joinToString(" ").ifBlank { null }
-                            if (displayName != null) {
-                                userCard?.setUserName(displayName)
-                            }
+                            userCard?.setUserName(person.firstName)
+                            userCard?.setUserImage(person.image)
 
                             // --- NEW: Call Vehicle list API for this person's company ---
                             val companyId = personResult.CompanyID
@@ -266,6 +265,7 @@ class HomeActivity : AppCompatActivity() {
                                 populateRouteCard(route, cardView)
                                 routeContainer.addView(cardView)
                             }
+
                         } else {
                             Log.w("HomeActivity", "Route list is null or empty.")
                             val noRouteView = layoutInflater.inflate(R.layout.no_route_found_layout, routeContainer, false)

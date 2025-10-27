@@ -114,7 +114,7 @@
                 <ScrollView
                     android:id="@+id/location_information_scroll"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
                     android:fillViewport="true"
                     android:paddingBottom="0dp"
@@ -122,40 +122,9 @@
                     <LinearLayout
                         android:id="@+id/location_information_scroll_container"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
                         android:orientation="vertical">
-                        <!-- 5 copies of current_location_details for scroll testing -->
-                        <include
-                            layout="@layout/current_location_details"
-                            android:id="@+id/current_location_details_include_1" />
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:background="@android:color/transparent" />
-                        <include
-                            layout="@layout/current_location_details"
-                            android:id="@+id/current_location_details_include_2" />
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:background="@android:color/transparent" />
-                        <include
-                            layout="@layout/current_location_details"
-                            android:id="@+id/current_location_details_include_3" />
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:background="@android:color/transparent" />
-                        <include
-                            layout="@layout/current_location_details"
-                            android:id="@+id/current_location_details_include_4" />
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:background="@android:color/transparent" />
-                        <include
-                            layout="@layout/current_location_details"
-                            android:id="@+id/current_location_details_include_5" />
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>

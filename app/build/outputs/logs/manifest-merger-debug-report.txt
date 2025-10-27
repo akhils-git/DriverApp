@@ -5,6 +5,8 @@ INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/And
 INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-98:12
 INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml:2:1-98:12
 MERGED from [androidx.databinding:viewbinding:8.13.0] /Users/akhilraj/.gradle/caches/8.13/transforms/26f0a090dc3e1c5046ee23c410f128e6/transformed/viewbinding-8.13.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil:2.4.0] /Users/akhilraj/.gradle/caches/8.13/transforms/24976a30940b1400d23d05ae4aff9f77/transformed/coil-2.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.4.0] /Users/akhilraj/.gradle/caches/8.13/transforms/44492117d6f6dd9e3e82ebde013c36b9/transformed/coil-base-2.4.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.7.5] /Users/akhilraj/.gradle/caches/8.13/transforms/652b7fa18f9b469ba88b5deb4a8fa192/transformed/navigation-common-2.7.5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] /Users/akhilraj/.gradle/caches/8.13/transforms/3c244d2a16a632ec3c4bf717028bc8fc/transformed/navigation-common-ktx-2.7.5/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.5] /Users/akhilraj/.gradle/caches/8.13/transforms/c92f577f5f3ed470f1b7efdf38879ebd/transformed/navigation-runtime-2.7.5/AndroidManifest.xml:17:1-22:12
@@ -56,10 +58,11 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/akhilraj/.gradle
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/bf9de842a62fbfc71284a5177345e5a8/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/ff836a8410612ff3faea81bf559f26f2/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/b25bf8834c0f62052db1ab175d217203/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/626b2eba210d2d7462b74bdee5cd55cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/4a938a9283219045d5f3068e1ee16268/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/akhilraj/.gradle/caches/8.13/transforms/e47a67425008a3472db3f696f323dfa3/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/akhilraj/.gradle/caches/8.13/transforms/b2feb96cdbb90765fad4492dfcf7d2dc/transformed/exifinterface-1.3.6/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/b3232d478f5b72406688ae20dc71d545/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/9b397285901ff0bcb1cfe38388de0570/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/1f2355c382c925c180e8bdadf22f65a2/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -95,8 +98,8 @@ MERGED from [androidx.core:core:1.12.0] /Users/akhilraj/.gradle/caches/8.13/tran
 MERGED from [androidx.core:core:1.12.0] /Users/akhilraj/.gradle/caches/8.13/transforms/e6a0c80eb1235e7d9d63a65f5c625d68/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/b25bf8834c0f62052db1ab175d217203/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/b25bf8834c0f62052db1ab175d217203/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/626b2eba210d2d7462b74bdee5cd55cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/626b2eba210d2d7462b74bdee5cd55cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
@@ -249,6 +252,10 @@ INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/And
 INJECTED from /Users/akhilraj/Workspace/AndroidNative/DriverApp/app/src/main/AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.13.0] /Users/akhilraj/.gradle/caches/8.13/transforms/26f0a090dc3e1c5046ee23c410f128e6/transformed/viewbinding-8.13.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.13.0] /Users/akhilraj/.gradle/caches/8.13/transforms/26f0a090dc3e1c5046ee23c410f128e6/transformed/viewbinding-8.13.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.4.0] /Users/akhilraj/.gradle/caches/8.13/transforms/24976a30940b1400d23d05ae4aff9f77/transformed/coil-2.4.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.4.0] /Users/akhilraj/.gradle/caches/8.13/transforms/24976a30940b1400d23d05ae4aff9f77/transformed/coil-2.4.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.4.0] /Users/akhilraj/.gradle/caches/8.13/transforms/44492117d6f6dd9e3e82ebde013c36b9/transformed/coil-base-2.4.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.4.0] /Users/akhilraj/.gradle/caches/8.13/transforms/44492117d6f6dd9e3e82ebde013c36b9/transformed/coil-base-2.4.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.5] /Users/akhilraj/.gradle/caches/8.13/transforms/652b7fa18f9b469ba88b5deb4a8fa192/transformed/navigation-common-2.7.5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.5] /Users/akhilraj/.gradle/caches/8.13/transforms/652b7fa18f9b469ba88b5deb4a8fa192/transformed/navigation-common-2.7.5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] /Users/akhilraj/.gradle/caches/8.13/transforms/3c244d2a16a632ec3c4bf717028bc8fc/transformed/navigation-common-ktx-2.7.5/AndroidManifest.xml:5:5-44
@@ -351,14 +358,16 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/akhilraj/.gradle/c
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/ff836a8410612ff3faea81bf559f26f2/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/b25bf8834c0f62052db1ab175d217203/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/b25bf8834c0f62052db1ab175d217203/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/626b2eba210d2d7462b74bdee5cd55cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/626b2eba210d2d7462b74bdee5cd55cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/4a938a9283219045d5f3068e1ee16268/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/4a938a9283219045d5f3068e1ee16268/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/akhilraj/.gradle/caches/8.13/transforms/e47a67425008a3472db3f696f323dfa3/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/akhilraj/.gradle/caches/8.13/transforms/e47a67425008a3472db3f696f323dfa3/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/akhilraj/.gradle/caches/8.13/transforms/b2feb96cdbb90765fad4492dfcf7d2dc/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/akhilraj/.gradle/caches/8.13/transforms/b2feb96cdbb90765fad4492dfcf7d2dc/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/b3232d478f5b72406688ae20dc71d545/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/b3232d478f5b72406688ae20dc71d545/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/akhilraj/.gradle/caches/8.13/transforms/9b397285901ff0bcb1cfe38388de0570/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
@@ -375,8 +384,8 @@ provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/akhilraj/.gradle/caches/8.13/transforms/cf25a913ec36a9c1c98ed0eb346a5406/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/akhilraj/.gradle/caches/8.13/transforms/5a1dc01f7f5fcc7a81b4727f24cba613/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/akhilraj/.gradle/caches/8.13/transforms/5a1dc01f7f5fcc7a81b4727f24cba613/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/626b2eba210d2d7462b74bdee5cd55cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/akhilraj/.gradle/caches/8.13/transforms/626b2eba210d2d7462b74bdee5cd55cd/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
 	tools:node
@@ -432,44 +441,44 @@ ADDED from [androidx.core:core:1.12.0] /Users/akhilraj/.gradle/caches/8.13/trans
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /Users/akhilraj/.gradle/caches/8.13/transforms/e6a0c80eb1235e7d9d63a65f5c625d68/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
 	android:value
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
 receiver#androidx.profileinstaller.ProfileInstallReceiver
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
 	android:enabled
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
 	android:exported
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
 	android:permission
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
 	android:directBootAware
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
 intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
 action#androidx.profileinstaller.action.INSTALL_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
 intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
 action#androidx.profileinstaller.action.SKIP_FILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
 intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
 action#androidx.profileinstaller.action.SAVE_PROFILE
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
 intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
 action#androidx.profileinstaller.action.BENCHMARK_OPERATION
-ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
 	android:name
-		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/akhilraj/.gradle/caches/8.13/transforms/d30300dc0a2061b77256b93ad96eeb50/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/akhilraj/.gradle/caches/8.13/transforms/838f69b9eede28d100d85745f165cd61/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92

@@ -1,11 +1,12 @@
 package com.girfalco.driverapp
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import coil.load
+import com.girfalco.driverapp.model.PersonStore
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class UserProfileActivity : AppCompatActivity() {
@@ -22,6 +23,25 @@ class UserProfileActivity : AppCompatActivity() {
             or android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
             or android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
         )
+
+        // --- Populate User Data ---
+        val user = PersonStore.current
+        if (user != null) {
+            val profileImageView = findViewById<ImageView>(R.id.user_profile_image)
+            val nameTextView = findViewById<TextView>(R.id.user_profile_name)
+            val emailTextView = findViewById<TextView>(R.id.user_profile_email)
+            val phoneTextView = findViewById<TextView>(R.id.user_profile_phone)
+
+            nameTextView.text = listOfNotNull(user.firstName, user.lastName).joinToString(" ")
+            emailTextView.text = user.email
+            phoneTextView.text = user.mobile
+
+            val imageUrl = if (user.image != null) "https://api.girfalco.sa/uploads/person/${user.image}" else null
+            profileImageView.load(imageUrl) {
+                placeholder(R.drawable.user_avathar)
+                error(R.drawable.user_avathar)
+            }
+        }
 
         // Set up back arrow click to finish activity
         val backArrow = findViewById<android.widget.ImageView>(R.id.user_profile_back_arrow)
