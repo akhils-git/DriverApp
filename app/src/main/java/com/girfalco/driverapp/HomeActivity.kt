@@ -5,6 +5,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.girfalco.driverapp.network.model.LoginResponse
 import kotlinx.serialization.json.Json
@@ -213,28 +214,21 @@ class HomeActivity : AppCompatActivity() {
         vehicleCard?.onChangeButtonClick = {
             showSelectVehiclePopup()
         }
+    }
 
-        // Add scale animation to View Details button (first instance only)
-        val currentLocationDetails1 = findViewById<View>(R.id.current_location_details_include_1)
-        val viewDetailsButtonRow1 = currentLocationDetails1?.findViewById<View>(R.id.view_details_button_row)
-        viewDetailsButtonRow1?.setOnClickListener { v ->
-            v.animate()
-                .scaleX(0.93f)
-                .scaleY(0.93f)
-                .setDuration(80)
-                .withEndAction {
-                    v.animate()
-                        .scaleX(1f)
-                        .scaleY(1f)
-                        .setDuration(80)
-                        .withEndAction {
-                            // Navigate to Route Details screen
-                            val intent = Intent(this, RouteDetailsActivity::class.java)
-                            startActivity(intent)
-                        }
-                        .start()
-                }
-                .start()
+    private fun populateRouteCard(route: RouteInformation, cardView: View) {
+        cardView.findViewById<TextView>(R.id.location_title).text = route.RouteName
+        cardView.findViewById<TextView>(R.id.location_bins_stops).text = "Total Bins and Stops: ${route.Stops ?: 0}"
+        cardView.findViewById<TextView>(R.id.allocated_time_value).text = route.StartTime
+        cardView.findViewById<TextView>(R.id.allocated_time_value_end).text = route.EndTime
+        cardView.findViewById<TextView>(R.id.current_location_bin_count).text = (route.totalBins ?: 0).toString()
+        cardView.findViewById<TextView>(R.id.current_location_status).text = route.statusLabel
+
+        val viewDetailsButton = cardView.findViewById<TextView>(R.id.view_details_button_text)
+        when (route.status) {
+            "1" -> viewDetailsButton.text = "View Details"
+            "2" -> viewDetailsButton.text = "Preview"
+            else -> viewDetailsButton.text = "View Details" 
         }
     }
 
@@ -260,8 +254,18 @@ class HomeActivity : AppCompatActivity() {
                         if (routeList != null) {
                             listRouteInformationCard = routeList
                             Log.d("HomeActivity", "Successfully fetched route list. Count: ${listRouteInformationCard.size}")
-                            // Here is the log you requested
                             Log.d("HomeActivity", "Route list content: $listRouteInformationCard")
+
+                            // --- UI UPDATE ---
+                            val routeContainer = findViewById<LinearLayout>(R.id.location_information_scroll_container)
+                            routeContainer.removeAllViews() // Clear old placeholder views
+
+                            for (route in listRouteInformationCard) {
+                                val cardView = layoutInflater.inflate(R.layout.current_location_details, routeContainer, false)
+                                populateRouteCard(route, cardView)
+                                routeContainer.addView(cardView)
+                            }
+
                         } else {
                             Log.w("HomeActivity", "Route list is null or empty.")
                         }

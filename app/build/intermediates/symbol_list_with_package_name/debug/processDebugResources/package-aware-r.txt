@@ -3456,6 +3456,7 @@ id current_location_details_include_5
 id current_location_history_image
 id current_location_image
 id current_location_rect
+id current_location_status
 id current_password_floating_label
 id current_password_input
 id current_password_input_layout
@@ -3600,6 +3601,7 @@ id list_item
 id locale
 id location_bins_stops
 id location_information_scroll
+id location_information_scroll_container
 id location_title
 id loginFragment
 id login_button

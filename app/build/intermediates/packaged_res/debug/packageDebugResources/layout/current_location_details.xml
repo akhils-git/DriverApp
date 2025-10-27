@@ -37,7 +37,7 @@
                 android:id="@+id/location_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Riyadh Central - Industrial Zones"
+                android:text="Loading..."
                 android:textColor="#2F3F46"
                 android:textSize="15dp"
                 android:fontFamily="sans-serif"
@@ -220,6 +220,7 @@
                 android:layout_gravity="right|center_vertical"
                 android:background="@drawable/current_location_repeat_rect">
                 <TextView
+                    android:id="@+id/current_location_status"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
